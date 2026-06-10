@@ -1,303 +1,689 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="light" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Pariwisata Alam Jawa Barat - Kelompok 12 (V2)</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Story: Pariwisata Alam Jawa Barat</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#006591",
+              "primary-container": "#0ea5e9",
+              "on-secondary-fixed": "#001e30",
+              "background": "#f6faff",
+              "surface": "#ffffff",
+              "outline-variant": "#bec8d2",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
-        body {
-            background-color: #0d1117;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #00B4D8;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        h1 { color: #00B4D8; margin-bottom: 5px; }
-        
-        .warning-banner {
-            background: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            border: 1px solid #ffeeba;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+      body { background-color: #f6faff; color: #171c20; scroll-behavior: smooth; }
+      .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(226, 232, 240, 0.8); }
+      .chart-container { min-height: 450px; width: 100%; }
+      .narrative-box { border-left: 4px solid #0EA5E9; background: #F0F9FF; padding: 20px; border-radius: 0 8px 8px 0; }
+      
+      /* Chapter label */
+      .chapter-label {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #0EA5E9;
+        margin-bottom: 8px;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        .controls {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-        }
-        select {
-            background: #0d1117;
-            color: white;
-            border: 1px solid #00B4D8;
-            padding: 10px;
-            border-radius: 4px;
-            width: 100%;
-            font-size: 16px;
-        }
-        .summary-box {
-            background: #161b22;
-            padding: 15px;
-            border-left: 5px solid #FF6B35;
-            margin-top: 15px;
-            font-size: 18px;
-        }
-        .chart-container {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            min-height: 450px;
-        }
+      /* Section separator */
+      .section-divider {
+        width: 48px;
+        height: 3px;
+        background: #0EA5E9;
+        margin: 12px 0 24px 0;
+        border-radius: 2px;
+      }
 
-        /* Metric Cards */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .metric-card {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 5px solid #FF6B35;
-            border-top: 1px solid #30363d;
-            border-right: 1px solid #30363d;
-            border-bottom: 1px solid #30363d;
-        }
-        .metric-card h3 { margin: 0; font-size: 14px; color: #8b949e; text-transform: uppercase; }
-        .metric-card p { margin: 10px 0 0; font-size: 20px; font-weight: bold; }
-        .metric-warning { color: #ffab70; }
+      /* Fun fact card scroll container */
+      .fun-fact-scroll {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding: 16px 4px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .fun-fact-scroll::-webkit-scrollbar { height: 4px; }
+      .fun-fact-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+      .fun-fact-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
 
-        #summary-text span { color: #FF6B35; font-weight: bold; }
+      .fun-fact-card {
+        min-width: 280px;
+        max-width: 280px;
+        scroll-snap-align: start;
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border: 1px solid #E2E8F0;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .fun-fact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      }
+
+      /* Takeaway cards */
+      .takeaway-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        border-top: 3px solid #0EA5E9;
+        flex: 1;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      /* Expandable anomali */
+      .anomali-toggle {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        background: #FEF3C7;
+        border-radius: 8px;
+        border: 1px solid #F59E0B;
+        transition: background 0.2s;
+      }
+      .anomali-toggle:hover { background: #FDE68A; }
+      .anomali-content {
+        display: none;
+        padding: 16px;
+        background: #FFFBEB;
+        border: 1px solid #F59E0B;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+      }
+      .anomali-content.open { display: block; }
+      
+      /* Hero Gradient */
+      .hero-bg {
+        background: linear-gradient(135deg, #0C4A6E 0%, #006591 100%);
+      }
     </style>
 </head>
-<body>
 
-    <div class="header">
-        <h1>Dashboard Pariwisata Alam Jawa Barat</h1>
-        <p>Analisis Data Terkoreksi 2016–2022 | Kelompok 12</p>
+<body class="min-h-screen flex flex-col">
+
+<!-- SECTION 1: HERO -->
+<section class="hero-bg min-h-screen flex items-center justify-center relative text-white px-6">
+    <div class="max-w-4xl text-center space-y-8">
+        <span class="px-4 py-2 bg-white/10 rounded-full text-xs font-black tracking-widest border border-white/20 uppercase">
+            DATA ANALYTICS · KELOMPOK 12 · II4013
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black leading-tight">
+            Siapa yang Benar-Benar Mengunjungi Hutan Jawa Barat?
+        </h1>
+        <p class="text-xl md:text-2xl text-blue-100/80 font-medium">
+            Analisis 310 kawasan wisata alam selama 7 tahun — termasuk era pandemi yang mengubah segalanya.
+        </p>
+        <div class="pt-8">
+            <a href="#section-2" class="bg-primary-container text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all shadow-xl inline-block">
+                Mulai Membaca ↓
+            </a>
+        </div>
     </div>
+    <div class="absolute bottom-8 right-8 text-xs opacity-50">
+        Sumber: Open Data Jabar 2016–2022
+    </div>
+</section>
 
-    <div class="container">
-        <div class="warning-banner">
-            <span>⚠</span>
+<main class="flex-grow max-w-[1200px] mx-auto w-full px-6">
+
+    <!-- SECTION 2: KONTEKS -->
+    <section id="section-2" class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">01 — KONTEKS</div>
+            <h2 class="text-3xl font-black text-slate-800">Dari 310 kawasan yang terdaftar, hanya sebagian kecil yang benar-benar dikunjungi. Dan datanya? Tidak sempurna.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-center justify-between border-y border-slate-200 py-12">
+            <div class="text-center flex-1">
+                <p class="text-4xl font-black text-primary">7 Tahun</p>
+                <p class="text-slate-500 font-medium mt-2">Rentang Waktu Data (2016-2022)</p>
+            </div>
+            <div class="hidden md:block w-px h-16 bg-slate-200"></div>
+            <div class="text-center flex-1">
+                <p class="text-4xl font-black text-primary">310</p>
+                <p class="text-slate-500 font-medium mt-2">Kawasan Terdaftar di Jawa Barat</p>
+            </div>
+            <div class="hidden md:block w-px h-16 bg-slate-200"></div>
+            <div class="text-center flex-1">
+                <p class="text-4xl font-black text-error">2 Tahun</p>
+                <p class="text-slate-500 font-medium mt-2">Titik Anomali & Bermasalah</p>
+            </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+            <div id="anomali-toggle" class="anomali-toggle">
+                <div class="flex items-center gap-3 font-bold text-amber-900">
+                    <span class="material-symbols-outlined">analytics</span>
+                    Catatan Kualitas Data
+                </div>
+                <span class="chevron material-symbols-outlined">expand_more</span>
+            </div>
+            <div id="anomali-content" class="anomali-content text-sm space-y-4 text-amber-950">
+                <p>• <strong>2020 (Suspect Copy):</strong> 472 baris data ditemukan identik sempurna dengan data tahun 2019, mengindikasikan pengulangan data karena kendala pelaporan saat pandemi.</p>
+                <p>• <strong>2021 (Reporting Gap):</strong> Mayoritas kawasan mencatat 0 pengunjung, kemungkinan besar karena penutupan total atau kegagalan sistem pelaporan.</p>
+                <p>• <strong>2022 (Incomplete):</strong> Hanya Taman Nasional Gunung Ciremai yang melaporkan data, menjadikannya satu-satunya titik data valid di tahun terakhir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: TREN KESELURUHAN -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">02 — TREN KESELURUHAN</div>
+            <h2 class="text-3xl font-black text-slate-800">Lonjakan 2016, collapse 2017, pandemi 2020-2021, dan recovery yang tidak merata. Ini cerita lengkapnya.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div id="overview-chart" class="chart-container"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="takeaway-card space-y-3">
+                <span class="material-symbols-outlined text-primary text-3xl">trending_down</span>
+                <p class="font-black text-lg">2016 → 2017: Turun 98%</p>
+                <p class="text-sm text-slate-500 leading-relaxed">Bukan karena pandemi. Ini adalah collapse pelaporan data di mana jumlah kawasan yang melapor berkurang drastis.</p>
+            </div>
+            <div class="takeaway-card space-y-3 border-error">
+                <span class="material-symbols-outlined text-error text-3xl">error</span>
+                <p class="font-black text-lg">2020: Data Suspect</p>
+                <p class="text-sm text-slate-500 leading-relaxed">472 baris data 2020 identik sempurna dengan 2019. Analisis pada tahun ini harus dilakukan dengan kewaspadaan tinggi.</p>
+            </div>
+            <div class="takeaway-card space-y-3">
+                <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+                <p class="font-black text-lg">2022: Satu Kawasan</p>
+                <p class="text-sm text-slate-500 leading-relaxed">Hanya TN Gn. Ciremai yang melaporkan data di tahun 2022, menjadikannya satu-satunya "penyintas" data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3B: DOMINASI -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">02B — KETIMPANGAN</div>
+            <h2 class="text-3xl font-black text-slate-800">Satu kawasan, sepertiga seluruh kunjungan Jawa Barat.</h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 mt-4 max-w-2xl">TWA Tangkubanparahu mendominasi 33.4% dari seluruh kunjungan tercatat. Ketimpangan ini menunjukkan bahwa pengembangan pariwisata Jawa Barat sangat bergantung pada satu destinasi.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="glass-card p-8 rounded-2xl shadow-sm">
+                <div id="dominasi-chart" style="height: 400px; width: 100%;"></div>
+            </div>
+            <div class="space-y-6">
+                <div class="takeaway-card space-y-2 border-l-4 border-primary pl-6 bg-white rounded-xl p-6 shadow-sm">
+                    <p class="text-4xl font-black text-primary">33.4%</p>
+                    <p class="font-bold">TWA Tangkubanparahu</p>
+                    <p class="text-sm text-slate-500">dari seluruh kunjungan Jawa Barat 2016–2022</p>
+                </div>
+                <div class="takeaway-card space-y-2 border-l-4 border-slate-300 pl-6 bg-white rounded-xl p-6 shadow-sm">
+                    <p class="text-4xl font-black text-slate-400">75.6%</p>
+                    <p class="font-bold">Top 5 Kawasan</p>
+                    <p class="text-sm text-slate-500">mengambil tiga perempat dari total kunjungan</p>
+                </div>
+                <div class="takeaway-card space-y-2 border-l-4 border-error pl-6 bg-white rounded-xl p-6 shadow-sm">
+                    <p class="text-4xl font-black text-error">224</p>
+                    <p class="font-bold">Kawasan = 0 Pengunjung</p>
+                    <p class="text-sm text-slate-500">tidak pernah tercatat satu pengunjung pun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: KAWASAN UNGGULAN -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">03 — KAWASAN UNGGULAN</div>
+            <h2 class="text-3xl font-black text-slate-800">Dari ratusan kawasan, 10 nama ini mendominasi hampir seluruh kunjungan tercatat.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div id="top-10-chart" style="height: 480px; width: 100%;"></div>
+        </div>
+
+        <div id="fun-facts-container" class="fun-fact-scroll">
+            <!-- Rendered by JS -->
+        </div>
+    </section>
+
+    <!-- SECTION 4B: PROFIL WISATAWAN -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">03B — PROFIL WISATAWAN</div>
+            <h2 class="text-3xl font-black text-slate-800">98.1% pengunjung adalah wisatawan lokal. Tapi ada potensi internasional yang tersembunyi.</h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 mt-4 max-w-2xl">Dari total 5.1 juta pengunjung, hanya 96,923 adalah wisatawan mancanegara (1.9%). Namun TWA Telagawarna mencatat rasio wisman 8% — jauh di atas rata-rata.</p>
+        </div>
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div id="profil-wisatawan-chart" style="height: 380px; width: 100%;"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                <p class="text-xs font-black uppercase tracking-widest text-blue-400 mb-3">Insight</p>
+                <p class="font-bold text-slate-800">TWA mendominasi baik dari sisi volume maupun daya tarik internasional</p>
+                <p class="text-sm text-slate-500 mt-2">Kategori TWA (Taman Wisata Alam) menyumbang kunjungan terbesar sekaligus memiliki wisatawan mancanegara paling banyak.</p>
+            </div>
+            <div class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
+                <p class="text-xs font-black uppercase tracking-widest text-amber-400 mb-3">Rekomendasi</p>
+                <p class="font-bold text-slate-800">Kawasan niche seperti TWA Telagawarna perlu strategi pemasaran internasional</p>
+                <p class="text-sm text-slate-500 mt-2">Rasio wisman 8% menunjukkan potensi yang belum dioptimalkan. Dengan pengelolaan tepat, bisa menjadi destinasi premium internasional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: EKSPLORASI MANDIRI -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">04 — EKSPLORASI</div>
+            <h2 class="text-3xl font-black text-slate-800">Sekarang giliran kamu. Pilih kawasan manapun dan lihat cerita datanya.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-4">
+                <div class="glass-card p-8 rounded-2xl space-y-6 sticky top-24">
+                    <div class="space-y-4">
+                        <p class="font-bold text-sm text-slate-400 uppercase tracking-widest">Panel Kontrol</p>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                            <input id="search-input" type="text" placeholder="Cari kawasan..." class="w-full pl-10 pr-4 py-3 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"/>
+                        </div>
+                        <select id="region-select" class="w-full p-4 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary font-bold text-primary">
+                            <option value="all">Semua Kawasan (Agregat)</option>
+                        </select>
+                        <div id="region-info" class="hidden">
+                            <span id="region-type-badge" class="px-3 py-1 bg-primary/10 text-primary text-xs font-black rounded-full uppercase">TWA</span>
+                            <span id="region-full-type" class="text-xs font-medium text-slate-400 ml-2 italic">Taman Wisata Alam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-8 space-y-6">
+                <div class="glass-card p-8 rounded-2xl shadow-sm">
+                    <div id="explorer-chart" class="chart-container"></div>
+                    <div id="narrative-container" class="mt-8">
+                        <div class="narrative-box flex gap-4">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">chat_bubble</span>
+                            <div id="narrative-text" class="text-lg leading-relaxed text-slate-700 italic">
+                                Pilih kawasan untuk memulai analisis narasi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: DATA VALID -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">05 — DATA VALID</div>
+            <h2 class="text-3xl font-black text-slate-800">Setelah mengecualikan tahun-tahun bermasalah, ini yang bisa kita percaya.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div id="yearly-total-chart" style="height: 400px; width: 100%;"></div>
+            <p class="mt-6 text-center font-bold text-primary italic">"Gap pelaporan dimulai sejak 2017, jauh sebelum pandemi datang."</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-on-secondary-fixed text-white py-12 px-8 mt-24">
+    <div class="max-w-[1200px] mx-auto space-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
-                Catatan Kualitas Data: Data 2020 terindikasi identik dengan 2019.<br>
-                Data 2022 hanya mencakup 1 kawasan (TN. Gn. Ciremai).
+                <p class="font-black text-2xl tracking-widest text-primary-container">KELOMPOK 12</p>
+                <p class="text-sm opacity-50">Analisis Data Pariwisata Alam Jawa Barat 2024</p>
+            </div>
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="#" class="hover:text-primary-container transition-colors">Metodologi</a>
+                <a href="#" class="hover:text-primary-container transition-colors">Sumber Data</a>
+                <a href="#" class="hover:text-primary-container transition-colors">Laporan Final</a>
             </div>
         </div>
-
-        <div class="controls">
-            <label for="kawasan-select">Pilih Kawasan Wisata:</label>
-            <select id="kawasan-select">
-                <option value="ALL">Sedang memuat data...</option>
-            </select>
-            
-            <div class="summary-box" id="summary-box" style="display:none;">
-                <p id="summary-text"></p>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <div id="line-chart"></div>
-        </div>
-
-        <div class="chart-container">
-            <div id="bar-chart"></div>
-        </div>
-
-        <h2 style="margin-top:40px; color:#00B4D8; border-bottom:1px solid #30363d; padding-bottom:10px;">Ringkasan Kualitas Data</h2>
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <h3>Kawasan Aktif 2016</h3>
-                <p>58 Kawasan</p>
-            </div>
-            <div class="metric-card">
-                <h3>Kawasan Aktif 2019</h3>
-                <p>26 Kawasan <span style="font-size:14px; color:#f85149;">(↓ 55%)</span></p>
-            </div>
-            <div class="metric-card">
-                <h3>Data 2020</h3>
-                <p class="metric-warning">⚠ Terindikasi Duplikat dari 2019</p>
-            </div>
+        <div class="pt-8 border-t border-white/10 text-center text-xs opacity-40">
+            Dashboard ini dikembangkan sebagai bagian dari Tugas Besar II4013 Data Analytics · Institut Teknologi Bandung
         </div>
     </div>
+</footer>
 
-    <script>
-        const CSV_PATH = "../data/clean/dishut_clean_v2.csv";
-        const THEME = {
-            plot_bgcolor: "#161b22",
-            paper_bgcolor: "#161b22",
-            font: { color: "#ffffff" },
-            xaxis: { gridcolor: "#30363d", zerolinecolor: "#30363d" },
-            yaxis: { gridcolor: "#30363d", zerolinecolor: "#30363d" }
+<script>
+/* ============================================
+   MODULE 1: DATA LOADER
+============================================ */
+const DataLoader = (() => {
+    let rawData = [];
+    const CSV_PATH = "../data/clean/dishut_clean_v2.csv";
+    async function fetchCSV() {
+        return new Promise((resolve, reject) => {
+            Papa.parse(CSV_PATH, {
+                download: true, header: true, dynamicTyping: true,
+                complete: (results) => {
+                    rawData = results.data.filter(d => d.pengelola_kawasan && d.tahun);
+                    resolve(rawData);
+                },
+                error: (err) => reject(err)
+            });
+        });
+    }
+    return { load: fetchCSV, getRaw: () => rawData };
+})();
+
+/* ============================================
+   MODULE 2: DATA PROCESSOR  
+============================================ */
+const DataProcessor = (() => {
+    function getAggregateTrend(rawData) {
+        const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022];
+        const wisnus = years.map(y => rawData.filter(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN NUSANTARA").reduce((s, c) => s + (c.jumlah_wisatawan || 0), 0));
+        const wisman = years.map(y => rawData.filter(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN MANCANEGARA").reduce((s, c) => s + (c.jumlah_wisatawan || 0), 0));
+        return { years, wisnus, wisman };
+    }
+    function getRegionData(rawData, regionName) {
+        const filtered = rawData.filter(d => d.pengelola_kawasan === regionName);
+        const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022];
+        const wisnus = years.map(y => filtered.filter(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN NUSANTARA").reduce((s, c) => s + (c.jumlah_wisatawan || 0), 0));
+        const wisman = years.map(y => filtered.filter(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN MANCANEGARA").reduce((s, c) => s + (c.jumlah_wisatawan || 0), 0));
+        const type = filtered[0]?.tipe_pengelola || 'N/A';
+        return { years, wisnus, wisman, type };
+    }
+    function getTop10(rawData) {
+        const totals = {};
+        rawData.forEach(d => { totals[d.pengelola_kawasan] = (totals[d.pengelola_kawasan] || 0) + (d.jumlah_wisatawan || 0); });
+        return Object.entries(totals).sort((a, b) => b[1] - a[1]).slice(0, 10).reverse();
+    }
+    function getYearlyValid(rawData) {
+        const validYears = [2016, 2017, 2018, 2019, 2021];
+        return validYears.map(y => ({ tahun: y, total: rawData.filter(d => d.tahun === y).reduce((s, c) => s + (c.jumlah_wisatawan || 0), 0) }));
+    }
+    return { getAggregateTrend, getRegionData, getTop10, getYearlyValid };
+})();
+
+/* ============================================
+   MODULE 3: CHART RENDERER
+============================================ */
+const ChartRenderer = (() => {
+    const commonLayout = {
+        paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+        margin: { t: 40, r: 20, b: 60, l: 60 }, font: { family: 'Inter', size: 12 },
+        xaxis: { gridcolor: '#f0f4f8', zeroline: false }, yaxis: { gridcolor: '#f0f4f8', zeroline: false, tickformat: ',' }
+    };
+    function renderOverview(data) {
+        const traces = [
+            { x: data.years, y: data.wisnus, name: 'Wisnus', line: { color: '#006591', width: 4 }, type: 'scatter' },
+            { x: data.years, y: data.wisman, name: 'Wisman', line: { color: '#de8712', width: 3 }, type: 'scatter' }
+        ];
+        const layout = { ...commonLayout, showlegend: true, legend: { orientation: 'h', y: 1.1 },
+            annotations: [
+                { x: 2016.5, y: 0.85, xref: 'x', yref: 'paper', text: '⬇ Reporting Gap', showarrow: true, font: { color: '#006591', size: 10 }, ax: 40, ay: -30 },
+                { x: 2020, y: 0.95, xref: 'x', yref: 'paper', text: '⚠ 2020: Suspect Copy', showarrow: true, font: { color: '#ba1a1a', size: 10 }, ax: 0, ay: -30 },
+                { x: 2021, y: 0.3, xref: 'x', yref: 'paper', text: '📍 Data 0', showarrow: true, font: { color: '#ba1a1a', size: 10 }, ax: 30, ay: 20 },
+                { x: 2022, y: 0.4, xref: 'x', yref: 'paper', text: '↗ TN Ciremai Recovery', showarrow: true, font: { color: '#006591', size: 10 }, ax: -40, ay: -20 }
+            ]
         };
+        Plotly.newPlot('overview-chart', traces, layout, { responsive: true, displayModeBar: false });
+    }
+    function renderExplorer(data, regionName) {
+        const traces = [
+            { x: data.years, y: data.wisnus, name: 'Wisnus', type: 'scatter', mode: 'lines+markers', line: { color: '#006591', width: 3 } },
+            { x: data.years, y: data.wisman, name: 'Wisman', type: 'scatter', mode: 'lines+markers', line: { color: '#de8712', width: 2 } }
+        ];
+        const layout = { ...commonLayout, title: regionName };
+        if (data.wisnus[4] > 0 || data.wisman[4] > 0) {
+            layout.annotations = [{ xref: 'paper', yref: 'paper', x: 0.5, y: 0.5, text: '⚠ 2020: DATA TIDAK DAPAT DIPERCAYA', font: { size: 16, color: 'rgba(186, 26, 26, 0.15)' }, showarrow: false, textangle: -30 }];
+        }
+        Plotly.newPlot('explorer-chart', traces, layout, { responsive: true, displayModeBar: false });
+    }
+    function renderComparison(top10, yearly) {
+        const trace1 = { 
+            y: top10.map(s => s[0]), 
+            x: top10.map(s => s[1]), 
+            type: 'bar', 
+            orientation: 'h', 
+            marker: { color: '#0ea5e9' },
+            text: top10.map(s => s[1].toLocaleString('id-ID')),
+            textposition: 'outside',
+            textfont: { size: 11 }
+        };
+        Plotly.newPlot('top-10-chart', [trace1], { 
+            ...commonLayout, 
+            margin: { l: 220, t: 10, r: 80, b: 20 },
+            xaxis: { ...commonLayout.xaxis, tickformat: ',.0f' }
+        }, { displayModeBar: false });
+        const trace2 = { x: yearly.map(d => d.tahun), y: yearly.map(d => d.total), type: 'bar', marker: { color: '#006591' } };
+        Plotly.newPlot('yearly-total-chart', [trace2], { ...commonLayout, margin: { t: 10, r: 10, b: 40, l: 60 }, xaxis: { type: 'category' } }, { displayModeBar: false });
+    }
 
-        let rawData = [];
+    // Chart baru 1: Dominasi kawasan (pie/donut)
+    function renderDominasi(rawData) {
+        const totals = {};
+        rawData.forEach(d => { 
+            totals[d.pengelola_kawasan] = (totals[d.pengelola_kawasan] || 0) + (d.jumlah_wisatawan || 0); 
+        });
+        const sorted = Object.entries(totals).sort((a,b) => b[1]-a[1]);
+        const top5 = sorted.slice(0, 5);
+        const others = sorted.slice(5).reduce((s, [,v]) => s + v, 0);
+        
+        const labels = [...top5.map(s => s[0]), 'Kawasan Lainnya (305)'];
+        const values = [...top5.map(s => s[1]), others];
+        
+        const trace = {
+            labels, values,
+            type: 'pie',
+            hole: 0.55,
+            marker: { colors: ['#0C4A6E','#006591','#0EA5E9','#38BDF8','#7DD3FC','#E2E8F0'] },
+            textinfo: 'percent',
+            hovertemplate: '<b>%{label}</b><br>%{value:,.0f} pengunjung<br>%{percent}<extra></extra>'
+        };
+        
+        const layout = {
+            ...commonLayout,
+            showlegend: true,
+            legend: { orientation: 'v', x: 1, y: 0.5 },
+            annotations: [{
+                text: '33.4%<br><span style="font-size:11px">Tangkuban</span>',
+                x: 0.5, y: 0.5, xref: 'paper', yref: 'paper',
+                showarrow: false,
+                font: { size: 16, color: '#0C4A6E', family: 'Inter' }
+            }]
+        };
+        
+        Plotly.newPlot('dominasi-chart', [trace], layout, { responsive: true, displayModeBar: false });
+    }
 
-        // 1. Load Data
-        Papa.parse(CSV_PATH, {
-            download: true,
-            header: true,
-            dynamicTyping: true,
-            complete: function(results) {
-                rawData = results.data.filter(d => d.pengelola_kawasan);
-                initDashboard();
-            }
+    // Chart baru 2: Wisnus vs Wisman per tipe pengelola (stacked bar)
+    function renderProfilWisatawan(rawData) {
+        const tipeList = ['TWA', 'TN', 'LAINNYA', 'TAHURA', 'PERHUTANI'];
+        
+        const wisnus = tipeList.map(t => 
+            rawData.filter(d => d.tipe_pengelola === t && d.jenis_wisatawan === 'WISATAWAN NUSANTARA')
+                   .reduce((s,c) => s + (c.jumlah_wisatawan||0), 0)
+        );
+        const wisman = tipeList.map(t => 
+            rawData.filter(d => d.tipe_pengelola === t && d.jenis_wisatawan === 'WISATAWAN MANCANEGARA')
+                   .reduce((s,c) => s + (c.jumlah_wisatawan||0), 0)
+        );
+        
+        const traces = [
+            { x: tipeList, y: wisnus, name: 'Wisatawan Nusantara', type: 'bar', 
+              marker: { color: '#006591' } },
+            { x: tipeList, y: wisman, name: 'Wisatawan Mancanegara', type: 'bar', 
+              marker: { color: '#de8712' } }
+        ];
+        
+        const layout = { 
+            ...commonLayout, 
+            barmode: 'stack',
+            showlegend: true,
+            legend: { orientation: 'h', y: 1.1 }
+        };
+        
+        Plotly.newPlot('profil-wisatawan-chart', [traces[0], traces[1]], layout, 
+            { responsive: true, displayModeBar: false });
+    }
+
+    return { renderOverview, renderExplorer, renderComparison, renderDominasi, renderProfilWisatawan };
+})();
+
+/* ============================================
+   MODULE 4: NARRATIVE ENGINE
+============================================ */
+const NarrativeEngine = (() => {
+    function generate(region, data) {
+        const has2016 = data.wisnus[0] > 0 || data.wisman[0] > 0;
+        const activeYears = data.years.filter((y, i) => data.wisnus[i] > 0 || data.wisman[i] > 0).length;
+        const totalVisitors = data.wisnus.reduce((a,b)=>a+b,0) + data.wisman.reduce((a,b)=>a+b,0);
+        if (region.includes("CIREMAI")) return `<strong>Taman Nasional Gunung Ciremai</strong> adalah satu-satunya kawasan yang melaporkan data di tahun 2022, dengan total pengunjung mencapai ${data.wisnus[6].toLocaleString()} orang.`;
+        if (totalVisitors === 0) return `Kawasan ini tidak memiliki catatan kunjungan dalam periode 2016–2022.`;
+        if (activeYears === 1 && has2016) return `<strong>${region}</strong> hanya tercatat aktif pada tahun 2016 dengan ${((data.wisnus[0] || 0) + (data.wisman[0] || 0)).toLocaleString()} pengunjung.`;
+        let peakIdx = 0; let maxVal = 0;
+        data.wisnus.forEach((v, i) => { if (v + data.wisman[i] > maxVal) { maxVal = v + data.wisman[i]; peakIdx = i; } });
+        return `<strong>${region}</strong> mencatat kunjungan tertinggi pada tahun ${data.years[peakIdx]} dengan total ${maxVal.toLocaleString()} pengunjung.`;
+    }
+    return { generate };
+})();
+
+/* ============================================
+   FUN FACTS DATA & RENDER
+============================================ */
+const KAWASAN_INFO = {
+  "TWA TANGKUBANPARAHU": { emoji: "🌋", tagline: "Kawasan Paling Populer", fact: "Gunung berapi aktif berbentuk kawah yang namanya berarti 'perahu terbalik' dalam bahasa Sunda. Destinasi wisata alam nomor satu di Jabar.", stat: "1,716,742 pengunjung" },
+  "TAHURA IR. H. DJUANDA": { emoji: "🌿", tagline: "Paru-Paru Kota Bandung", fact: "Taman Hutan Raya pertama di Indonesia. Terletak di Dago, menyimpan gua Belanda dan Jepang peninggalan era kolonial.", stat: "577,539 pengunjung" },
+  "TN. GN. CIREMAI": { emoji: "🏔️", tagline: "Atap Jawa Barat", fact: "Gunung tertinggi di Jawa Barat (3.078 mdpl). Satu-satunya kawasan dengan rekam jejak data paling lengkap hingga 2022.", stat: "440,785 pengunjung" },
+  "TWA TELAGA PATENGAN": { emoji: "🌊", tagline: "Danau Legenda Sunda", fact: "Danau vulkanik indah di Ciwidey. Menurut legenda, terbentuk dari air mata perpisahan Ki Santang dan Dewi Rengganis.", stat: "202,180 pengunjung" },
+  "TWA CIMANGGU": { emoji: "♨️", tagline: "Surga Air Panas", fact: "Taman Wisata Alam dengan sumber air panas alami berkhasiat terapeutik di kawasan Ciwidey yang sejuk.", stat: "113,657 pengunjung" }
+};
+
+function renderFunFacts() {
+  const container = document.getElementById('fun-facts-container');
+  if (!container) return;
+  Object.entries(KAWASAN_INFO).forEach(([name, info]) => {
+    container.innerHTML += `
+      <div class="fun-fact-card">
+        <div style="font-size:40px;margin-bottom:8px">${info.emoji}</div>
+        <p style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0EA5E9;margin-bottom:4px">${info.tagline}</p>
+        <p style="font-weight:700;margin-bottom:8px;font-size:14px">${name}</p>
+        <p style="font-size:13px;color:#475569;line-height:1.6;margin-bottom:12px;flex-grow:1">${info.fact}</p>
+        <span style="background:#EFF6FF;color:#0EA5E9;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;width:fit-content">${info.stat}</span>
+      </div>`;
+  });
+}
+
+/* ============================================
+   MODULE 5: UI CONTROLLER
+============================================ */
+const UIController = (() => {
+    async function init() {
+        const rawData = await DataLoader.load();
+        
+        // Populate dropdown
+        const select = document.getElementById('region-select');
+        const uniqueRegions = [...new Set(rawData.map(d => d.pengelola_kawasan))].sort();
+        uniqueRegions.forEach(r => {
+            const opt = document.createElement('option');
+            opt.value = r; opt.textContent = r;
+            select.appendChild(opt);
         });
 
-        function initDashboard() {
-            const kawasanList = [...new Set(rawData.map(d => d.pengelola_kawasan))].sort();
-            const select = document.getElementById('kawasan-select');
-            select.innerHTML = '';
-            
-            kawasanList.forEach(k => {
-                const opt = document.createElement('option');
-                opt.value = k;
-                opt.textContent = k;
-                select.appendChild(opt);
+        // Render dengan delay bertahap
+        ChartRenderer.renderOverview(DataProcessor.getAggregateTrend(rawData));
+        
+        setTimeout(() => {
+            ChartRenderer.renderComparison(
+                DataProcessor.getTop10(rawData), 
+                DataProcessor.getYearlyValid(rawData)
+            );
+            ChartRenderer.renderDominasi(rawData);
+            ChartRenderer.renderProfilWisatawan(rawData);
+        }, 100);
+
+        setTimeout(() => {
+            const firstRegion = uniqueRegions[0];
+            const firstData = DataProcessor.getRegionData(rawData, firstRegion);
+            ChartRenderer.renderExplorer(firstData, firstRegion);
+            document.getElementById('narrative-text').innerHTML = 
+                NarrativeEngine.generate(firstRegion, firstData);
+            select.value = firstRegion;
+            renderFunFacts();
+        }, 200);
+
+        setupListeners();
+    }
+
+    function setupListeners() {
+        document.getElementById('anomali-toggle')?.addEventListener('click', function() {
+            const content = document.getElementById('anomali-content');
+            content.classList.toggle('open');
+            this.querySelector('.chevron').textContent = content.classList.contains('open') ? 'expand_less' : 'expand_more';
+        });
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            Array.from(document.getElementById('region-select').options).forEach(opt => {
+                if (opt.value === 'all') return;
+                opt.hidden = !opt.textContent.toLowerCase().includes(term);
             });
+        });
 
-            updateCharts(kawasanList[0]);
-            renderRecoveryComparison();
+        document.getElementById('region-select').addEventListener('change', (e) => {
+            const region = e.target.value;
+            const rawData = DataLoader.getRaw();
+            if (region === 'all') {
+                ChartRenderer.renderExplorer(DataProcessor.getAggregateTrend(rawData), "Semua Kawasan");
+                document.getElementById('narrative-text').innerHTML = "Pilih kawasan spesifik untuk melihat narasi detail.";
+                document.getElementById('region-info').classList.add('hidden');
+            } else {
+                const regionData = DataProcessor.getRegionData(rawData, region);
+                ChartRenderer.renderExplorer(regionData, region);
+                document.getElementById('narrative-text').innerHTML = NarrativeEngine.generate(region, regionData);
+                document.getElementById('region-info').classList.remove('hidden');
+                document.getElementById('region-type-badge').textContent = regionData.type;
+                const typeMap = { 'TWA': 'Taman Wisata Alam', 'TN': 'Taman Nasional', 'TAHURA': 'Taman Hutan Raya', 'CA': 'Cagar Alam', 'TB': 'Taman Buru' };
+                document.getElementById('region-full-type').textContent = typeMap[regionData.type] || 'Kawasan Konservasi';
+            }
+        });
+    }
+    return { init };
+})();
 
-            select.addEventListener('change', (e) => updateCharts(e.target.value));
-        }
+UIController.init();
+</script>
 
-        function updateCharts(kawasan) {
-            const filtered = rawData.filter(d => d.pengelola_kawasan === kawasan);
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022];
-            
-            const wisnus = years.map(y => {
-                const row = filtered.find(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN NUSANTARA");
-                return row ? row.jumlah_wisatawan : 0;
-            });
-
-            const wisman = years.map(y => {
-                const row = filtered.find(d => d.tahun === y && d.jenis_wisatawan === "WISATAWAN MANCANEGARA");
-                return row ? row.jumlah_wisatawan : 0;
-            });
-
-            // Markers Logic
-            const markers_nus = years.map(y => {
-                if (y === 2020) return 'triangle-up';
-                if (y === 2022 && !kawasan.includes('CIREMAI')) return 'square';
-                return 'circle';
-            });
-            const colors_nus = years.map(y => {
-                if (y === 2020) return '#FFFF00';
-                if (y === 2022 && !kawasan.includes('CIREMAI')) return '#FF0000';
-                return '#00B4D8';
-            });
-
-            const trace1 = {
-                x: years, y: wisnus, name: 'Wisnus',
-                type: 'scatter', mode: 'lines+markers',
-                line: { color: '#00B4D8', width: 3 },
-                marker: { symbol: markers_nus, color: colors_nus, size: 10, line: {color: '#000', width: 1} }
-            };
-            const trace2 = {
-                x: years, y: wisman, name: 'Wisman',
-                type: 'scatter', mode: 'lines+markers',
-                line: { color: '#FF6B35', width: 3 },
-                marker: { size: 6 }
-            };
-
-            const layout = {
-                ...THEME,
-                title: `Tren Pengunjung: ${kawasan}`,
-                margin: { t: 50, b: 50, l: 60, r: 30 },
-                annotations: [
-                    { x: 2020, y: Math.max(...wisnus)*1.1, text: '⚠ Suspect Copy', showarrow: false, font: {color: '#FFFF00', size: 10} }
-                ]
-            };
-
-            Plotly.newPlot('line-chart', [trace1, trace2], layout);
-
-            // Summary
-            const totals = years.map((y, i) => wisnus[i] + wisman[i]);
-            const maxVal = Math.max(...totals);
-            const maxYear = years[totals.indexOf(maxVal)];
-            
-            document.getElementById('summary-box').style.display = 'block';
-            document.getElementById('summary-text').innerHTML = 
-                `Kawasan ini mencapai puncak pada tahun <span>${maxYear}</span> dengan <span>${maxVal.toLocaleString()}</span> pengunjung.`;
-        }
-
-        function renderRecoveryComparison() {
-            // Calculate Top 10 by 2016-2019
-            const prePandemic = rawData.filter(d => d.tahun >= 2016 && d.tahun <= 2019);
-            const kawasanTotals = {};
-            prePandemic.forEach(d => {
-                kawasanTotals[d.pengelola_kawasan] = (kawasanTotals[d.pengelola_kawasan] || 0) + d.jumlah_wisatawan;
-            });
-            
-            const top10 = Object.entries(kawasanTotals)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 10)
-                .map(e => e[0]);
-
-            const period1 = []; // 2016-2019 avg
-            const period2 = []; // 2021-2022 avg (only valid 2022)
-
-            top10.forEach(k => {
-                const val1 = rawData.filter(d => d.pengelola_kawasan === k && d.tahun >= 2016 && d.tahun <= 2019)
-                                    .reduce((s, c) => s + c.jumlah_wisatawan, 0) / 4;
-                
-                // 2022 only if Ciremai
-                const years2 = [2021];
-                if (k.includes('CIREMAI')) years2.push(2022);
-                
-                const val2 = rawData.filter(d => d.pengelola_kawasan === k && years2.includes(d.tahun))
-                                    .reduce((s, c) => s + c.jumlah_wisatawan, 0) / years2.length;
-                
-                period1.push(val1);
-                period2.push(val2);
-            });
-
-            const trace1 = {
-                x: top10, y: period1, name: 'Avg 2016-2019 (Pra)',
-                type: 'bar', marker: { color: '#00B4D8', opacity: 0.8 }
-            };
-            const trace2 = {
-                x: top10, y: period2, name: 'Avg 2021-2022 (Pasca)',
-                type: 'bar', marker: { color: '#FF6B35', opacity: 0.8 }
-            };
-
-            const layout = {
-                ...THEME,
-                title: 'Top 10 Kawasan: Perbandingan Performa Pra vs Pasca Pandemi',
-                barmode: 'group',
-                xaxis: { tickfont: {size: 10} },
-                margin: { t: 50, b: 100, l: 80, r: 30 }
-            };
-
-            Plotly.newPlot('bar-chart', [trace1, trace2], layout);
-        }
-    </script>
 </body>
 </html>
