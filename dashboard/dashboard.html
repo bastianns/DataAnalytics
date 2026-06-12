@@ -129,6 +129,17 @@
       .hero-bg {
         background: linear-gradient(135deg, #0C4A6E 0%, #006591 100%);
       }
+
+      /* Fade-in Animation */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+      }
     </style>
 </head>
 
@@ -136,7 +147,61 @@
 
 <!-- SECTION 1: HERO -->
 <section class="hero-bg min-h-screen flex items-center justify-center relative text-white px-6">
-    <div class="max-w-4xl text-center space-y-8">
+    <div class="absolute inset-0 w-full h-full z-0">
+    <canvas id="hero-canvas" style="width:100%;height:100%;display:block;"></canvas>
+    <script>
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      function sync() {
+        canvas.width = canvas.clientWidth || 1280;
+        canvas.height = canvas.clientHeight || 720;
+      }
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(sync).observe(canvas);
+      }
+      sync();
+      const gl = canvas.getContext('webgl');
+      if (!gl) return;
+      const vs = `attribute vec2 a_position; varying vec2 v_uv;
+        void main() { v_uv = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0, 1); }`;
+      const fs = `precision highp float; varying vec2 v_uv;
+        uniform float u_time; uniform vec2 u_resolution;
+        void main() {
+          vec2 uv = v_uv;
+          float t = u_time * 0.2;
+          float c = (sin(uv.x*10.+t) + sin(uv.y*10.-t)) * 0.25 + 0.5;
+          vec3 col = mix(vec3(0.0,0.18,0.43), vec3(0.0,0.39,0.57), c);
+          gl_FragColor = vec4(col, 1.0);
+        }`;
+      function mkShader(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src); gl.compileShader(s); return s;
+      }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog); gl.useProgram(prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(prog, 'a_position');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+      const uT = gl.getUniformLocation(prog, 'u_time');
+      const uR = gl.getUniformLocation(prog, 'u_resolution');
+      function render(t) {
+        sync();
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.uniform1f(uT, t * 0.001);
+        gl.uniform2f(uR, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(render);
+      }
+      render(0);
+    })();
+    </script>
+    </div>
+    <div class="max-w-4xl text-center space-y-8 relative z-10">
         <span class="px-4 py-2 bg-white/10 rounded-full text-xs font-black tracking-widest border border-white/20 uppercase">
             DATA ANALYTICS · KELOMPOK 12 · II4013
         </span>
@@ -152,7 +217,7 @@
             </a>
         </div>
     </div>
-    <div class="absolute bottom-8 right-8 text-xs opacity-50">
+    <div class="absolute bottom-8 right-8 text-xs opacity-50 z-10">
         Sumber: Open Data Jabar 2016–2022
     </div>
 </section>
@@ -160,7 +225,7 @@
 <main class="flex-grow max-w-[1200px] mx-auto w-full px-6">
 
     <!-- SECTION 2: KONTEKS -->
-    <section id="section-2" class="py-24 space-y-12">
+    <section id="section-2" class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">01 — KONTEKS</div>
             <h2 class="text-3xl font-black text-slate-800">Dari 310 kawasan yang terdaftar, hanya sebagian kecil yang benar-benar dikunjungi. Dan datanya? Tidak sempurna.</h2>
@@ -201,7 +266,7 @@
     </section>
 
     <!-- SECTION 3: TREN KESELURUHAN -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">02 — TREN KESELURUHAN</div>
             <h2 class="text-3xl font-black text-slate-800">Lonjakan 2016, collapse 2017, pandemi 2020-2021, dan recovery yang tidak merata. Ini cerita lengkapnya.</h2>
@@ -232,7 +297,7 @@
     </section>
 
     <!-- SECTION 3B: DOMINASI -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">03 — KETIMPANGAN</div>
             <h2 class="text-3xl font-black text-slate-800">Satu kawasan, sepertiga seluruh kunjungan Jawa Barat.</h2>
@@ -264,7 +329,7 @@
     </section>
 
     <!-- SECTION 4: KAWASAN UNGGULAN -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">04 — KAWASAN UNGGULAN</div>
             <h2 class="text-3xl font-black text-slate-800">Dari ratusan kawasan, 10 nama ini mendominasi hampir seluruh kunjungan tercatat.</h2>
@@ -281,7 +346,7 @@
     </section>
 
     <!-- SECTION 4B: PROFIL WISATAWAN -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">05 — PROFIL WISATAWAN</div>
             <h2 class="text-3xl font-black text-slate-800">98.1% pengunjung adalah wisatawan lokal. Tapi ada potensi internasional yang tersembunyi.</h2>
@@ -306,7 +371,7 @@
     </section>
 
     <!-- SECTION 5B: KONTEKS HOTEL -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">06 — KONTEKS MAKRO</div>
             <h2 class="text-3xl font-black text-slate-800">
@@ -328,18 +393,22 @@
                 <span class="chevron-hotel material-symbols-outlined">expand_more</span>
             </div>
             <div id="hotel-anomali-content" class="anomali-content text-sm space-y-3 text-amber-950">
-                <p>• <strong>576 dari 1008 baris bernilai kosong (NaN):</strong> 
-                   Hanya jenis hotel "Total" yang konsisten terisi. Data per bintang 
-                   (Bintang 1–5) dan per ukuran kamar tidak lengkap.</p>
-                <p>• <strong>2022 hanya 2 bulan:</strong> Data 2022 hanya mencakup 
-                   Januari–Februari (24 baris dari 12 jenis hotel). Rata-rata 2022 
-                   tidak representatif untuk satu tahun penuh.</p>
-                <p>• <strong>2023 hanya 1 bulan:</strong> Data 2023 hanya 12 baris — 
-                   kemungkinan satu bulan saja. Jangan jadikan acuan tren tahunan.</p>
-                <p>• <strong>2024–2025 struktur berbeda:</strong> Mulai 2024 data 
-                   jauh lebih lengkap (144 baris/tahun), menunjukkan perubahan 
-                   sistem pelaporan. Perbandingan 2019–2023 vs 2024–2025 harus 
-                   dilakukan dengan hati-hati.</p>
+                <p>• <strong>TPK adalah persentase:</strong> 
+                   TPK = (Kamar terjual / Kamar tersedia) × 100%. 
+                   Nilai 53% berarti lebih dari separuh kamar hotel 
+                   di Jawa Barat terisi rata-rata di 2019.</p>
+                <p>• <strong>Sub-kategori tidak dilaporkan:</strong> 
+                   Data per bintang (1–5) dan per ukuran kamar memang 
+                   tidak tersedia di sumber asli. Hanya nilai "Total" 
+                   yang dilaporkan. Ini bukan error cleaning.</p>
+                <p>• <strong>2022–2023 tidak lengkap:</strong> 
+                   Data 2022 and 2023 hanya mencakup sebagian bulan 
+                   — bukan 12 bulan penuh. Tren 2022–2023 tidak 
+                   representatif untuk perbandingan tahunan.</p>
+                <p>• <strong>2024–2025 lebih lengkap:</strong> 
+                   Mulai 2024 pelaporan jauh lebih konsisten. 
+                   Perbandingan lintas periode harus dilakukan 
+                   dengan hati-hati.</p>
             </div>
         </div>
 
@@ -360,21 +429,24 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="bg-white rounded-xl p-5 border-t-4 border-primary shadow-sm text-center">
                 <p class="text-3xl font-black text-primary">53%</p>
-                <p class="text-xs text-slate-500 mt-1">TPK Pra-Pandemi (2019)</p>
+                <p class="text-xs text-slate-500 mt-1">Kamar Terisi Pra-Pandemi (2019)</p>
             </div>
             <div class="bg-white rounded-xl p-5 border-t-4 border-error shadow-sm text-center">
                 <p class="text-3xl font-black text-error">35%</p>
-                <p class="text-xs text-slate-500 mt-1">TPK Saat Pandemi (2020)</p>
+                <p class="text-xs text-slate-500 mt-1">Kamar Terisi Saat Pandemi (2020)</p>
             </div>
             <div class="bg-white rounded-xl p-5 border-t-4 border-primary-container shadow-sm text-center">
                 <p class="text-3xl font-black text-primary-container">51%</p>
-                <p class="text-xs text-slate-500 mt-1">TPK Recovery (2022)</p>
+                <p class="text-xs text-slate-500 mt-1">Kamar Terisi Recovery (2022)*</p>
             </div>
             <div class="bg-white rounded-xl p-5 border-t-4 border-slate-300 shadow-sm text-center">
                 <p class="text-3xl font-black text-slate-600">Hotel Bintang 5</p>
                 <p class="text-xs text-slate-500 mt-1">Rata-rata TPK tertinggi (57.8%)</p>
             </div>
         </div>
+        <p class="text-xs text-slate-400 text-center mt-2">
+          *Data 2022 tidak mencakup 12 bulan penuh
+        </p>
 
         <!-- Insight cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -426,7 +498,7 @@
     </section>
 
     <!-- SECTION 5: EKSPLORASI MANDIRI -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">07 — EKSPLORASI MANDIRI</div>
             <h2 class="text-3xl font-black text-slate-800">Sekarang giliran kamu. Pilih kawasan manapun dan lihat cerita datanya.</h2>
@@ -469,7 +541,7 @@
     </section>
 
     <!-- SECTION 6: DATA VALID -->
-    <section class="py-24 space-y-12">
+    <section class="py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">08 — DATA VALID & PENUTUP</div>
             <h2 class="text-3xl font-black text-slate-800">Setelah mengecualikan tahun-tahun bermasalah, ini yang bisa kita percaya.</h2>
@@ -540,6 +612,18 @@
 </footer>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+});
+
 /* ============================================
    MODULE 1: DATA LOADER
 ============================================ */
