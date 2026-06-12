@@ -1,0 +1,1009 @@
+tahun,bulan,jenis_hotel,tpk
+2019,Januari,1.a. Hotel Bintang 1,
+2019,Januari,1.b. Hotel Bintang 2,
+2019,Januari,1.c. Hotel Bintang 3,
+2019,Januari,1.d. Hotel Bintang 4,
+2019,Januari,1.e. Hotel Bintang 5,
+2019,Januari,1. Hotel Berbintang Total,54.33
+2019,Januari,2.a. Hotel NonBintang; kamar <10,
+2019,Januari,2.b. Hotel NonBintang; kamar 10-24,
+2019,Januari,2.c. Hotel NonBintang; kamar 25-40,
+2019,Januari,2.d. Hotel NonBintang; kamar >40,
+2019,Januari,2. Hotel NonBintang Total,36.72
+2019,Januari,3. Hotel Berbintang dan NonBintang Total,51.45
+2020,Januari,1.a. Hotel Bintang 1,
+2020,Januari,1.b. Hotel Bintang 2,
+2020,Januari,1.c. Hotel Bintang 3,
+2020,Januari,1.d. Hotel Bintang 4,
+2020,Januari,1.e. Hotel Bintang 5,
+2020,Januari,1. Hotel Berbintang Total,47.06
+2020,Januari,2.a. Hotel NonBintang; kamar <10,
+2020,Januari,2.b. Hotel NonBintang; kamar 10-24,
+2020,Januari,2.c. Hotel NonBintang; kamar 25-40,
+2020,Januari,2.d. Hotel NonBintang; kamar >40,
+2020,Januari,2. Hotel NonBintang Total,35.35
+2020,Januari,3. Hotel Berbintang dan NonBintang Total,45.96
+2021,Januari,1.a. Hotel Bintang 1,
+2021,Januari,1.b. Hotel Bintang 2,
+2021,Januari,1.c. Hotel Bintang 3,
+2021,Januari,1.d. Hotel Bintang 4,
+2021,Januari,1.e. Hotel Bintang 5,
+2021,Januari,1. Hotel Berbintang Total,29.16
+2021,Januari,2.a. Hotel NonBintang; kamar <10,
+2021,Januari,2.b. Hotel NonBintang; kamar 10-24,
+2021,Januari,2.c. Hotel NonBintang; kamar 25-40,
+2021,Januari,2.d. Hotel NonBintang; kamar >40,
+2021,Januari,2. Hotel NonBintang Total,18.89
+2021,Januari,3. Hotel Berbintang dan NonBintang Total,26.68
+2022,Januari,1.a. Hotel Bintang 1,
+2022,Januari,1.b. Hotel Bintang 2,
+2022,Januari,1.c. Hotel Bintang 3,
+2022,Januari,1.d. Hotel Bintang 4,
+2022,Januari,1.e. Hotel Bintang 5,
+2022,Januari,1. Hotel Berbintang Total,46.99
+2022,Januari,2.a. Hotel NonBintang; kamar <10,
+2022,Januari,2.b. Hotel NonBintang; kamar 10-24,
+2022,Januari,2.c. Hotel NonBintang; kamar 25-40,
+2022,Januari,2.d. Hotel NonBintang; kamar >40,
+2022,Januari,2. Hotel NonBintang Total,27.61
+2022,Januari,3. Hotel Berbintang dan NonBintang Total,
+2023,Januari,1.a. Hotel Bintang 1,
+2023,Januari,1.b. Hotel Bintang 2,
+2023,Januari,1.c. Hotel Bintang 3,
+2023,Januari,1.d. Hotel Bintang 4,
+2023,Januari,1.e. Hotel Bintang 5,
+2023,Januari,1. Hotel Berbintang Total,46.5
+2023,Januari,2.a. Hotel NonBintang; kamar <10,
+2023,Januari,2.b. Hotel NonBintang; kamar 10-24,
+2023,Januari,2.c. Hotel NonBintang; kamar 25-40,
+2023,Januari,2.d. Hotel NonBintang; kamar >40,
+2023,Januari,2. Hotel NonBintang Total,24.7
+2023,Januari,3. Hotel Berbintang dan NonBintang Total,39.15
+2024,Januari,1.a. Hotel Bintang 1,33.67
+2024,Januari,1.b. Hotel Bintang 2,42.21
+2024,Januari,1.c. Hotel Bintang 3,45.76
+2024,Januari,1.d. Hotel Bintang 4,49.77
+2024,Januari,1.e. Hotel Bintang 5,49.54
+2024,Januari,1. Hotel Berbintang Total,45.94
+2024,Januari,2.a. Hotel NonBintang; kamar <10,12.13
+2024,Januari,2.b. Hotel NonBintang; kamar 10-24,24.37
+2024,Januari,2.c. Hotel NonBintang; kamar 25-40,25.31
+2024,Januari,2.d. Hotel NonBintang; kamar >40,19.65
+2024,Januari,2. Hotel NonBintang Total,22.11
+2024,Januari,3. Hotel Berbintang dan NonBintang Total,38.42
+2025,Januari,1.a. Hotel Bintang 1,29.15
+2025,Januari,1.b. Hotel Bintang 2,45.83
+2025,Januari,1.c. Hotel Bintang 3,43.33
+2025,Januari,1.d. Hotel Bintang 4,52.08
+2025,Januari,1.e. Hotel Bintang 5,58.79
+2025,Januari,1. Hotel Berbintang Total,47.59
+2025,Januari,2.a. Hotel NonBintang; kamar <10,17.01
+2025,Januari,2.b. Hotel NonBintang; kamar 10-24,23.07
+2025,Januari,2.c. Hotel NonBintang; kamar 25-40,27.22
+2025,Januari,2.d. Hotel NonBintang; kamar >40,22.79
+2025,Januari,2. Hotel NonBintang Total,23.72
+2025,Januari,3. Hotel Berbintang dan NonBintang Total,40.08
+2019,Februari,1.a. Hotel Bintang 1,
+2019,Februari,1.b. Hotel Bintang 2,
+2019,Februari,1.c. Hotel Bintang 3,
+2019,Februari,1.d. Hotel Bintang 4,
+2019,Februari,1.e. Hotel Bintang 5,
+2019,Februari,1. Hotel Berbintang Total,51.57
+2019,Februari,2.a. Hotel NonBintang; kamar <10,
+2019,Februari,2.b. Hotel NonBintang; kamar 10-24,
+2019,Februari,2.c. Hotel NonBintang; kamar 25-40,
+2019,Februari,2.d. Hotel NonBintang; kamar >40,
+2019,Februari,2. Hotel NonBintang Total,32.48
+2019,Februari,3. Hotel Berbintang dan NonBintang Total,48.08
+2020,Februari,1.a. Hotel Bintang 1,
+2020,Februari,1.b. Hotel Bintang 2,
+2020,Februari,1.c. Hotel Bintang 3,
+2020,Februari,1.d. Hotel Bintang 4,
+2020,Februari,1.e. Hotel Bintang 5,
+2020,Februari,1. Hotel Berbintang Total,49.53
+2020,Februari,2.a. Hotel NonBintang; kamar <10,
+2020,Februari,2.b. Hotel NonBintang; kamar 10-24,
+2020,Februari,2.c. Hotel NonBintang; kamar 25-40,
+2020,Februari,2.d. Hotel NonBintang; kamar >40,
+2020,Februari,2. Hotel NonBintang Total,33.92
+2020,Februari,3. Hotel Berbintang dan NonBintang Total,46.47
+2021,Februari,1.a. Hotel Bintang 1,
+2021,Februari,1.b. Hotel Bintang 2,
+2021,Februari,1.c. Hotel Bintang 3,
+2021,Februari,1.d. Hotel Bintang 4,
+2021,Februari,1.e. Hotel Bintang 5,
+2021,Februari,1. Hotel Berbintang Total,37.15
+2021,Februari,2.a. Hotel NonBintang; kamar <10,
+2021,Februari,2.b. Hotel NonBintang; kamar 10-24,
+2021,Februari,2.c. Hotel NonBintang; kamar 25-40,
+2021,Februari,2.d. Hotel NonBintang; kamar >40,
+2021,Februari,2. Hotel NonBintang Total,18.17
+2021,Februari,3. Hotel Berbintang dan NonBintang Total,33.85
+2022,Februari,1.a. Hotel Bintang 1,
+2022,Februari,1.b. Hotel Bintang 2,
+2022,Februari,1.c. Hotel Bintang 3,
+2022,Februari,1.d. Hotel Bintang 4,
+2022,Februari,1.e. Hotel Bintang 5,
+2022,Februari,1. Hotel Berbintang Total,39.04
+2022,Februari,2.a. Hotel NonBintang; kamar <10,
+2022,Februari,2.b. Hotel NonBintang; kamar 10-24,
+2022,Februari,2.c. Hotel NonBintang; kamar 25-40,
+2022,Februari,2.d. Hotel NonBintang; kamar >40,
+2022,Februari,2. Hotel NonBintang Total,22.28
+2022,Februari,3. Hotel Berbintang dan NonBintang Total,
+2023,Februari,1.a. Hotel Bintang 1,
+2023,Februari,1.b. Hotel Bintang 2,
+2023,Februari,1.c. Hotel Bintang 3,
+2023,Februari,1.d. Hotel Bintang 4,
+2023,Februari,1.e. Hotel Bintang 5,
+2023,Februari,1. Hotel Berbintang Total,49.39
+2023,Februari,2.a. Hotel NonBintang; kamar <10,
+2023,Februari,2.b. Hotel NonBintang; kamar 10-24,
+2023,Februari,2.c. Hotel NonBintang; kamar 25-40,
+2023,Februari,2.d. Hotel NonBintang; kamar >40,
+2023,Februari,2. Hotel NonBintang Total,19.97
+2023,Februari,3. Hotel Berbintang dan NonBintang Total,38.93
+2024,Februari,1.a. Hotel Bintang 1,30.0
+2024,Februari,1.b. Hotel Bintang 2,45.65
+2024,Februari,1.c. Hotel Bintang 3,46.7
+2024,Februari,1.d. Hotel Bintang 4,54.84
+2024,Februari,1.e. Hotel Bintang 5,63.31
+2024,Februari,1. Hotel Berbintang Total,49.09
+2024,Februari,2.a. Hotel NonBintang; kamar <10,16.25
+2024,Februari,2.b. Hotel NonBintang; kamar 10-24,25.99
+2024,Februari,2.c. Hotel NonBintang; kamar 25-40,28.71
+2024,Februari,2.d. Hotel NonBintang; kamar >40,22.94
+2024,Februari,2. Hotel NonBintang Total,24.49
+2024,Februari,3. Hotel Berbintang dan NonBintang Total,40.03
+2025,Februari,1.a. Hotel Bintang 1,30.15
+2025,Februari,1.b. Hotel Bintang 2,42.94
+2025,Februari,1.c. Hotel Bintang 3,41.22
+2025,Februari,1.d. Hotel Bintang 4,50.53
+2025,Februari,1.e. Hotel Bintang 5,54.18
+2025,Februari,1. Hotel Berbintang Total,45.51
+2025,Februari,2.a. Hotel NonBintang; kamar <10,14.3
+2025,Februari,2.b. Hotel NonBintang; kamar 10-24,20.7
+2025,Februari,2.c. Hotel NonBintang; kamar 25-40,24.32
+2025,Februari,2.d. Hotel NonBintang; kamar >40,20.86
+2025,Februari,2. Hotel NonBintang Total,21.33
+2025,Februari,3. Hotel Berbintang dan NonBintang Total,37.88
+2019,Maret,1.a. Hotel Bintang 1,
+2019,Maret,1.b. Hotel Bintang 2,
+2019,Maret,1.c. Hotel Bintang 3,
+2019,Maret,1.d. Hotel Bintang 4,
+2019,Maret,1.e. Hotel Bintang 5,
+2019,Maret,1. Hotel Berbintang Total,52.69
+2019,Maret,2.a. Hotel NonBintang; kamar <10,
+2019,Maret,2.b. Hotel NonBintang; kamar 10-24,
+2019,Maret,2.c. Hotel NonBintang; kamar 25-40,
+2019,Maret,2.d. Hotel NonBintang; kamar >40,
+2019,Maret,2. Hotel NonBintang Total,34.6
+2019,Maret,3. Hotel Berbintang dan NonBintang Total,48.81
+2020,Maret,1.a. Hotel Bintang 1,
+2020,Maret,1.b. Hotel Bintang 2,
+2020,Maret,1.c. Hotel Bintang 3,
+2020,Maret,1.d. Hotel Bintang 4,
+2020,Maret,1.e. Hotel Bintang 5,
+2020,Maret,1. Hotel Berbintang Total,34.55
+2020,Maret,2.a. Hotel NonBintang; kamar <10,
+2020,Maret,2.b. Hotel NonBintang; kamar 10-24,
+2020,Maret,2.c. Hotel NonBintang; kamar 25-40,
+2020,Maret,2.d. Hotel NonBintang; kamar >40,
+2020,Maret,2. Hotel NonBintang Total,17.89
+2020,Maret,3. Hotel Berbintang dan NonBintang Total,28.73
+2021,Maret,1.a. Hotel Bintang 1,
+2021,Maret,1.b. Hotel Bintang 2,
+2021,Maret,1.c. Hotel Bintang 3,
+2021,Maret,1.d. Hotel Bintang 4,
+2021,Maret,1.e. Hotel Bintang 5,
+2021,Maret,1. Hotel Berbintang Total,40.37
+2021,Maret,2.a. Hotel NonBintang; kamar <10,
+2021,Maret,2.b. Hotel NonBintang; kamar 10-24,
+2021,Maret,2.c. Hotel NonBintang; kamar 25-40,
+2021,Maret,2.d. Hotel NonBintang; kamar >40,
+2021,Maret,2. Hotel NonBintang Total,19.87
+2021,Maret,3. Hotel Berbintang dan NonBintang Total,34.23
+2022,Maret,1.a. Hotel Bintang 1,
+2022,Maret,1.b. Hotel Bintang 2,
+2022,Maret,1.c. Hotel Bintang 3,
+2022,Maret,1.d. Hotel Bintang 4,
+2022,Maret,1.e. Hotel Bintang 5,
+2022,Maret,1. Hotel Berbintang Total,50.44
+2022,Maret,2.a. Hotel NonBintang; kamar <10,
+2022,Maret,2.b. Hotel NonBintang; kamar 10-24,
+2022,Maret,2.c. Hotel NonBintang; kamar 25-40,
+2022,Maret,2.d. Hotel NonBintang; kamar >40,
+2022,Maret,2. Hotel NonBintang Total,23.55
+2022,Maret,3. Hotel Berbintang dan NonBintang Total,
+2023,Maret,1.a. Hotel Bintang 1,
+2023,Maret,1.b. Hotel Bintang 2,
+2023,Maret,1.c. Hotel Bintang 3,
+2023,Maret,1.d. Hotel Bintang 4,
+2023,Maret,1.e. Hotel Bintang 5,
+2023,Maret,1. Hotel Berbintang Total,46.25
+2023,Maret,2.a. Hotel NonBintang; kamar <10,
+2023,Maret,2.b. Hotel NonBintang; kamar 10-24,
+2023,Maret,2.c. Hotel NonBintang; kamar 25-40,
+2023,Maret,2.d. Hotel NonBintang; kamar >40,
+2023,Maret,2. Hotel NonBintang Total,19.44
+2023,Maret,3. Hotel Berbintang dan NonBintang Total,36.92
+2024,Maret,1.a. Hotel Bintang 1,24.12
+2024,Maret,1.b. Hotel Bintang 2,40.88
+2024,Maret,1.c. Hotel Bintang 3,38.48
+2024,Maret,1.d. Hotel Bintang 4,43.91
+2024,Maret,1.e. Hotel Bintang 5,51.98
+2024,Maret,1. Hotel Berbintang Total,40.56
+2024,Maret,2.a. Hotel NonBintang; kamar <10,10.31
+2024,Maret,2.b. Hotel NonBintang; kamar 10-24,17.48
+2024,Maret,2.c. Hotel NonBintang; kamar 25-40,21.27
+2024,Maret,2.d. Hotel NonBintang; kamar >40,15.51
+2024,Maret,2. Hotel NonBintang Total,16.85
+2024,Maret,3. Hotel Berbintang dan NonBintang Total,32.39
+2025,Maret,1.a. Hotel Bintang 1,17.32
+2025,Maret,1.b. Hotel Bintang 2,30.08
+2025,Maret,1.c. Hotel Bintang 3,26.75
+2025,Maret,1.d. Hotel Bintang 4,30.92
+2025,Maret,1.e. Hotel Bintang 5,32.58
+2025,Maret,1. Hotel Berbintang Total,28.77
+2025,Maret,2.a. Hotel NonBintang; kamar <10,7.99
+2025,Maret,2.b. Hotel NonBintang; kamar 10-24,13.36
+2025,Maret,2.c. Hotel NonBintang; kamar 25-40,17.79
+2025,Maret,2.d. Hotel NonBintang; kamar >40,13.64
+2025,Maret,2. Hotel NonBintang Total,14.37
+2025,Maret,3. Hotel Berbintang dan NonBintang Total,24.28
+2019,April,1.a. Hotel Bintang 1,
+2019,April,1.b. Hotel Bintang 2,
+2019,April,1.c. Hotel Bintang 3,
+2019,April,1.d. Hotel Bintang 4,
+2019,April,1.e. Hotel Bintang 5,
+2019,April,1. Hotel Berbintang Total,53.17
+2019,April,2.a. Hotel NonBintang; kamar <10,
+2019,April,2.b. Hotel NonBintang; kamar 10-24,
+2019,April,2.c. Hotel NonBintang; kamar 25-40,
+2019,April,2.d. Hotel NonBintang; kamar >40,
+2019,April,2. Hotel NonBintang Total,35.9
+2019,April,3. Hotel Berbintang dan NonBintang Total,49.19
+2020,April,1.a. Hotel Bintang 1,
+2020,April,1.b. Hotel Bintang 2,
+2020,April,1.c. Hotel Bintang 3,
+2020,April,1.d. Hotel Bintang 4,
+2020,April,1.e. Hotel Bintang 5,
+2020,April,1. Hotel Berbintang Total,10.77
+2020,April,2.a. Hotel NonBintang; kamar <10,
+2020,April,2.b. Hotel NonBintang; kamar 10-24,
+2020,April,2.c. Hotel NonBintang; kamar 25-40,
+2020,April,2.d. Hotel NonBintang; kamar >40,
+2020,April,2. Hotel NonBintang Total,5.13
+2020,April,3. Hotel Berbintang dan NonBintang Total,8.02
+2021,April,1.a. Hotel Bintang 1,
+2021,April,1.b. Hotel Bintang 2,
+2021,April,1.c. Hotel Bintang 3,
+2021,April,1.d. Hotel Bintang 4,
+2021,April,1.e. Hotel Bintang 5,
+2021,April,1. Hotel Berbintang Total,38.4
+2021,April,2.a. Hotel NonBintang; kamar <10,
+2021,April,2.b. Hotel NonBintang; kamar 10-24,
+2021,April,2.c. Hotel NonBintang; kamar 25-40,
+2021,April,2.d. Hotel NonBintang; kamar >40,
+2021,April,2. Hotel NonBintang Total,16.49
+2021,April,3. Hotel Berbintang dan NonBintang Total,32.17
+2022,April,1.a. Hotel Bintang 1,
+2022,April,1.b. Hotel Bintang 2,
+2022,April,1.c. Hotel Bintang 3,
+2022,April,1.d. Hotel Bintang 4,
+2022,April,1.e. Hotel Bintang 5,
+2022,April,1. Hotel Berbintang Total,35.35
+2022,April,2.a. Hotel NonBintang; kamar <10,
+2022,April,2.b. Hotel NonBintang; kamar 10-24,
+2022,April,2.c. Hotel NonBintang; kamar 25-40,
+2022,April,2.d. Hotel NonBintang; kamar >40,
+2022,April,2. Hotel NonBintang Total,16.26
+2022,April,3. Hotel Berbintang dan NonBintang Total,
+2023,April,1.a. Hotel Bintang 1,
+2023,April,1.b. Hotel Bintang 2,
+2023,April,1.c. Hotel Bintang 3,
+2023,April,1.d. Hotel Bintang 4,
+2023,April,1.e. Hotel Bintang 5,
+2023,April,1. Hotel Berbintang Total,42.81
+2023,April,2.a. Hotel NonBintang; kamar <10,
+2023,April,2.b. Hotel NonBintang; kamar 10-24,
+2023,April,2.c. Hotel NonBintang; kamar 25-40,
+2023,April,2.d. Hotel NonBintang; kamar >40,
+2023,April,2. Hotel NonBintang Total,21.03
+2023,April,3. Hotel Berbintang dan NonBintang Total,35.34
+2024,April,1.a. Hotel Bintang 1,29.27
+2024,April,1.b. Hotel Bintang 2,46.45
+2024,April,1.c. Hotel Bintang 3,45.38
+2024,April,1.d. Hotel Bintang 4,49.61
+2024,April,1.e. Hotel Bintang 5,51.59
+2024,April,1. Hotel Berbintang Total,46.32
+2024,April,2.a. Hotel NonBintang; kamar <10,19.39
+2024,April,2.b. Hotel NonBintang; kamar 10-24,24.19
+2024,April,2.c. Hotel NonBintang; kamar 25-40,25.94
+2024,April,2.d. Hotel NonBintang; kamar >40,20.87
+2024,April,2. Hotel NonBintang Total,22.81
+2024,April,3. Hotel Berbintang dan NonBintang Total,37.99
+2025,April,1.a. Hotel Bintang 1,29.85
+2025,April,1.b. Hotel Bintang 2,48.15
+2025,April,1.c. Hotel Bintang 3,43.38
+2025,April,1.d. Hotel Bintang 4,49.98
+2025,April,1.e. Hotel Bintang 5,50.23
+2025,April,1. Hotel Berbintang Total,46.37
+2025,April,2.a. Hotel NonBintang; kamar <10,23.43
+2025,April,2.b. Hotel NonBintang; kamar 10-24,26.27
+2025,April,2.c. Hotel NonBintang; kamar 25-40,27.26
+2025,April,2.d. Hotel NonBintang; kamar >40,25.01
+2025,April,2. Hotel NonBintang Total,25.76
+2025,April,3. Hotel Berbintang dan NonBintang Total,38.07
+2019,Mei,1.a. Hotel Bintang 1,
+2019,Mei,1.b. Hotel Bintang 2,
+2019,Mei,1.c. Hotel Bintang 3,
+2019,Mei,1.d. Hotel Bintang 4,
+2019,Mei,1.e. Hotel Bintang 5,
+2019,Mei,1. Hotel Berbintang Total,38.79
+2019,Mei,2.a. Hotel NonBintang; kamar <10,
+2019,Mei,2.b. Hotel NonBintang; kamar 10-24,
+2019,Mei,2.c. Hotel NonBintang; kamar 25-40,
+2019,Mei,2.d. Hotel NonBintang; kamar >40,
+2019,Mei,2. Hotel NonBintang Total,28.26
+2019,Mei,3. Hotel Berbintang dan NonBintang Total,36.47
+2020,Mei,1.a. Hotel Bintang 1,
+2020,Mei,1.b. Hotel Bintang 2,
+2020,Mei,1.c. Hotel Bintang 3,
+2020,Mei,1.d. Hotel Bintang 4,
+2020,Mei,1.e. Hotel Bintang 5,
+2020,Mei,1. Hotel Berbintang Total,12.92
+2020,Mei,2.a. Hotel NonBintang; kamar <10,
+2020,Mei,2.b. Hotel NonBintang; kamar 10-24,
+2020,Mei,2.c. Hotel NonBintang; kamar 25-40,
+2020,Mei,2.d. Hotel NonBintang; kamar >40,
+2020,Mei,2. Hotel NonBintang Total,13.87
+2020,Mei,3. Hotel Berbintang dan NonBintang Total,13.35
+2021,Mei,1.a. Hotel Bintang 1,
+2021,Mei,1.b. Hotel Bintang 2,
+2021,Mei,1.c. Hotel Bintang 3,
+2021,Mei,1.d. Hotel Bintang 4,
+2021,Mei,1.e. Hotel Bintang 5,
+2021,Mei,1. Hotel Berbintang Total,35.72
+2021,Mei,2.a. Hotel NonBintang; kamar <10,
+2021,Mei,2.b. Hotel NonBintang; kamar 10-24,
+2021,Mei,2.c. Hotel NonBintang; kamar 25-40,
+2021,Mei,2.d. Hotel NonBintang; kamar >40,
+2021,Mei,2. Hotel NonBintang Total,18.41
+2021,Mei,3. Hotel Berbintang dan NonBintang Total,30.58
+2022,Mei,1.a. Hotel Bintang 1,
+2022,Mei,1.b. Hotel Bintang 2,
+2022,Mei,1.c. Hotel Bintang 3,
+2022,Mei,1.d. Hotel Bintang 4,
+2022,Mei,1.e. Hotel Bintang 5,
+2022,Mei,1. Hotel Berbintang Total,54.13
+2022,Mei,2.a. Hotel NonBintang; kamar <10,
+2022,Mei,2.b. Hotel NonBintang; kamar 10-24,
+2022,Mei,2.c. Hotel NonBintang; kamar 25-40,
+2022,Mei,2.d. Hotel NonBintang; kamar >40,
+2022,Mei,2. Hotel NonBintang Total,28.31
+2022,Mei,3. Hotel Berbintang dan NonBintang Total,
+2023,Mei,1.a. Hotel Bintang 1,
+2023,Mei,1.b. Hotel Bintang 2,
+2023,Mei,1.c. Hotel Bintang 3,
+2023,Mei,1.d. Hotel Bintang 4,
+2023,Mei,1.e. Hotel Bintang 5,
+2023,Mei,1. Hotel Berbintang Total,
+2023,Mei,2.a. Hotel NonBintang; kamar <10,
+2023,Mei,2.b. Hotel NonBintang; kamar 10-24,
+2023,Mei,2.c. Hotel NonBintang; kamar 25-40,
+2023,Mei,2.d. Hotel NonBintang; kamar >40,
+2023,Mei,2. Hotel NonBintang Total,
+2023,Mei,3. Hotel Berbintang dan NonBintang Total,
+2024,Mei,1.a. Hotel Bintang 1,29.78
+2024,Mei,1.b. Hotel Bintang 2,51.92
+2024,Mei,1.c. Hotel Bintang 3,49.7
+2024,Mei,1.d. Hotel Bintang 4,57.32
+2024,Mei,1.e. Hotel Bintang 5,64.73
+2024,Mei,1. Hotel Berbintang Total,52.31
+2024,Mei,2.a. Hotel NonBintang; kamar <10,18.38
+2024,Mei,2.b. Hotel NonBintang; kamar 10-24,24.85
+2024,Mei,2.c. Hotel NonBintang; kamar 25-40,26.85
+2024,Mei,2.d. Hotel NonBintang; kamar >40,21.32
+2024,Mei,2. Hotel NonBintang Total,23.27
+2024,Mei,3. Hotel Berbintang dan NonBintang Total,42.45
+2025,Mei,1.a. Hotel Bintang 1,27.46
+2025,Mei,1.b. Hotel Bintang 2,49.59
+2025,Mei,1.c. Hotel Bintang 3,42.88
+2025,Mei,1.d. Hotel Bintang 4,52.62
+2025,Mei,1.e. Hotel Bintang 5,48.65
+2025,Mei,1. Hotel Berbintang Total,47.08
+2025,Mei,2.a. Hotel NonBintang; kamar <10,19.78
+2025,Mei,2.b. Hotel NonBintang; kamar 10-24,22.53
+2025,Mei,2.c. Hotel NonBintang; kamar 25-40,25.8
+2025,Mei,2.d. Hotel NonBintang; kamar >40,24.05
+2025,Mei,2. Hotel NonBintang Total,23.42
+2025,Mei,3. Hotel Berbintang dan NonBintang Total,37.59
+2019,Juni,1.a. Hotel Bintang 1,
+2019,Juni,1.b. Hotel Bintang 2,
+2019,Juni,1.c. Hotel Bintang 3,
+2019,Juni,1.d. Hotel Bintang 4,
+2019,Juni,1.e. Hotel Bintang 5,
+2019,Juni,1. Hotel Berbintang Total,53.13
+2019,Juni,2.a. Hotel NonBintang; kamar <10,
+2019,Juni,2.b. Hotel NonBintang; kamar 10-24,
+2019,Juni,2.c. Hotel NonBintang; kamar 25-40,
+2019,Juni,2.d. Hotel NonBintang; kamar >40,
+2019,Juni,2. Hotel NonBintang Total,32.9
+2019,Juni,3. Hotel Berbintang dan NonBintang Total,47.57
+2020,Juni,1.a. Hotel Bintang 1,
+2020,Juni,1.b. Hotel Bintang 2,
+2020,Juni,1.c. Hotel Bintang 3,
+2020,Juni,1.d. Hotel Bintang 4,
+2020,Juni,1.e. Hotel Bintang 5,
+2020,Juni,1. Hotel Berbintang Total,20.76
+2020,Juni,2.a. Hotel NonBintang; kamar <10,
+2020,Juni,2.b. Hotel NonBintang; kamar 10-24,
+2020,Juni,2.c. Hotel NonBintang; kamar 25-40,
+2020,Juni,2.d. Hotel NonBintang; kamar >40,
+2020,Juni,2. Hotel NonBintang Total,15.57
+2020,Juni,3. Hotel Berbintang dan NonBintang Total,19.13
+2021,Juni,1.a. Hotel Bintang 1,
+2021,Juni,1.b. Hotel Bintang 2,
+2021,Juni,1.c. Hotel Bintang 3,
+2021,Juni,1.d. Hotel Bintang 4,
+2021,Juni,1.e. Hotel Bintang 5,
+2021,Juni,1. Hotel Berbintang Total,38.19
+2021,Juni,2.a. Hotel NonBintang; kamar <10,
+2021,Juni,2.b. Hotel NonBintang; kamar 10-24,
+2021,Juni,2.c. Hotel NonBintang; kamar 25-40,
+2021,Juni,2.d. Hotel NonBintang; kamar >40,
+2021,Juni,2. Hotel NonBintang Total,19.31
+2021,Juni,3. Hotel Berbintang dan NonBintang Total,32.9
+2022,Juni,1.a. Hotel Bintang 1,
+2022,Juni,1.b. Hotel Bintang 2,
+2022,Juni,1.c. Hotel Bintang 3,
+2022,Juni,1.d. Hotel Bintang 4,
+2022,Juni,1.e. Hotel Bintang 5,
+2022,Juni,1. Hotel Berbintang Total,52.82
+2022,Juni,2.a. Hotel NonBintang; kamar <10,
+2022,Juni,2.b. Hotel NonBintang; kamar 10-24,
+2022,Juni,2.c. Hotel NonBintang; kamar 25-40,
+2022,Juni,2.d. Hotel NonBintang; kamar >40,
+2022,Juni,2. Hotel NonBintang Total,26.19
+2022,Juni,3. Hotel Berbintang dan NonBintang Total,
+2023,Juni,1.a. Hotel Bintang 1,
+2023,Juni,1.b. Hotel Bintang 2,
+2023,Juni,1.c. Hotel Bintang 3,
+2023,Juni,1.d. Hotel Bintang 4,
+2023,Juni,1.e. Hotel Bintang 5,
+2023,Juni,1. Hotel Berbintang Total,
+2023,Juni,2.a. Hotel NonBintang; kamar <10,
+2023,Juni,2.b. Hotel NonBintang; kamar 10-24,
+2023,Juni,2.c. Hotel NonBintang; kamar 25-40,
+2023,Juni,2.d. Hotel NonBintang; kamar >40,
+2023,Juni,2. Hotel NonBintang Total,
+2023,Juni,3. Hotel Berbintang dan NonBintang Total,
+2024,Juni,1.a. Hotel Bintang 1,31.99
+2024,Juni,1.b. Hotel Bintang 2,53.14
+2024,Juni,1.c. Hotel Bintang 3,51.7
+2024,Juni,1.d. Hotel Bintang 4,59.72
+2024,Juni,1.e. Hotel Bintang 5,69.17
+2024,Juni,1. Hotel Berbintang Total,54.42
+2024,Juni,2.a. Hotel NonBintang; kamar <10,19.56
+2024,Juni,2.b. Hotel NonBintang; kamar 10-24,24.75
+2024,Juni,2.c. Hotel NonBintang; kamar 25-40,27.28
+2024,Juni,2.d. Hotel NonBintang; kamar >40,21.53
+2024,Juni,2. Hotel NonBintang Total,23.57
+2024,Juni,3. Hotel Berbintang dan NonBintang Total,43.81
+2025,Juni,1.a. Hotel Bintang 1,26.59
+2025,Juni,1.b. Hotel Bintang 2,46.4
+2025,Juni,1.c. Hotel Bintang 3,44.12
+2025,Juni,1.d. Hotel Bintang 4,51.2
+2025,Juni,1.e. Hotel Bintang 5,54.27
+2025,Juni,1. Hotel Berbintang Total,47.08
+2025,Juni,2.a. Hotel NonBintang; kamar <10,19.12
+2025,Juni,2.b. Hotel NonBintang; kamar 10-24,23.14
+2025,Juni,2.c. Hotel NonBintang; kamar 25-40,25.56
+2025,Juni,2.d. Hotel NonBintang; kamar >40,22.9
+2025,Juni,2. Hotel NonBintang Total,23.14
+2025,Juni,3. Hotel Berbintang dan NonBintang Total,37.5
+2019,Juli,1.a. Hotel Bintang 1,
+2019,Juli,1.b. Hotel Bintang 2,
+2019,Juli,1.c. Hotel Bintang 3,
+2019,Juli,1.d. Hotel Bintang 4,
+2019,Juli,1.e. Hotel Bintang 5,
+2019,Juli,1. Hotel Berbintang Total,54.69
+2019,Juli,2.a. Hotel NonBintang; kamar <10,
+2019,Juli,2.b. Hotel NonBintang; kamar 10-24,
+2019,Juli,2.c. Hotel NonBintang; kamar 25-40,
+2019,Juli,2.d. Hotel NonBintang; kamar >40,
+2019,Juli,2. Hotel NonBintang Total,34.13
+2019,Juli,3. Hotel Berbintang dan NonBintang Total,49.03
+2020,Juli,1.a. Hotel Bintang 1,
+2020,Juli,1.b. Hotel Bintang 2,
+2020,Juli,1.c. Hotel Bintang 3,
+2020,Juli,1.d. Hotel Bintang 4,
+2020,Juli,1.e. Hotel Bintang 5,
+2020,Juli,1. Hotel Berbintang Total,30.51
+2020,Juli,2.a. Hotel NonBintang; kamar <10,
+2020,Juli,2.b. Hotel NonBintang; kamar 10-24,
+2020,Juli,2.c. Hotel NonBintang; kamar 25-40,
+2020,Juli,2.d. Hotel NonBintang; kamar >40,
+2020,Juli,2. Hotel NonBintang Total,18.22
+2020,Juli,3. Hotel Berbintang dan NonBintang Total,27.17
+2021,Juli,1.a. Hotel Bintang 1,
+2021,Juli,1.b. Hotel Bintang 2,
+2021,Juli,1.c. Hotel Bintang 3,
+2021,Juli,1.d. Hotel Bintang 4,
+2021,Juli,1.e. Hotel Bintang 5,
+2021,Juli,1. Hotel Berbintang Total,19.48
+2021,Juli,2.a. Hotel NonBintang; kamar <10,
+2021,Juli,2.b. Hotel NonBintang; kamar 10-24,
+2021,Juli,2.c. Hotel NonBintang; kamar 25-40,
+2021,Juli,2.d. Hotel NonBintang; kamar >40,
+2021,Juli,2. Hotel NonBintang Total,11.11
+2021,Juli,3. Hotel Berbintang dan NonBintang Total,16.94
+2022,Juli,1.a. Hotel Bintang 1,
+2022,Juli,1.b. Hotel Bintang 2,
+2022,Juli,1.c. Hotel Bintang 3,
+2022,Juli,1.d. Hotel Bintang 4,
+2022,Juli,1.e. Hotel Bintang 5,
+2022,Juli,1. Hotel Berbintang Total,53.48
+2022,Juli,2.a. Hotel NonBintang; kamar <10,
+2022,Juli,2.b. Hotel NonBintang; kamar 10-24,
+2022,Juli,2.c. Hotel NonBintang; kamar 25-40,
+2022,Juli,2.d. Hotel NonBintang; kamar >40,
+2022,Juli,2. Hotel NonBintang Total,25.12
+2022,Juli,3. Hotel Berbintang dan NonBintang Total,
+2023,Juli,1.a. Hotel Bintang 1,
+2023,Juli,1.b. Hotel Bintang 2,
+2023,Juli,1.c. Hotel Bintang 3,
+2023,Juli,1.d. Hotel Bintang 4,
+2023,Juli,1.e. Hotel Bintang 5,
+2023,Juli,1. Hotel Berbintang Total,
+2023,Juli,2.a. Hotel NonBintang; kamar <10,
+2023,Juli,2.b. Hotel NonBintang; kamar 10-24,
+2023,Juli,2.c. Hotel NonBintang; kamar 25-40,
+2023,Juli,2.d. Hotel NonBintang; kamar >40,
+2023,Juli,2. Hotel NonBintang Total,
+2023,Juli,3. Hotel Berbintang dan NonBintang Total,
+2024,Juli,1.a. Hotel Bintang 1,31.25
+2024,Juli,1.b. Hotel Bintang 2,54.24
+2024,Juli,1.c. Hotel Bintang 3,53.85
+2024,Juli,1.d. Hotel Bintang 4,62.09
+2024,Juli,1.e. Hotel Bintang 5,65.98
+2024,Juli,1. Hotel Berbintang Total,55.94
+2024,Juli,2.a. Hotel NonBintang; kamar <10,17.85
+2024,Juli,2.b. Hotel NonBintang; kamar 10-24,25.04
+2024,Juli,2.c. Hotel NonBintang; kamar 25-40,27.67
+2024,Juli,2.d. Hotel NonBintang; kamar >40,22.44
+2024,Juli,2. Hotel NonBintang Total,23.87
+2024,Juli,3. Hotel Berbintang dan NonBintang Total,44.96
+2025,Juli,1.a. Hotel Bintang 1,28.79
+2025,Juli,1.b. Hotel Bintang 2,45.23
+2025,Juli,1.c. Hotel Bintang 3,45.6
+2025,Juli,1.d. Hotel Bintang 4,55.82
+2025,Juli,1.e. Hotel Bintang 5,56.97
+2025,Juli,1. Hotel Berbintang Total,49.52
+2025,Juli,2.a. Hotel NonBintang; kamar <10,17.63
+2025,Juli,2.b. Hotel NonBintang; kamar 10-24,22.39
+2025,Juli,2.c. Hotel NonBintang; kamar 25-40,24.73
+2025,Juli,2.d. Hotel NonBintang; kamar >40,23.52
+2025,Juli,2. Hotel NonBintang Total,22.68
+2025,Juli,3. Hotel Berbintang dan NonBintang Total,38.8
+2019,Agustus,1.a. Hotel Bintang 1,
+2019,Agustus,1.b. Hotel Bintang 2,
+2019,Agustus,1.c. Hotel Bintang 3,
+2019,Agustus,1.d. Hotel Bintang 4,
+2019,Agustus,1.e. Hotel Bintang 5,
+2019,Agustus,1. Hotel Berbintang Total,49.58
+2019,Agustus,2.a. Hotel NonBintang; kamar <10,
+2019,Agustus,2.b. Hotel NonBintang; kamar 10-24,
+2019,Agustus,2.c. Hotel NonBintang; kamar 25-40,
+2019,Agustus,2.d. Hotel NonBintang; kamar >40,
+2019,Agustus,2. Hotel NonBintang Total,36.35
+2019,Agustus,3. Hotel Berbintang dan NonBintang Total,46.26
+2020,Agustus,1.a. Hotel Bintang 1,
+2020,Agustus,1.b. Hotel Bintang 2,
+2020,Agustus,1.c. Hotel Bintang 3,
+2020,Agustus,1.d. Hotel Bintang 4,
+2020,Agustus,1.e. Hotel Bintang 5,
+2020,Agustus,1. Hotel Berbintang Total,40.82
+2020,Agustus,2.a. Hotel NonBintang; kamar <10,
+2020,Agustus,2.b. Hotel NonBintang; kamar 10-24,
+2020,Agustus,2.c. Hotel NonBintang; kamar 25-40,
+2020,Agustus,2.d. Hotel NonBintang; kamar >40,
+2020,Agustus,2. Hotel NonBintang Total,19.34
+2020,Agustus,3. Hotel Berbintang dan NonBintang Total,34.95
+2021,Agustus,1.a. Hotel Bintang 1,
+2021,Agustus,1.b. Hotel Bintang 2,
+2021,Agustus,1.c. Hotel Bintang 3,
+2021,Agustus,1.d. Hotel Bintang 4,
+2021,Agustus,1.e. Hotel Bintang 5,
+2021,Agustus,1. Hotel Berbintang Total,27.49
+2021,Agustus,2.a. Hotel NonBintang; kamar <10,
+2021,Agustus,2.b. Hotel NonBintang; kamar 10-24,
+2021,Agustus,2.c. Hotel NonBintang; kamar 25-40,
+2021,Agustus,2.d. Hotel NonBintang; kamar >40,
+2021,Agustus,2. Hotel NonBintang Total,18.25
+2021,Agustus,3. Hotel Berbintang dan NonBintang Total,24.95
+2022,Agustus,1.a. Hotel Bintang 1,
+2022,Agustus,1.b. Hotel Bintang 2,
+2022,Agustus,1.c. Hotel Bintang 3,
+2022,Agustus,1.d. Hotel Bintang 4,
+2022,Agustus,1.e. Hotel Bintang 5,
+2022,Agustus,1. Hotel Berbintang Total,50.73
+2022,Agustus,2.a. Hotel NonBintang; kamar <10,
+2022,Agustus,2.b. Hotel NonBintang; kamar 10-24,
+2022,Agustus,2.c. Hotel NonBintang; kamar 25-40,
+2022,Agustus,2.d. Hotel NonBintang; kamar >40,
+2022,Agustus,2. Hotel NonBintang Total,23.74
+2022,Agustus,3. Hotel Berbintang dan NonBintang Total,
+2023,Agustus,1.a. Hotel Bintang 1,
+2023,Agustus,1.b. Hotel Bintang 2,
+2023,Agustus,1.c. Hotel Bintang 3,
+2023,Agustus,1.d. Hotel Bintang 4,
+2023,Agustus,1.e. Hotel Bintang 5,
+2023,Agustus,1. Hotel Berbintang Total,
+2023,Agustus,2.a. Hotel NonBintang; kamar <10,
+2023,Agustus,2.b. Hotel NonBintang; kamar 10-24,
+2023,Agustus,2.c. Hotel NonBintang; kamar 25-40,
+2023,Agustus,2.d. Hotel NonBintang; kamar >40,
+2023,Agustus,2. Hotel NonBintang Total,
+2023,Agustus,3. Hotel Berbintang dan NonBintang Total,
+2024,Agustus,1.a. Hotel Bintang 1,32.96
+2024,Agustus,1.b. Hotel Bintang 2,49.26
+2024,Agustus,1.c. Hotel Bintang 3,48.62
+2024,Agustus,1.d. Hotel Bintang 4,55.98
+2024,Agustus,1.e. Hotel Bintang 5,64.45
+2024,Agustus,1. Hotel Berbintang Total,51.09
+2024,Agustus,2.a. Hotel NonBintang; kamar <10,17.29
+2024,Agustus,2.b. Hotel NonBintang; kamar 10-24,23.73
+2024,Agustus,2.c. Hotel NonBintang; kamar 25-40,27.02
+2024,Agustus,2.d. Hotel NonBintang; kamar >40,20.8
+2024,Agustus,2. Hotel NonBintang Total,22.69
+2024,Agustus,3. Hotel Berbintang dan NonBintang Total,41.44
+2025,Agustus,1.a. Hotel Bintang 1,23.71
+2025,Agustus,1.b. Hotel Bintang 2,45.44
+2025,Agustus,1.c. Hotel Bintang 3,41.75
+2025,Agustus,1.d. Hotel Bintang 4,50.61
+2025,Agustus,1.e. Hotel Bintang 5,54.51
+2025,Agustus,1. Hotel Berbintang Total,45.75
+2025,Agustus,2.a. Hotel NonBintang; kamar <10,17.43
+2025,Agustus,2.b. Hotel NonBintang; kamar 10-24,21.0
+2025,Agustus,2.c. Hotel NonBintang; kamar 25-40,24.64
+2025,Agustus,2.d. Hotel NonBintang; kamar >40,22.13
+2025,Agustus,2. Hotel NonBintang Total,21.76
+2025,Agustus,3. Hotel Berbintang dan NonBintang Total,36.12
+2019,September,1.a. Hotel Bintang 1,
+2019,September,1.b. Hotel Bintang 2,
+2019,September,1.c. Hotel Bintang 3,
+2019,September,1.d. Hotel Bintang 4,
+2019,September,1.e. Hotel Bintang 5,
+2019,September,1. Hotel Berbintang Total,50.6
+2019,September,2.a. Hotel NonBintang; kamar <10,
+2019,September,2.b. Hotel NonBintang; kamar 10-24,
+2019,September,2.c. Hotel NonBintang; kamar 25-40,
+2019,September,2.d. Hotel NonBintang; kamar >40,
+2019,September,2. Hotel NonBintang Total,36.51
+2019,September,3. Hotel Berbintang dan NonBintang Total,47.57
+2020,September,1.a. Hotel Bintang 1,
+2020,September,1.b. Hotel Bintang 2,
+2020,September,1.c. Hotel Bintang 3,
+2020,September,1.d. Hotel Bintang 4,
+2020,September,1.e. Hotel Bintang 5,
+2020,September,1. Hotel Berbintang Total,37.43
+2020,September,2.a. Hotel NonBintang; kamar <10,
+2020,September,2.b. Hotel NonBintang; kamar 10-24,
+2020,September,2.c. Hotel NonBintang; kamar 25-40,
+2020,September,2.d. Hotel NonBintang; kamar >40,
+2020,September,2. Hotel NonBintang Total,19.98
+2020,September,3. Hotel Berbintang dan NonBintang Total,32.68
+2021,September,1.a. Hotel Bintang 1,
+2021,September,1.b. Hotel Bintang 2,
+2021,September,1.c. Hotel Bintang 3,
+2021,September,1.d. Hotel Bintang 4,
+2021,September,1.e. Hotel Bintang 5,
+2021,September,1. Hotel Berbintang Total,44.59
+2021,September,2.a. Hotel NonBintang; kamar <10,
+2021,September,2.b. Hotel NonBintang; kamar 10-24,
+2021,September,2.c. Hotel NonBintang; kamar 25-40,
+2021,September,2.d. Hotel NonBintang; kamar >40,
+2021,September,2. Hotel NonBintang Total,20.13
+2021,September,3. Hotel Berbintang dan NonBintang Total,37.33
+2022,September,1.a. Hotel Bintang 1,
+2022,September,1.b. Hotel Bintang 2,
+2022,September,1.c. Hotel Bintang 3,
+2022,September,1.d. Hotel Bintang 4,
+2022,September,1.e. Hotel Bintang 5,
+2022,September,1. Hotel Berbintang Total,53.97
+2022,September,2.a. Hotel NonBintang; kamar <10,
+2022,September,2.b. Hotel NonBintang; kamar 10-24,
+2022,September,2.c. Hotel NonBintang; kamar 25-40,
+2022,September,2.d. Hotel NonBintang; kamar >40,
+2022,September,2. Hotel NonBintang Total,22.54
+2022,September,3. Hotel Berbintang dan NonBintang Total,
+2023,September,1.a. Hotel Bintang 1,
+2023,September,1.b. Hotel Bintang 2,
+2023,September,1.c. Hotel Bintang 3,
+2023,September,1.d. Hotel Bintang 4,
+2023,September,1.e. Hotel Bintang 5,
+2023,September,1. Hotel Berbintang Total,
+2023,September,2.a. Hotel NonBintang; kamar <10,
+2023,September,2.b. Hotel NonBintang; kamar 10-24,
+2023,September,2.c. Hotel NonBintang; kamar 25-40,
+2023,September,2.d. Hotel NonBintang; kamar >40,
+2023,September,2. Hotel NonBintang Total,
+2023,September,3. Hotel Berbintang dan NonBintang Total,
+2024,September,1.a. Hotel Bintang 1,33.84
+2024,September,1.b. Hotel Bintang 2,50.83
+2024,September,1.c. Hotel Bintang 3,49.73
+2024,September,1.d. Hotel Bintang 4,57.08
+2024,September,1.e. Hotel Bintang 5,59.86
+2024,September,1. Hotel Berbintang Total,51.97
+2024,September,2.a. Hotel NonBintang; kamar <10,17.92
+2024,September,2.b. Hotel NonBintang; kamar 10-24,24.44
+2024,September,2.c. Hotel NonBintang; kamar 25-40,27.8
+2024,September,2.d. Hotel NonBintang; kamar >40,20.42
+2024,September,2. Hotel NonBintang Total,23.01
+2024,September,3. Hotel Berbintang dan NonBintang Total,42.09
+2025,September,1.a. Hotel Bintang 1,23.96
+2025,September,1.b. Hotel Bintang 2,43.89
+2025,September,1.c. Hotel Bintang 3,41.97
+2025,September,1.d. Hotel Bintang 4,51.3
+2025,September,1.e. Hotel Bintang 5,51.78
+2025,September,1. Hotel Berbintang Total,45.66
+2025,September,2.a. Hotel NonBintang; kamar <10,15.76
+2025,September,2.b. Hotel NonBintang; kamar 10-24,22.46
+2025,September,2.c. Hotel NonBintang; kamar 25-40,25.29
+2025,September,2.d. Hotel NonBintang; kamar >40,22.93
+2025,September,2. Hotel NonBintang Total,22.43
+2025,September,3. Hotel Berbintang dan NonBintang Total,36.33
+2019,Oktober,1.a. Hotel Bintang 1,
+2019,Oktober,1.b. Hotel Bintang 2,
+2019,Oktober,1.c. Hotel Bintang 3,
+2019,Oktober,1.d. Hotel Bintang 4,
+2019,Oktober,1.e. Hotel Bintang 5,
+2019,Oktober,1. Hotel Berbintang Total,56.07
+2019,Oktober,2.a. Hotel NonBintang; kamar <10,
+2019,Oktober,2.b. Hotel NonBintang; kamar 10-24,
+2019,Oktober,2.c. Hotel NonBintang; kamar 25-40,
+2019,Oktober,2.d. Hotel NonBintang; kamar >40,
+2019,Oktober,2. Hotel NonBintang Total,34.33
+2019,Oktober,3. Hotel Berbintang dan NonBintang Total,50.36
+2020,Oktober,1.a. Hotel Bintang 1,
+2020,Oktober,1.b. Hotel Bintang 2,
+2020,Oktober,1.c. Hotel Bintang 3,
+2020,Oktober,1.d. Hotel Bintang 4,
+2020,Oktober,1.e. Hotel Bintang 5,
+2020,Oktober,1. Hotel Berbintang Total,43.57
+2020,Oktober,2.a. Hotel NonBintang; kamar <10,
+2020,Oktober,2.b. Hotel NonBintang; kamar 10-24,
+2020,Oktober,2.c. Hotel NonBintang; kamar 25-40,
+2020,Oktober,2.d. Hotel NonBintang; kamar >40,
+2020,Oktober,2. Hotel NonBintang Total,20.39
+2020,Oktober,3. Hotel Berbintang dan NonBintang Total,37.02
+2021,Oktober,1.a. Hotel Bintang 1,
+2021,Oktober,1.b. Hotel Bintang 2,
+2021,Oktober,1.c. Hotel Bintang 3,
+2021,Oktober,1.d. Hotel Bintang 4,
+2021,Oktober,1.e. Hotel Bintang 5,
+2021,Oktober,1. Hotel Berbintang Total,54.03
+2021,Oktober,2.a. Hotel NonBintang; kamar <10,
+2021,Oktober,2.b. Hotel NonBintang; kamar 10-24,
+2021,Oktober,2.c. Hotel NonBintang; kamar 25-40,
+2021,Oktober,2.d. Hotel NonBintang; kamar >40,
+2021,Oktober,2. Hotel NonBintang Total,23.61
+2021,Oktober,3. Hotel Berbintang dan NonBintang Total,44.68
+2022,Oktober,1.a. Hotel Bintang 1,
+2022,Oktober,1.b. Hotel Bintang 2,
+2022,Oktober,1.c. Hotel Bintang 3,
+2022,Oktober,1.d. Hotel Bintang 4,
+2022,Oktober,1.e. Hotel Bintang 5,
+2022,Oktober,1. Hotel Berbintang Total,57.67
+2022,Oktober,2.a. Hotel NonBintang; kamar <10,
+2022,Oktober,2.b. Hotel NonBintang; kamar 10-24,
+2022,Oktober,2.c. Hotel NonBintang; kamar 25-40,
+2022,Oktober,2.d. Hotel NonBintang; kamar >40,
+2022,Oktober,2. Hotel NonBintang Total,23.39
+2022,Oktober,3. Hotel Berbintang dan NonBintang Total,
+2023,Oktober,1.a. Hotel Bintang 1,
+2023,Oktober,1.b. Hotel Bintang 2,
+2023,Oktober,1.c. Hotel Bintang 3,
+2023,Oktober,1.d. Hotel Bintang 4,
+2023,Oktober,1.e. Hotel Bintang 5,
+2023,Oktober,1. Hotel Berbintang Total,
+2023,Oktober,2.a. Hotel NonBintang; kamar <10,
+2023,Oktober,2.b. Hotel NonBintang; kamar 10-24,
+2023,Oktober,2.c. Hotel NonBintang; kamar 25-40,
+2023,Oktober,2.d. Hotel NonBintang; kamar >40,
+2023,Oktober,2. Hotel NonBintang Total,
+2023,Oktober,3. Hotel Berbintang dan NonBintang Total,
+2024,Oktober,1.a. Hotel Bintang 1,31.73
+2024,Oktober,1.b. Hotel Bintang 2,52.34
+2024,Oktober,1.c. Hotel Bintang 3,49.26
+2024,Oktober,1.d. Hotel Bintang 4,61.55
+2024,Oktober,1.e. Hotel Bintang 5,63.45
+2024,Oktober,1. Hotel Berbintang Total,53.85
+2024,Oktober,2.a. Hotel NonBintang; kamar <10,13.89
+2024,Oktober,2.b. Hotel NonBintang; kamar 10-24,23.19
+2024,Oktober,2.c. Hotel NonBintang; kamar 25-40,28.11
+2024,Oktober,2.d. Hotel NonBintang; kamar >40,21.03
+2024,Oktober,2. Hotel NonBintang Total,23.1
+2024,Oktober,3. Hotel Berbintang dan NonBintang Total,44.82
+2025,Oktober,1.a. Hotel Bintang 1,25.73
+2025,Oktober,1.b. Hotel Bintang 2,46.98
+2025,Oktober,1.c. Hotel Bintang 3,45.13
+2025,Oktober,1.d. Hotel Bintang 4,58.1
+2025,Oktober,1.e. Hotel Bintang 5,56.81
+2025,Oktober,1. Hotel Berbintang Total,50.24
+2025,Oktober,2.a. Hotel NonBintang; kamar <10,15.3
+2025,Oktober,2.b. Hotel NonBintang; kamar 10-24,21.78
+2025,Oktober,2.c. Hotel NonBintang; kamar 25-40,25.57
+2025,Oktober,2.d. Hotel NonBintang; kamar >40,23.18
+2025,Oktober,2. Hotel NonBintang Total,22.26
+2025,Oktober,3. Hotel Berbintang dan NonBintang Total,38.9
+2019,November,1.a. Hotel Bintang 1,
+2019,November,1.b. Hotel Bintang 2,
+2019,November,1.c. Hotel Bintang 3,
+2019,November,1.d. Hotel Bintang 4,
+2019,November,1.e. Hotel Bintang 5,
+2019,November,1. Hotel Berbintang Total,58.95
+2019,November,2.a. Hotel NonBintang; kamar <10,
+2019,November,2.b. Hotel NonBintang; kamar 10-24,
+2019,November,2.c. Hotel NonBintang; kamar 25-40,
+2019,November,2.d. Hotel NonBintang; kamar >40,
+2019,November,2. Hotel NonBintang Total,32.73
+2019,November,3. Hotel Berbintang dan NonBintang Total,51.59
+2020,November,1.a. Hotel Bintang 1,
+2020,November,1.b. Hotel Bintang 2,
+2020,November,1.c. Hotel Bintang 3,
+2020,November,1.d. Hotel Bintang 4,
+2020,November,1.e. Hotel Bintang 5,
+2020,November,1. Hotel Berbintang Total,48.89
+2020,November,2.a. Hotel NonBintang; kamar <10,
+2020,November,2.b. Hotel NonBintang; kamar 10-24,
+2020,November,2.c. Hotel NonBintang; kamar 25-40,
+2020,November,2.d. Hotel NonBintang; kamar >40,
+2020,November,2. Hotel NonBintang Total,20.95
+2020,November,3. Hotel Berbintang dan NonBintang Total,41.31
+2021,November,1.a. Hotel Bintang 1,
+2021,November,1.b. Hotel Bintang 2,
+2021,November,1.c. Hotel Bintang 3,
+2021,November,1.d. Hotel Bintang 4,
+2021,November,1.e. Hotel Bintang 5,
+2021,November,1. Hotel Berbintang Total,54.14
+2021,November,2.a. Hotel NonBintang; kamar <10,
+2021,November,2.b. Hotel NonBintang; kamar 10-24,
+2021,November,2.c. Hotel NonBintang; kamar 25-40,
+2021,November,2.d. Hotel NonBintang; kamar >40,
+2021,November,2. Hotel NonBintang Total,24.89
+2021,November,3. Hotel Berbintang dan NonBintang Total,45.41
+2022,November,1.a. Hotel Bintang 1,
+2022,November,1.b. Hotel Bintang 2,
+2022,November,1.c. Hotel Bintang 3,
+2022,November,1.d. Hotel Bintang 4,
+2022,November,1.e. Hotel Bintang 5,
+2022,November,1. Hotel Berbintang Total,56.64
+2022,November,2.a. Hotel NonBintang; kamar <10,
+2022,November,2.b. Hotel NonBintang; kamar 10-24,
+2022,November,2.c. Hotel NonBintang; kamar 25-40,
+2022,November,2.d. Hotel NonBintang; kamar >40,
+2022,November,2. Hotel NonBintang Total,24.18
+2022,November,3. Hotel Berbintang dan NonBintang Total,
+2023,November,1.a. Hotel Bintang 1,
+2023,November,1.b. Hotel Bintang 2,
+2023,November,1.c. Hotel Bintang 3,
+2023,November,1.d. Hotel Bintang 4,
+2023,November,1.e. Hotel Bintang 5,
+2023,November,1. Hotel Berbintang Total,
+2023,November,2.a. Hotel NonBintang; kamar <10,
+2023,November,2.b. Hotel NonBintang; kamar 10-24,
+2023,November,2.c. Hotel NonBintang; kamar 25-40,
+2023,November,2.d. Hotel NonBintang; kamar >40,
+2023,November,2. Hotel NonBintang Total,
+2023,November,3. Hotel Berbintang dan NonBintang Total,
+2024,November,1.a. Hotel Bintang 1,31.57
+2024,November,1.b. Hotel Bintang 2,53.4
+2024,November,1.c. Hotel Bintang 3,48.78
+2024,November,1.d. Hotel Bintang 4,59.3
+2024,November,1.e. Hotel Bintang 5,62.26
+2024,November,1. Hotel Berbintang Total,52.99
+2024,November,2.a. Hotel NonBintang; kamar <10,17.48
+2024,November,2.b. Hotel NonBintang; kamar 10-24,24.2
+2024,November,2.c. Hotel NonBintang; kamar 25-40,27.14
+2024,November,2.d. Hotel NonBintang; kamar >40,20.3
+2024,November,2. Hotel NonBintang Total,22.71
+2024,November,3. Hotel Berbintang dan NonBintang Total,42.72
+2025,November,1.a. Hotel Bintang 1,27.66
+2025,November,1.b. Hotel Bintang 2,48.52
+2025,November,1.c. Hotel Bintang 3,48.44
+2025,November,1.d. Hotel Bintang 4,61.6
+2025,November,1.e. Hotel Bintang 5,62.3
+2025,November,1. Hotel Berbintang Total,53.54
+2025,November,2.a. Hotel NonBintang; kamar <10,17.35
+2025,November,2.b. Hotel NonBintang; kamar 10-24,22.85
+2025,November,2.c. Hotel NonBintang; kamar 25-40,27.0
+2025,November,2.d. Hotel NonBintang; kamar >40,24.04
+2025,November,2. Hotel NonBintang Total,23.48
+2025,November,3. Hotel Berbintang dan NonBintang Total,41.41
+2019,Desember,1.a. Hotel Bintang 1,
+2019,Desember,1.b. Hotel Bintang 2,
+2019,Desember,1.c. Hotel Bintang 3,
+2019,Desember,1.d. Hotel Bintang 4,
+2019,Desember,1.e. Hotel Bintang 5,
+2019,Desember,1. Hotel Berbintang Total,62.4
+2019,Desember,2.a. Hotel NonBintang; kamar <10,
+2019,Desember,2.b. Hotel NonBintang; kamar 10-24,
+2019,Desember,2.c. Hotel NonBintang; kamar 25-40,
+2019,Desember,2.d. Hotel NonBintang; kamar >40,
+2019,Desember,2. Hotel NonBintang Total,34.4
+2019,Desember,3. Hotel Berbintang dan NonBintang Total,54.82
+2020,Desember,1.a. Hotel Bintang 1,
+2020,Desember,1.b. Hotel Bintang 2,
+2020,Desember,1.c. Hotel Bintang 3,
+2020,Desember,1.d. Hotel Bintang 4,
+2020,Desember,1.e. Hotel Bintang 5,
+2020,Desember,1. Hotel Berbintang Total,45.22
+2020,Desember,2.a. Hotel NonBintang; kamar <10,
+2020,Desember,2.b. Hotel NonBintang; kamar 10-24,
+2020,Desember,2.c. Hotel NonBintang; kamar 25-40,
+2020,Desember,2.d. Hotel NonBintang; kamar >40,
+2020,Desember,2. Hotel NonBintang Total,19.96
+2020,Desember,3. Hotel Berbintang dan NonBintang Total,38.8
+2021,Desember,1.a. Hotel Bintang 1,
+2021,Desember,1.b. Hotel Bintang 2,
+2021,Desember,1.c. Hotel Bintang 3,
+2021,Desember,1.d. Hotel Bintang 4,
+2021,Desember,1.e. Hotel Bintang 5,
+2021,Desember,1. Hotel Berbintang Total,56.92
+2021,Desember,2.a. Hotel NonBintang; kamar <10,
+2021,Desember,2.b. Hotel NonBintang; kamar 10-24,
+2021,Desember,2.c. Hotel NonBintang; kamar 25-40,
+2021,Desember,2.d. Hotel NonBintang; kamar >40,
+2021,Desember,2. Hotel NonBintang Total,25.58
+2021,Desember,3. Hotel Berbintang dan NonBintang Total,47.53
+2022,Desember,1.a. Hotel Bintang 1,
+2022,Desember,1.b. Hotel Bintang 2,
+2022,Desember,1.c. Hotel Bintang 3,
+2022,Desember,1.d. Hotel Bintang 4,
+2022,Desember,1.e. Hotel Bintang 5,
+2022,Desember,1. Hotel Berbintang Total,60.18
+2022,Desember,2.a. Hotel NonBintang; kamar <10,
+2022,Desember,2.b. Hotel NonBintang; kamar 10-24,
+2022,Desember,2.c. Hotel NonBintang; kamar 25-40,
+2022,Desember,2.d. Hotel NonBintang; kamar >40,
+2022,Desember,2. Hotel NonBintang Total,25.97
+2022,Desember,3. Hotel Berbintang dan NonBintang Total,
+2023,Desember,1.a. Hotel Bintang 1,
+2023,Desember,1.b. Hotel Bintang 2,
+2023,Desember,1.c. Hotel Bintang 3,
+2023,Desember,1.d. Hotel Bintang 4,
+2023,Desember,1.e. Hotel Bintang 5,
+2023,Desember,1. Hotel Berbintang Total,
+2023,Desember,2.a. Hotel NonBintang; kamar <10,
+2023,Desember,2.b. Hotel NonBintang; kamar 10-24,
+2023,Desember,2.c. Hotel NonBintang; kamar 25-40,
+2023,Desember,2.d. Hotel NonBintang; kamar >40,
+2023,Desember,2. Hotel NonBintang Total,
+2023,Desember,3. Hotel Berbintang dan NonBintang Total,
+2024,Desember,1.a. Hotel Bintang 1,37.05
+2024,Desember,1.b. Hotel Bintang 2,57.32
+2024,Desember,1.c. Hotel Bintang 3,54.47
+2024,Desember,1.d. Hotel Bintang 4,64.89
+2024,Desember,1.e. Hotel Bintang 5,70.5
+2024,Desember,1. Hotel Berbintang Total,58.56
+2024,Desember,2.a. Hotel NonBintang; kamar <10,24.35
+2024,Desember,2.b. Hotel NonBintang; kamar 10-24,28.54
+2024,Desember,2.c. Hotel NonBintang; kamar 25-40,31.18
+2024,Desember,2.d. Hotel NonBintang; kamar >40,23.44
+2024,Desember,2. Hotel NonBintang Total,26.85
+2024,Desember,3. Hotel Berbintang dan NonBintang Total,47.87
+2025,Desember,1.a. Hotel Bintang 1,29.65
+2025,Desember,1.b. Hotel Bintang 2,52.49
+2025,Desember,1.c. Hotel Bintang 3,52.99
+2025,Desember,1.d. Hotel Bintang 4,65.96
+2025,Desember,1.e. Hotel Bintang 5,69.47
+2025,Desember,1. Hotel Berbintang Total,58.13
+2025,Desember,2.a. Hotel NonBintang; kamar <10,23.69
+2025,Desember,2.b. Hotel NonBintang; kamar 10-24,27.27
+2025,Desember,2.c. Hotel NonBintang; kamar 25-40,29.84
+2025,Desember,2.d. Hotel NonBintang; kamar >40,27.57
+2025,Desember,2. Hotel NonBintang Total,27.51
+2025,Desember,3. Hotel Berbintang dan NonBintang Total,45.75
