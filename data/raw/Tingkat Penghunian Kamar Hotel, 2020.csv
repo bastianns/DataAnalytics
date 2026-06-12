@@ -1,0 +1,16 @@
+﻿Jenis Hotel,,,,,,,,,,,,,
+,Tingkat Penghunian Kamar Hotel (Persen),,,,,,,,,,,,
+,2020,,,,,,,,,,,,
+,Januari,Februari,Maret,April,Mei,Juni,Juli,Agustus,September,Oktober,November,Desember,Tahunan
+1.a. Hotel Bintang 1,-,-,-,-,-,-,-,-,-,-,-,-,-
+1.b. Hotel Bintang 2,-,-,-,-,-,-,-,-,-,-,-,-,-
+1.c. Hotel Bintang 3,-,-,-,-,-,-,-,-,-,-,-,-,-
+1.d. Hotel Bintang 4,-,-,-,-,-,-,-,-,-,-,-,-,-
+1.e. Hotel Bintang 5,-,-,-,-,-,-,-,-,-,-,-,-,-
+1. Hotel Berbintang Total,47.06,49.53,34.55,10.77,12.92,20.76,30.51,40.82,37.43,43.57,48.89,45.22,36.22
+2.a. Hotel NonBintang; kamar <10,-,-,-,-,-,-,-,-,-,-,-,-,-
+2.b. Hotel NonBintang; kamar 10-24,-,-,-,-,-,-,-,-,-,-,-,-,-
+2.c. Hotel NonBintang; kamar 25-40,-,-,-,-,-,-,-,-,-,-,-,-,-
+2.d. Hotel NonBintang; kamar >40,-,-,-,-,-,-,-,-,-,-,-,-,-
+2. Hotel NonBintang Total,35.35,33.92,17.89,5.13,13.87,15.57,18.22,19.34,19.98,20.39,20.95,19.96,20.01
+3. Hotel Berbintang dan NonBintang Total,45.96,46.47,28.73,8.02,13.35,19.13,27.17,34.95,32.68,37.02,41.31,38.8,31.71
