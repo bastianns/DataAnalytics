@@ -891,44 +891,76 @@ const ChartRenderer = (() => {
 
     function renderHotelSeasonal(monthlyData) {
         const el = document.getElementById('hotel-seasonal-chart');
-        if (!el || !monthlyData || monthlyData.length === 0) return;
+        if (!el) return;
         
-        const maxVal = Math.max(...monthlyData.map(d => d.avg));
-        const minVal = Math.min(...monthlyData.filter(d => d.avg > 0).map(d => d.avg));
+        // Filter hanya yang ada datanya
+        const validData = monthlyData.filter(d => d.avg > 0);
+        if (validData.length === 0) {
+            el.innerHTML = '<p style="text-align:center;padding:60px;color:#94a3b8">Data musiman tidak tersedia</p>';
+            return;
+        }
+
+        const maxVal = Math.max(...validData.map(d => d.avg));
+        const minVal = Math.min(...validData.map(d => d.avg));
         
-        const colors = monthlyData.map(d => {
+        const colors = validData.map(d => {
             if (d.avg === maxVal) return '#0C4A6E';
-            if (d.avg >= 40) return '#006591';
-            if (d.avg >= 35) return '#0EA5E9';
+            if (d.avg >= 45) return '#006591';
+            if (d.avg >= 38) return '#0EA5E9';
             return '#BAE6FD';
         });
-        
+
         const trace = {
-            x: monthlyData.map(d => d.bulan),
-            y: monthlyData.map(d => d.avg),
+            x: validData.map(d => d.bulan),  // string kategori
+            y: validData.map(d => d.avg),
             type: 'bar',
             marker: { color: colors },
-            text: monthlyData.map(d => d.avg > 0 ? d.avg + '%' : 'N/A'),
+            text: validData.map(d => d.avg + '%'),
             textposition: 'outside',
-            textfont: { size: 10 },
+            textfont: { size: 11, color: '#334155' },
             hovertemplate: '<b>%{x}</b><br>Rata-rata TPK: %{y:.1f}%<extra></extra>'
         };
-        
+
         const layout = {
-            ...commonLayout,
-            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 60],
-                     title: 'Rata-rata TPK (%)' },
-            margin: { t: 30, r: 20, b: 80, l: 60 },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            font: { family: 'Inter', size: 12 },
+            margin: { t: 40, r: 20, b: 60, l: 70 },
+            xaxis: { 
+                type: 'category',      // PENTING: paksa kategori bukan date
+                gridcolor: '#f0f4f8',
+                zeroline: false,
+                tickangle: -30,
+                tickfont: { size: 11 }
+            },
+            yaxis: { 
+                gridcolor: '#f0f4f8',
+                zeroline: false,
+                ticksuffix: '%',
+                range: [0, maxVal + 10],
+                title: { text: 'Rata-rata TPK (%)', font: { size: 11 } }
+            },
             annotations: [
-                { x: 'Desember', y: monthlyData.find(d=>d.bulan==='Desember')?.avg || 0,
-                  yshift: 25, text: '🏆 Tertinggi', showarrow: false,
-                  font: { color: '#0C4A6E', size: 10, weight: 'bold' } },
-                { x: 'Mei', y: monthlyData.find(d=>d.bulan==='Mei')?.avg || 0,
-                  yshift: 25, text: '📉 Terendah', showarrow: false,
-                  font: { color: '#94A3B8', size: 10 } }
+                {
+                    x: validData.find(d => d.avg === maxVal)?.bulan,
+                    y: maxVal,
+                    yshift: 28,
+                    text: '🏆 Tertinggi',
+                    showarrow: false,
+                    font: { color: '#0C4A6E', size: 10, family: 'Inter' }
+                },
+                {
+                    x: validData.find(d => d.avg === minVal)?.bulan,
+                    y: minVal,
+                    yshift: 28,
+                    text: '📉 Terendah',
+                    showarrow: false,
+                    font: { color: '#94A3B8', size: 10, family: 'Inter' }
+                }
             ]
         };
-        Plotly.newPlot('hotel-seasonal-chart', [trace], layout,
+
+        Plotly.newPlot('hotel-seasonal-chart', [trace], layout, 
             { responsive: true, displayModeBar: false });
     }
 
@@ -1031,7 +1063,7 @@ const HotelModule = (() => {
             if (bulanData.length === 0) return { bulan: b, avg: 0 };
             const avg = bulanData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) 
                         / bulanData.length;
-            return { bulan: b.substring(0,3), avg: Math.round(avg*10)/10 };
+            return { bulan: b, avg: Math.round(avg*10)/10 };
         });
     }
 
