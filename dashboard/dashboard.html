@@ -348,6 +348,78 @@
         </div>
     </section>
 
+    <!-- SECTION 5B: KONTEKS HOTEL -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">04B — KONTEKS MAKRO</div>
+            <h2 class="text-3xl font-black text-slate-800">
+                Bagaimana kondisi akomodasi hotel saat wisata alam terpuruk?
+            </h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 mt-4 max-w-2xl">
+                Data tingkat hunian kamar hotel Jawa Barat (2019–2025) memberi konteks makro 
+                tentang kondisi industri pariwisata secara keseluruhan — bukan hanya wisata alam.
+            </p>
+        </div>
+
+        <!-- Chart 1: Tren hunian per tahun -->
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div class="mb-6">
+                <h3 class="font-bold text-lg text-slate-800">
+                    Tren Tingkat Hunian Hotel (2019–2025)
+                </h3>
+                <p class="text-sm text-slate-500">
+                    Hotel Berbintang vs Non-Bintang — rata-rata tahunan
+                </p>
+            </div>
+            <div id="hotel-trend-chart" style="height: 380px; width: 100%;"></div>
+        </div>
+
+        <!-- Insight cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="takeaway-card space-y-3">
+                <span class="text-2xl">📉</span>
+                <p class="font-black text-lg">2020: Titik Terendah</p>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Pandemi COVID-19 menghantam hunian hotel hingga titik terendah, 
+                    mencerminkan kondisi yang sama dengan data kunjungan wisata alam.
+                </p>
+            </div>
+            <div class="takeaway-card space-y-3">
+                <span class="text-2xl">📈</span>
+                <p class="font-black text-lg">2022–2023: Recovery</p>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Hotel berbintang menunjukkan pemulihan lebih cepat dibanding 
+                    non-bintang — mengindikasikan segmen premium lebih resilient.
+                </p>
+            </div>
+            <div class="takeaway-card space-y-3">
+                <span class="text-2xl">🔗</span>
+                <p class="font-black text-lg">Korelasi Positif</p>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Pola tren hotel selaras dengan tren kunjungan wisata alam — 
+                    menunjukkan keterkaitan ekosistem pariwisata Jawa Barat.
+                </p>
+            </div>
+        </div>
+
+        <!-- Chart 2: Pola musiman -->
+        <div class="glass-card p-8 rounded-2xl shadow-sm">
+            <div class="mb-6">
+                <h3 class="font-bold text-lg text-slate-800">
+                    Pola Musiman: Bulan Mana yang Paling Ramai?
+                </h3>
+                <p class="text-sm text-slate-500">
+                    Rata-rata tingkat hunian per bulan (semua tahun & tipe hotel)
+                </p>
+            </div>
+            <div id="hotel-seasonal-chart" style="height: 320px; width: 100%;"></div>
+            <p class="mt-4 text-center text-sm font-bold text-primary italic">
+                "Bar berwarna lebih gelap = bulan dengan hunian tertinggi"
+            </p>
+        </div>
+    </section>
+
     <!-- SECTION 6: DATA VALID -->
     <section class="py-24 space-y-12">
         <div>
@@ -558,7 +630,73 @@ const ChartRenderer = (() => {
             { responsive: true, displayModeBar: false });
     }
 
-    return { renderOverview, renderExplorer, renderComparison, renderDominasi, renderProfilWisatawan };
+    function renderHotelTrend(yearlyByType) {
+        const el = document.getElementById('hotel-trend-chart');
+        if (!el) return;
+        if (!yearlyByType || yearlyByType.length === 0) {
+            el.innerHTML = '<p class="text-center text-slate-400 py-16">Data tidak tersedia</p>';
+            return;
+        }
+        const colors = ['#006591', '#0EA5E9'];
+        const traces = yearlyByType.map((item, i) => ({
+            x: item.years,
+            y: item.values,
+            name: item.tipe.replace('1. ', '').replace('2. ', ''),
+            type: 'scatter',
+            mode: 'lines+markers',
+            line: { color: colors[i], width: 3 },
+            marker: { size: 8 },
+            connectgaps: true
+        }));
+        const layout = {
+            ...commonLayout,
+            showlegend: true,
+            legend: { orientation: 'h', y: 1.1 },
+            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 80] },
+            xaxis: { ...commonLayout.xaxis, type: 'category' },
+            shapes: [{
+                type: 'rect', xref: 'paper', yref: 'paper',
+                x0: 0.13, y0: 0, x1: 0.28, y1: 1,
+                fillcolor: 'rgba(239,68,68,0.06)', line: { width: 0 }
+            }],
+            annotations: [{
+                x: 2020, y: 0.95, xref: 'x', yref: 'paper',
+                text: '📍 COVID-19', showarrow: false,
+                font: { color: '#ba1a1a', size: 10 }
+            }]
+        };
+        Plotly.newPlot('hotel-trend-chart', traces, layout, { responsive: true, displayModeBar: false });
+    }
+
+    function renderHotelSeasonal(monthlyData) {
+        const el = document.getElementById('hotel-seasonal-chart');
+        if (!el || !monthlyData || monthlyData.length === 0) return;
+        
+        const maxVal = Math.max(...monthlyData.map(d => d.avg));
+        const colors = monthlyData.map(d => 
+            d.avg === maxVal ? '#0C4A6E' : 
+            d.avg > 45 ? '#006591' : 
+            d.avg > 35 ? '#0EA5E9' : '#BAE6FD'
+        );
+        
+        const trace = {
+            x: monthlyData.map(d => d.bulan),
+            y: monthlyData.map(d => d.avg),
+            type: 'bar',
+            marker: { color: colors },
+            text: monthlyData.map(d => d.avg + '%'),
+            textposition: 'outside',
+            textfont: { size: 10 }
+        };
+        const layout = {
+            ...commonLayout,
+            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 70] },
+            margin: { t: 20, r: 20, b: 80, l: 60 }
+        };
+        Plotly.newPlot('hotel-seasonal-chart', [trace], layout, { responsive: true, displayModeBar: false });
+    }
+
+    return { renderOverview, renderExplorer, renderComparison, renderDominasi, renderProfilWisatawan, renderHotelTrend, renderHotelSeasonal };
 })();
 
 /* ============================================
@@ -590,6 +728,57 @@ const KAWASAN_INFO = {
   "TWA CIMANGGU": { emoji: "♨️", tagline: "Surga Air Panas", fact: "Taman Wisata Alam dengan sumber air panas alami berkhasiat terapeutik di kawasan Ciwidey yang sejuk.", stat: "113,657 pengunjung" }
 };
 
+/* ============================================
+   MODULE 6: HOTEL DATA
+============================================ */
+const HotelModule = (() => {
+    let hotelData = [];
+
+    async function loadHotel() {
+        return new Promise((resolve) => {
+            Papa.parse('../data/processed/hotel_clean.csv', {
+                download: true, header: true, dynamicTyping: true,
+                complete: (results) => {
+                    hotelData = results.data.filter(d => d.tahun && d.tpk !== null && d.tpk !== '');
+                    resolve(hotelData);
+                },
+                error: () => resolve([])
+            });
+        });
+    }
+
+    function getYearlyByType(data) {
+        const targetTypes = ['1. Hotel Berbintang Total', '2. Hotel NonBintang Total'];
+        const years = [...new Set(data.map(d => d.tahun))].sort();
+        
+        return targetTypes.map(tipe => {
+            const typeData = data.filter(d => d.jenis_hotel === tipe && d.tpk);
+            const yearlyAvg = years.map(y => {
+                const yearData = typeData.filter(d => d.tahun === y);
+                if (yearData.length === 0) return null;
+                const avg = yearData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) / yearData.length;
+                return Math.round(avg * 10) / 10;
+            });
+            return { tipe, years, values: yearlyAvg };
+        });
+    }
+
+    function getMonthlyPattern(data) {
+        const bulanOrder = ['Januari','Februari','Maret','April','Mei','Juni',
+                            'Juli','Agustus','September','Oktober','November','Desember'];
+        const totalData = data.filter(d => d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total' && d.tpk);
+        
+        return bulanOrder.map(b => {
+            const bulanData = totalData.filter(d => d.bulan === b);
+            if (bulanData.length === 0) return { bulan: b, avg: 0 };
+            const avg = bulanData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) / bulanData.length;
+            return { bulan: b, avg: Math.round(avg * 10) / 10 };
+        });
+    }
+
+    return { loadHotel, getYearlyByType, getMonthlyPattern, getRaw: () => hotelData };
+})();
+
 function renderFunFacts() {
   const container = document.getElementById('fun-facts-container');
   if (!container) return;
@@ -611,6 +800,7 @@ function renderFunFacts() {
 const UIController = (() => {
     async function init() {
         const rawData = await DataLoader.load();
+        const hotelData = await HotelModule.loadHotel();
         
         // Populate dropdown
         const select = document.getElementById('region-select');
@@ -631,6 +821,11 @@ const UIController = (() => {
             );
             ChartRenderer.renderDominasi(rawData);
             ChartRenderer.renderProfilWisatawan(rawData);
+
+            if (hotelData.length > 0) {
+                ChartRenderer.renderHotelTrend(HotelModule.getYearlyByType(hotelData));
+                ChartRenderer.renderHotelSeasonal(HotelModule.getMonthlyPattern(hotelData));
+            }
         }, 100);
 
         setTimeout(() => {
