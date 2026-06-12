@@ -234,7 +234,7 @@
     <!-- SECTION 3B: DOMINASI -->
     <section class="py-24 space-y-12">
         <div>
-            <div class="chapter-label">02B — KETIMPANGAN</div>
+            <div class="chapter-label">03 — KETIMPANGAN</div>
             <h2 class="text-3xl font-black text-slate-800">Satu kawasan, sepertiga seluruh kunjungan Jawa Barat.</h2>
             <div class="section-divider"></div>
             <p class="text-slate-500 mt-4 max-w-2xl">TWA Tangkubanparahu mendominasi 33.4% dari seluruh kunjungan tercatat. Ketimpangan ini menunjukkan bahwa pengembangan pariwisata Jawa Barat sangat bergantung pada satu destinasi.</p>
@@ -266,7 +266,7 @@
     <!-- SECTION 4: KAWASAN UNGGULAN -->
     <section class="py-24 space-y-12">
         <div>
-            <div class="chapter-label">03 — KAWASAN UNGGULAN</div>
+            <div class="chapter-label">04 — KAWASAN UNGGULAN</div>
             <h2 class="text-3xl font-black text-slate-800">Dari ratusan kawasan, 10 nama ini mendominasi hampir seluruh kunjungan tercatat.</h2>
             <div class="section-divider"></div>
         </div>
@@ -283,7 +283,7 @@
     <!-- SECTION 4B: PROFIL WISATAWAN -->
     <section class="py-24 space-y-12">
         <div>
-            <div class="chapter-label">03B — PROFIL WISATAWAN</div>
+            <div class="chapter-label">05 — PROFIL WISATAWAN</div>
             <h2 class="text-3xl font-black text-slate-800">98.1% pengunjung adalah wisatawan lokal. Tapi ada potensi internasional yang tersembunyi.</h2>
             <div class="section-divider"></div>
             <p class="text-slate-500 mt-4 max-w-2xl">Dari total 5.1 juta pengunjung, hanya 96,923 adalah wisatawan mancanegara (1.9%). Namun TWA Telagawarna mencatat rasio wisman 8% — jauh di atas rata-rata.</p>
@@ -305,53 +305,10 @@
         </div>
     </section>
 
-    <!-- SECTION 5: EKSPLORASI MANDIRI -->
-    <section class="py-24 space-y-12">
-        <div>
-            <div class="chapter-label">04 — EKSPLORASI</div>
-            <h2 class="text-3xl font-black text-slate-800">Sekarang giliran kamu. Pilih kawasan manapun dan lihat cerita datanya.</h2>
-            <div class="section-divider"></div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div class="lg:col-span-4">
-                <div class="glass-card p-8 rounded-2xl space-y-6 sticky top-24">
-                    <div class="space-y-4">
-                        <p class="font-bold text-sm text-slate-400 uppercase tracking-widest">Panel Kontrol</p>
-                        <div class="relative">
-                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-                            <input id="search-input" type="text" placeholder="Cari kawasan..." class="w-full pl-10 pr-4 py-3 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"/>
-                        </div>
-                        <select id="region-select" class="w-full p-4 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary font-bold text-primary">
-                            <option value="all">Semua Kawasan (Agregat)</option>
-                        </select>
-                        <div id="region-info" class="hidden">
-                            <span id="region-type-badge" class="px-3 py-1 bg-primary/10 text-primary text-xs font-black rounded-full uppercase">TWA</span>
-                            <span id="region-full-type" class="text-xs font-medium text-slate-400 ml-2 italic">Taman Wisata Alam</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:col-span-8 space-y-6">
-                <div class="glass-card p-8 rounded-2xl shadow-sm">
-                    <div id="explorer-chart" class="chart-container"></div>
-                    <div id="narrative-container" class="mt-8">
-                        <div class="narrative-box flex gap-4">
-                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">chat_bubble</span>
-                            <div id="narrative-text" class="text-lg leading-relaxed text-slate-700 italic">
-                                Pilih kawasan untuk memulai analisis narasi.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- SECTION 5B: KONTEKS HOTEL -->
     <section class="py-24 space-y-12">
         <div>
-            <div class="chapter-label">04B — KONTEKS MAKRO</div>
+            <div class="chapter-label">06 — KONTEKS MAKRO</div>
             <h2 class="text-3xl font-black text-slate-800">
                 Bagaimana kondisi akomodasi hotel saat wisata alam terpuruk?
             </h2>
@@ -468,10 +425,53 @@
         </div>
     </section>
 
+    <!-- SECTION 5: EKSPLORASI MANDIRI -->
+    <section class="py-24 space-y-12">
+        <div>
+            <div class="chapter-label">07 — EKSPLORASI MANDIRI</div>
+            <h2 class="text-3xl font-black text-slate-800">Sekarang giliran kamu. Pilih kawasan manapun dan lihat cerita datanya.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-4">
+                <div class="glass-card p-8 rounded-2xl space-y-6 sticky top-24">
+                    <div class="space-y-4">
+                        <p class="font-bold text-sm text-slate-400 uppercase tracking-widest">Panel Kontrol</p>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                            <input id="search-input" type="text" placeholder="Cari kawasan..." class="w-full pl-10 pr-4 py-3 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"/>
+                        </div>
+                        <select id="region-select" class="w-full p-4 rounded-xl border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary font-bold text-primary">
+                            <option value="all">Semua Kawasan (Agregat)</option>
+                        </select>
+                        <div id="region-info" class="hidden">
+                            <span id="region-type-badge" class="px-3 py-1 bg-primary/10 text-primary text-xs font-black rounded-full uppercase">TWA</span>
+                            <span id="region-full-type" class="text-xs font-medium text-slate-400 ml-2 italic">Taman Wisata Alam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-8 space-y-6">
+                <div class="glass-card p-8 rounded-2xl shadow-sm">
+                    <div id="explorer-chart" class="chart-container"></div>
+                    <div id="narrative-container" class="mt-8">
+                        <div class="narrative-box flex gap-4">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">chat_bubble</span>
+                            <div id="narrative-text" class="text-lg leading-relaxed text-slate-700 italic">
+                                Pilih kawasan untuk memulai analisis narasi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 6: DATA VALID -->
     <section class="py-24 space-y-12">
         <div>
-            <div class="chapter-label">05 — DATA VALID</div>
+            <div class="chapter-label">08 — DATA VALID & PENUTUP</div>
             <h2 class="text-3xl font-black text-slate-800">Setelah mengecualikan tahun-tahun bermasalah, ini yang bisa kita percaya.</h2>
             <div class="section-divider"></div>
         </div>
@@ -479,6 +479,42 @@
         <div class="glass-card p-8 rounded-2xl shadow-sm">
             <div id="yearly-total-chart" style="height: 400px; width: 100%;"></div>
             <p class="mt-6 text-center font-bold text-primary italic">"Gap pelaporan dimulai sejak 2017, jauh sebelum pandemi datang."</p>
+            
+            <div class="mt-16 bg-gradient-to-br from-primary to-primary-container 
+                 rounded-3xl p-10 text-white text-center space-y-6">
+                <h3 class="text-2xl font-black">Apa yang Bisa Dilakukan?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-8">
+                    <div class="bg-white/10 rounded-2xl p-6 space-y-3">
+                        <p class="text-2xl">📋</p>
+                        <p class="font-bold">Perbaiki Sistem Pelaporan</p>
+                        <p class="text-sm text-blue-100">
+                            224 kawasan tidak pernah melaporkan data. 
+                            Standardisasi sistem pelaporan digital 
+                            adalah prioritas utama Dinas Kehutanan.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 space-y-3">
+                        <p class="text-2xl">🎯</p>
+                        <p class="font-bold">Diversifikasi Destinasi</p>
+                        <p class="text-sm text-blue-100">
+                            Ketergantungan pada Tangkubanparahu (33.4%) 
+                            membuat pariwisata Jabar rentan. 
+                            Perlu pengembangan kawasan potensial 
+                            seperti TWA Telagawarna.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 space-y-3">
+                        <p class="text-2xl">🌍</p>
+                        <p class="font-bold">Garap Pasar Internasional</p>
+                        <p class="text-sm text-blue-100">
+                            Dengan hanya 1.9% wisatawan mancanegara, 
+                            ada ruang besar untuk pertumbuhan. 
+                            Sinkronisasi promosi wisata alam 
+                            dengan peak season hotel (Desember).
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
