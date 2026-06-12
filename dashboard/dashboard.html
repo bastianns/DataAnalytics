@@ -362,6 +362,30 @@
             </p>
         </div>
 
+        <div class="max-w-2xl">
+            <div id="hotel-anomali-toggle" class="anomali-toggle">
+                <div class="flex items-center gap-3 font-bold text-amber-900">
+                    <span class="material-symbols-outlined">analytics</span>
+                    Catatan Kualitas Data Hotel
+                </div>
+                <span class="chevron-hotel material-symbols-outlined">expand_more</span>
+            </div>
+            <div id="hotel-anomali-content" class="anomali-content text-sm space-y-3 text-amber-950">
+                <p>• <strong>576 dari 1008 baris bernilai kosong (NaN):</strong> 
+                   Hanya jenis hotel "Total" yang konsisten terisi. Data per bintang 
+                   (Bintang 1–5) dan per ukuran kamar tidak lengkap.</p>
+                <p>• <strong>2022 hanya 2 bulan:</strong> Data 2022 hanya mencakup 
+                   Januari–Februari (24 baris dari 12 jenis hotel). Rata-rata 2022 
+                   tidak representatif untuk satu tahun penuh.</p>
+                <p>• <strong>2023 hanya 1 bulan:</strong> Data 2023 hanya 12 baris — 
+                   kemungkinan satu bulan saja. Jangan jadikan acuan tren tahunan.</p>
+                <p>• <strong>2024–2025 struktur berbeda:</strong> Mulai 2024 data 
+                   jauh lebih lengkap (144 baris/tahun), menunjukkan perubahan 
+                   sistem pelaporan. Perbandingan 2019–2023 vs 2024–2025 harus 
+                   dilakukan dengan hati-hati.</p>
+            </div>
+        </div>
+
         <!-- Chart 1: Tren hunian per tahun -->
         <div class="glass-card p-8 rounded-2xl shadow-sm">
             <div class="mb-6">
@@ -375,30 +399,54 @@
             <div id="hotel-trend-chart" style="height: 380px; width: 100%;"></div>
         </div>
 
+        <!-- Stat row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-xl p-5 border-t-4 border-primary shadow-sm text-center">
+                <p class="text-3xl font-black text-primary">53%</p>
+                <p class="text-xs text-slate-500 mt-1">TPK Pra-Pandemi (2019)</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border-t-4 border-error shadow-sm text-center">
+                <p class="text-3xl font-black text-error">35%</p>
+                <p class="text-xs text-slate-500 mt-1">TPK Saat Pandemi (2020)</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border-t-4 border-primary-container shadow-sm text-center">
+                <p class="text-3xl font-black text-primary-container">51%</p>
+                <p class="text-xs text-slate-500 mt-1">TPK Recovery (2022)</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border-t-4 border-slate-300 shadow-sm text-center">
+                <p class="text-3xl font-black text-slate-600">Hotel Bintang 5</p>
+                <p class="text-xs text-slate-500 mt-1">Rata-rata TPK tertinggi (57.8%)</p>
+            </div>
+        </div>
+
         <!-- Insight cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="takeaway-card space-y-3">
-                <span class="text-2xl">📉</span>
-                <p class="font-black text-lg">2020: Titik Terendah</p>
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    Pandemi COVID-19 menghantam hunian hotel hingga titik terendah, 
-                    mencerminkan kondisi yang sama dengan data kunjungan wisata alam.
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                <p class="text-xs font-black uppercase tracking-widest text-blue-400 mb-3">
+                    🔗 Korelasi dengan Wisata Alam
+                </p>
+                <p class="font-bold text-slate-800">
+                    Pola pandemi hotel selaras dengan collapse kunjungan wisata alam
+                </p>
+                <p class="text-sm text-slate-500 mt-2">
+                    Hotel drop dari 53% ke 35% TPK di 2020, bersamaan dengan 
+                    kunjungan wisata alam yang juga mencatat titik terendah. 
+                    Ini mengkonfirmasi bahwa pandemi berdampak sistemik pada 
+                    seluruh ekosistem pariwisata Jawa Barat.
                 </p>
             </div>
-            <div class="takeaway-card space-y-3">
-                <span class="text-2xl">📈</span>
-                <p class="font-black text-lg">2022–2023: Recovery</p>
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    Hotel berbintang menunjukkan pemulihan lebih cepat dibanding 
-                    non-bintang — mengindikasikan segmen premium lebih resilient.
+            <div class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
+                <p class="text-xs font-black uppercase tracking-widest text-amber-400 mb-3">
+                    📅 Temuan Musiman
                 </p>
-            </div>
-            <div class="takeaway-card space-y-3">
-                <span class="text-2xl">🔗</span>
-                <p class="font-black text-lg">Korelasi Positif</p>
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    Pola tren hotel selaras dengan tren kunjungan wisata alam — 
-                    menunjukkan keterkaitan ekosistem pariwisata Jawa Barat.
+                <p class="font-bold text-slate-800">
+                    Desember paling ramai, Mei paling sepi
+                </p>
+                <p class="text-sm text-slate-500 mt-2">
+                    Pola musiman menunjukkan puncak di akhir tahun (Desember: ~47%) 
+                    dan awal tahun (Januari–Februari: ~40%). Bulan Mei adalah titik 
+                    paling sepi (~32%). Ini relevan untuk perencanaan promosi wisata alam 
+                    yang harus mendorong kunjungan di bulan-bulan sepi.
                 </p>
             </div>
         </div>
@@ -648,24 +696,44 @@ const ChartRenderer = (() => {
             marker: { size: 8 },
             connectgaps: true
         }));
+
+        // Tambah trace benchmark: garis putus2 di y=38.5 (rata-rata keseluruhan)
+        traces.push({
+            x: [2019, 2020, 2021, 2022, 2023, 2024, 2025],
+            y: [38.5, 38.5, 38.5, 38.5, 38.5, 38.5, 38.5],
+            name: 'Rata-rata Keseluruhan (38.5%)',
+            type: 'scatter',
+            mode: 'lines',
+            line: { color: '#94A3B8', width: 2, dash: 'dot' }
+        });
+
         const layout = {
             ...commonLayout,
             showlegend: true,
-            legend: { orientation: 'h', y: 1.1 },
-            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 80] },
-            xaxis: { ...commonLayout.xaxis, type: 'category' },
+            legend: { orientation: 'h', y: 1.15 },
+            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 75],
+                     title: 'Tingkat Hunian Kamar (%)' },
+            xaxis: { ...commonLayout.xaxis, type: 'category',
+                     title: 'Tahun' },
             shapes: [{
-                type: 'rect', xref: 'paper', yref: 'paper',
-                x0: 0.13, y0: 0, x1: 0.28, y1: 1,
+                type: 'rect', xref: 'x', yref: 'paper',
+                x0: '2019.5', y0: 0, x1: '2021.5', y1: 1,
                 fillcolor: 'rgba(239,68,68,0.06)', line: { width: 0 }
             }],
-            annotations: [{
-                x: 2020, y: 0.95, xref: 'x', yref: 'paper',
-                text: '📍 COVID-19', showarrow: false,
-                font: { color: '#ba1a1a', size: 10 }
-            }]
+            annotations: [
+                { x: '2020', y: 0.95, xref: 'x', yref: 'paper',
+                  text: '📍 COVID-19 Impact', showarrow: false,
+                  font: { color: '#ba1a1a', size: 10 } },
+                { x: '2022', y: 0.15, xref: 'x', yref: 'paper',
+                  text: '⚠ Data 2022 tidak lengkap', showarrow: false,
+                  font: { color: '#d97706', size: 9 } },
+                { x: '2023', y: 0.08, xref: 'x', yref: 'paper',
+                  text: '⚠ Data 2023 tidak lengkap', showarrow: false,
+                  font: { color: '#d97706', size: 9 } }
+            ]
         };
-        Plotly.newPlot('hotel-trend-chart', traces, layout, { responsive: true, displayModeBar: false });
+        Plotly.newPlot('hotel-trend-chart', traces, layout,
+            { responsive: true, displayModeBar: false });
     }
 
     function renderHotelSeasonal(monthlyData) {
@@ -673,27 +741,42 @@ const ChartRenderer = (() => {
         if (!el || !monthlyData || monthlyData.length === 0) return;
         
         const maxVal = Math.max(...monthlyData.map(d => d.avg));
-        const colors = monthlyData.map(d => 
-            d.avg === maxVal ? '#0C4A6E' : 
-            d.avg > 45 ? '#006591' : 
-            d.avg > 35 ? '#0EA5E9' : '#BAE6FD'
-        );
+        const minVal = Math.min(...monthlyData.filter(d => d.avg > 0).map(d => d.avg));
+        
+        const colors = monthlyData.map(d => {
+            if (d.avg === maxVal) return '#0C4A6E';
+            if (d.avg >= 40) return '#006591';
+            if (d.avg >= 35) return '#0EA5E9';
+            return '#BAE6FD';
+        });
         
         const trace = {
             x: monthlyData.map(d => d.bulan),
             y: monthlyData.map(d => d.avg),
             type: 'bar',
             marker: { color: colors },
-            text: monthlyData.map(d => d.avg + '%'),
+            text: monthlyData.map(d => d.avg > 0 ? d.avg + '%' : 'N/A'),
             textposition: 'outside',
-            textfont: { size: 10 }
+            textfont: { size: 10 },
+            hovertemplate: '<b>%{x}</b><br>Rata-rata TPK: %{y:.1f}%<extra></extra>'
         };
+        
         const layout = {
             ...commonLayout,
-            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 70] },
-            margin: { t: 20, r: 20, b: 80, l: 60 }
+            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 60],
+                     title: 'Rata-rata TPK (%)' },
+            margin: { t: 30, r: 20, b: 80, l: 60 },
+            annotations: [
+                { x: 'Desember', y: monthlyData.find(d=>d.bulan==='Desember')?.avg || 0,
+                  yshift: 25, text: '🏆 Tertinggi', showarrow: false,
+                  font: { color: '#0C4A6E', size: 10, weight: 'bold' } },
+                { x: 'Mei', y: monthlyData.find(d=>d.bulan==='Mei')?.avg || 0,
+                  yshift: 25, text: '📉 Terendah', showarrow: false,
+                  font: { color: '#94A3B8', size: 10 } }
+            ]
         };
-        Plotly.newPlot('hotel-seasonal-chart', [trace], layout, { responsive: true, displayModeBar: false });
+        Plotly.newPlot('hotel-seasonal-chart', [trace], layout,
+            { responsive: true, displayModeBar: false });
     }
 
     return { renderOverview, renderExplorer, renderComparison, renderDominasi, renderProfilWisatawan, renderHotelTrend, renderHotelSeasonal };
@@ -766,7 +849,10 @@ const HotelModule = (() => {
     function getMonthlyPattern(data) {
         const bulanOrder = ['Januari','Februari','Maret','April','Mei','Juni',
                             'Juli','Agustus','September','Oktober','November','Desember'];
-        const totalData = data.filter(d => d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total' && d.tpk);
+        const totalData = data.filter(d => 
+            d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total' && 
+            d.tpk && d.tahun >= 2019 && d.tahun <= 2021
+        );
         
         return bulanOrder.map(b => {
             const bulanData = totalData.filter(d => d.bulan === b);
@@ -846,6 +932,13 @@ const UIController = (() => {
             const content = document.getElementById('anomali-content');
             content.classList.toggle('open');
             this.querySelector('.chevron').textContent = content.classList.contains('open') ? 'expand_less' : 'expand_more';
+        });
+
+        document.getElementById('hotel-anomali-toggle')?.addEventListener('click', function() {
+            const content = document.getElementById('hotel-anomali-content');
+            content.classList.toggle('open');
+            this.querySelector('.chevron-hotel').textContent = 
+                content.classList.contains('open') ? 'expand_less' : 'expand_more';
         });
 
         document.getElementById('search-input').addEventListener('input', (e) => {
