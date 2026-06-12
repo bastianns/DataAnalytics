@@ -140,6 +140,18 @@
         opacity: 1;
         transform: none;
       }
+
+      /* Responsive layout fixes */
+      main {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+      }
+
+      @media (min-width: 1400px) {
+          .max-w-\[1200px\] {
+              max-width: 1400px !important;
+          }
+      }
     </style>
 </head>
 
@@ -205,7 +217,7 @@
         <span class="px-4 py-2 bg-white/10 rounded-full text-xs font-black tracking-widest border border-white/20 uppercase">
             DATA ANALYTICS · KELOMPOK 12 · II4013
         </span>
-        <h1 class="text-5xl md:text-7xl font-black leading-tight">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
             Siapa yang Benar-Benar Mengunjungi Hutan Jawa Barat?
         </h1>
         <p class="text-xl md:text-2xl text-blue-100/80 font-medium">
@@ -225,7 +237,7 @@
 <main class="flex-grow max-w-[1200px] mx-auto w-full px-6">
 
     <!-- SECTION 2: KONTEKS -->
-    <section id="section-2" class="py-24 space-y-12 fade-in-section">
+    <section id="section-2" class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">01 — KONTEKS</div>
             <h2 class="text-3xl font-black text-slate-800">Dari 310 kawasan yang terdaftar, hanya sebagian kecil yang benar-benar dikunjungi. Dan datanya? Tidak sempurna.</h2>
@@ -266,7 +278,7 @@
     </section>
 
     <!-- SECTION 3: TREN KESELURUHAN -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">02 — TREN KESELURUHAN</div>
             <h2 class="text-3xl font-black text-slate-800">Lonjakan 2016, collapse 2017, pandemi 2020-2021, dan recovery yang tidak merata. Ini cerita lengkapnya.</h2>
@@ -297,7 +309,7 @@
     </section>
 
     <!-- SECTION 3B: DOMINASI -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">03 — KETIMPANGAN</div>
             <h2 class="text-3xl font-black text-slate-800">Satu kawasan, sepertiga seluruh kunjungan Jawa Barat.</h2>
@@ -329,7 +341,7 @@
     </section>
 
     <!-- SECTION 4: KAWASAN UNGGULAN -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">04 — KAWASAN UNGGULAN</div>
             <h2 class="text-3xl font-black text-slate-800">Dari ratusan kawasan, 10 nama ini mendominasi hampir seluruh kunjungan tercatat.</h2>
@@ -346,7 +358,7 @@
     </section>
 
     <!-- SECTION 4B: PROFIL WISATAWAN -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">05 — PROFIL WISATAWAN</div>
             <h2 class="text-3xl font-black text-slate-800">98.1% pengunjung adalah wisatawan lokal. Tapi ada potensi internasional yang tersembunyi.</h2>
@@ -371,7 +383,7 @@
     </section>
 
     <!-- SECTION 5B: KONTEKS HOTEL -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">06 — KONTEKS MAKRO</div>
             <h2 class="text-3xl font-black text-slate-800">
@@ -498,7 +510,7 @@
     </section>
 
     <!-- SECTION 5: EKSPLORASI MANDIRI -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">07 — EKSPLORASI MANDIRI</div>
             <h2 class="text-3xl font-black text-slate-800">Sekarang giliran kamu. Pilih kawasan manapun dan lihat cerita datanya.</h2>
@@ -541,7 +553,7 @@
     </section>
 
     <!-- SECTION 6: DATA VALID -->
-    <section class="py-24 space-y-12 fade-in-section">
+    <section class="py-16 md:py-24 space-y-12 fade-in-section">
         <div>
             <div class="chapter-label">08 — DATA VALID & PENUTUP</div>
             <h2 class="text-3xl font-black text-slate-800">Setelah mengecualikan tahun-tahun bermasalah, ini yang bisa kita percaya.</h2>
@@ -711,21 +723,37 @@ const ChartRenderer = (() => {
         Plotly.newPlot('explorer-chart', traces, layout, { responsive: true, displayModeBar: false });
     }
     function renderComparison(top10, yearly) {
-        const trace1 = { 
-            y: top10.map(s => s[0]), 
-            x: top10.map(s => s[1]), 
-            type: 'bar', 
-            orientation: 'h', 
-            marker: { color: '#0ea5e9' },
+        const trace1 = {
+            y: top10.map(s => s[0]),
+            x: top10.map(s => s[1]),
+            type: 'bar',
+            orientation: 'h',
+            marker: { 
+                color: top10.map((_, i) => 
+                    i === top10.length-1 ? '#0C4A6E' : '#0ea5e9'
+                )
+            },
             text: top10.map(s => s[1].toLocaleString('id-ID')),
-            textposition: 'outside',
-            textfont: { size: 11 }
+            textposition: 'auto',
+            insidetextanchor: 'end',
+            textfont: { size: 11, color: 'white' }
         };
-        Plotly.newPlot('top-10-chart', [trace1], { 
-            ...commonLayout, 
-            margin: { l: 220, t: 10, r: 80, b: 20 },
-            xaxis: { ...commonLayout.xaxis, tickformat: ',.0f' }
-        }, { displayModeBar: false });
+        Plotly.newPlot('top-10-chart', [trace1], {
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            margin: { l: 230, t: 20, r: 100, b: 30 },
+            font: { family: 'Inter', size: 11 },
+            xaxis: { 
+                gridcolor: '#f0f4f8', 
+                zeroline: false,
+                tickformat: ',.0f'
+            },
+            yaxis: { 
+                automargin: true,
+                tickfont: { size: 10 }
+            }
+        }, { displayModeBar: false, responsive: true });
+        
         const trace2 = { x: yearly.map(d => d.tahun), y: yearly.map(d => d.total), type: 'bar', marker: { color: '#006591' } };
         Plotly.newPlot('yearly-total-chart', [trace2], { ...commonLayout, margin: { t: 10, r: 10, b: 40, l: 60 }, xaxis: { type: 'category' } }, { displayModeBar: false });
     }
@@ -770,32 +798,37 @@ const ChartRenderer = (() => {
     // Chart baru 2: Wisnus vs Wisman per tipe pengelola (stacked bar)
     function renderProfilWisatawan(rawData) {
         const tipeList = ['TWA', 'TN', 'LAINNYA', 'TAHURA', 'PERHUTANI'];
-        
         const wisnus = tipeList.map(t => 
-            rawData.filter(d => d.tipe_pengelola === t && d.jenis_wisatawan === 'WISATAWAN NUSANTARA')
+            rawData.filter(d => d.tipe_pengelola === t && 
+                           d.jenis_wisatawan === 'WISATAWAN NUSANTARA')
                    .reduce((s,c) => s + (c.jumlah_wisatawan||0), 0)
         );
         const wisman = tipeList.map(t => 
-            rawData.filter(d => d.tipe_pengelola === t && d.jenis_wisatawan === 'WISATAWAN MANCANEGARA')
+            rawData.filter(d => d.tipe_pengelola === t && 
+                           d.jenis_wisatawan === 'WISATAWAN MANCANEGARA')
                    .reduce((s,c) => s + (c.jumlah_wisatawan||0), 0)
         );
-        
-        const traces = [
-            { x: tipeList, y: wisnus, name: 'Wisatawan Nusantara', type: 'bar', 
-              marker: { color: '#006591' } },
-            { x: tipeList, y: wisman, name: 'Wisatawan Mancanegara', type: 'bar', 
-              marker: { color: '#de8712' } }
-        ];
-        
-        const layout = { 
-            ...commonLayout, 
+        const layout = {
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
             barmode: 'stack',
             showlegend: true,
-            legend: { orientation: 'h', y: 1.1 }
+            legend: { orientation: 'h', y: 1.1 },
+            margin: { t: 50, r: 20, b: 60, l: 80 },
+            font: { family: 'Inter', size: 12 },
+            xaxis: { gridcolor: '#f0f4f8', zeroline: false },
+            yaxis: { 
+                gridcolor: '#f0f4f8', 
+                zeroline: false, 
+                tickformat: ',.0f'
+            }
         };
-        
-        Plotly.newPlot('profil-wisatawan-chart', [traces[0], traces[1]], layout, 
-            { responsive: true, displayModeBar: false });
+        Plotly.newPlot('profil-wisatawan-chart', [
+            { x: tipeList, y: wisnus, name: 'Wisatawan Nusantara', 
+              type: 'bar', marker: { color: '#006591' } },
+            { x: tipeList, y: wisman, name: 'Wisatawan Mancanegara', 
+              type: 'bar', marker: { color: '#de8712' } }
+        ], layout, { displayModeBar: false, responsive: true });
     }
 
     function renderHotelTrend(yearlyByType) {
@@ -951,34 +984,54 @@ const HotelModule = (() => {
     }
 
     function getYearlyByType(data) {
-        const targetTypes = ['1. Hotel Berbintang Total', '2. Hotel NonBintang Total'];
-        const years = [...new Set(data.map(d => d.tahun))].sort();
+        const targetTypes = [
+            '1. Hotel Berbintang Total', 
+            '2. Hotel NonBintang Total'
+        ];
+        const years = [...new Set(
+            data.filter(d => d.tpk !== null && d.tpk !== '' && d.tpk)
+                .map(d => d.tahun)
+        )].sort();
         
         return targetTypes.map(tipe => {
-            const typeData = data.filter(d => d.jenis_hotel === tipe && d.tpk);
+            const typeData = data.filter(d => 
+                d.jenis_hotel === tipe && 
+                d.tpk !== null && 
+                d.tpk !== '' && 
+                d.tpk
+            );
             const yearlyAvg = years.map(y => {
                 const yearData = typeData.filter(d => d.tahun === y);
                 if (yearData.length === 0) return null;
-                const avg = yearData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) / yearData.length;
-                return Math.round(avg * 10) / 10;
+                const sum = yearData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0);
+                return Math.round((sum / yearData.length) * 10) / 10;
             });
-            return { tipe, years, values: yearlyAvg };
+            return { 
+                tipe: tipe.replace('1. ','').replace('2. ',''), 
+                years, 
+                values: yearlyAvg 
+            };
         });
     }
 
     function getMonthlyPattern(data) {
-        const bulanOrder = ['Januari','Februari','Maret','April','Mei','Juni',
-                            'Juli','Agustus','September','Oktober','November','Desember'];
+        const bulanOrder = [
+            'Januari','Februari','Maret','April','Mei','Juni',
+            'Juli','Agustus','September','Oktober','November','Desember'
+        ];
+        // Gunakan Hotel Berbintang Total saja, semua tahun yang valid
         const totalData = data.filter(d => 
-            d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total' && 
-            d.tpk && d.tahun >= 2019 && d.tahun <= 2021
+            d.jenis_hotel === '1. Hotel Berbintang Total' && 
+            d.tpk !== null && d.tpk !== '' && d.tpk &&
+            d.tahun >= 2019
         );
         
         return bulanOrder.map(b => {
             const bulanData = totalData.filter(d => d.bulan === b);
             if (bulanData.length === 0) return { bulan: b, avg: 0 };
-            const avg = bulanData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) / bulanData.length;
-            return { bulan: b, avg: Math.round(avg * 10) / 10 };
+            const avg = bulanData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) 
+                        / bulanData.length;
+            return { bulan: b.substring(0,3), avg: Math.round(avg*10)/10 };
         });
     }
 
@@ -1035,7 +1088,16 @@ const UIController = (() => {
         }, 100);
 
         setTimeout(() => {
-            const firstRegion = uniqueRegions[0];
+            // Pilih kawasan dengan total pengunjung terbanyak sebagai default
+            const regionTotals = {};
+            rawData.forEach(d => {
+                regionTotals[d.pengelola_kawasan] = 
+                    (regionTotals[d.pengelola_kawasan] || 0) + 
+                    (d.jumlah_wisatawan || 0);
+            });
+            const firstRegion = Object.entries(regionTotals)
+                .sort((a,b) => b[1]-a[1])[0][0];
+
             const firstData = DataProcessor.getRegionData(rawData, firstRegion);
             ChartRenderer.renderExplorer(firstData, firstRegion);
             document.getElementById('narrative-text').innerHTML = 
