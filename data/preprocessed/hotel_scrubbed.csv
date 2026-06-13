@@ -1,0 +1,253 @@
+tahun,bulan,jenis_hotel,tpk,bulan_num,periode,is_covid
+2019,Januari,1. Hotel Berbintang Total,54.33,1,2019-01-01,False
+2019,Februari,1. Hotel Berbintang Total,51.57,2,2019-02-01,False
+2019,Maret,1. Hotel Berbintang Total,52.69,3,2019-03-01,False
+2019,April,1. Hotel Berbintang Total,53.17,4,2019-04-01,False
+2019,Mei,1. Hotel Berbintang Total,38.79,5,2019-05-01,False
+2019,Juni,1. Hotel Berbintang Total,53.13,6,2019-06-01,False
+2019,Juli,1. Hotel Berbintang Total,54.69,7,2019-07-01,False
+2019,Agustus,1. Hotel Berbintang Total,49.58,8,2019-08-01,False
+2019,September,1. Hotel Berbintang Total,50.6,9,2019-09-01,False
+2019,Oktober,1. Hotel Berbintang Total,56.07,10,2019-10-01,False
+2019,November,1. Hotel Berbintang Total,58.95,11,2019-11-01,False
+2019,Desember,1. Hotel Berbintang Total,62.4,12,2019-12-01,False
+2020,Januari,1. Hotel Berbintang Total,47.06,1,2020-01-01,True
+2020,Februari,1. Hotel Berbintang Total,49.53,2,2020-02-01,True
+2020,Maret,1. Hotel Berbintang Total,34.55,3,2020-03-01,True
+2020,April,1. Hotel Berbintang Total,10.77,4,2020-04-01,True
+2020,Mei,1. Hotel Berbintang Total,12.92,5,2020-05-01,True
+2020,Juni,1. Hotel Berbintang Total,20.76,6,2020-06-01,True
+2020,Juli,1. Hotel Berbintang Total,30.51,7,2020-07-01,True
+2020,Agustus,1. Hotel Berbintang Total,40.82,8,2020-08-01,True
+2020,September,1. Hotel Berbintang Total,37.43,9,2020-09-01,True
+2020,Oktober,1. Hotel Berbintang Total,43.57,10,2020-10-01,True
+2020,November,1. Hotel Berbintang Total,48.89,11,2020-11-01,True
+2020,Desember,1. Hotel Berbintang Total,45.22,12,2020-12-01,True
+2021,Januari,1. Hotel Berbintang Total,29.16,1,2021-01-01,True
+2021,Februari,1. Hotel Berbintang Total,37.15,2,2021-02-01,True
+2021,Maret,1. Hotel Berbintang Total,40.37,3,2021-03-01,True
+2021,April,1. Hotel Berbintang Total,38.4,4,2021-04-01,True
+2021,Mei,1. Hotel Berbintang Total,35.72,5,2021-05-01,True
+2021,Juni,1. Hotel Berbintang Total,38.19,6,2021-06-01,True
+2021,Juli,1. Hotel Berbintang Total,19.48,7,2021-07-01,True
+2021,Agustus,1. Hotel Berbintang Total,27.49,8,2021-08-01,True
+2021,September,1. Hotel Berbintang Total,44.59,9,2021-09-01,True
+2021,Oktober,1. Hotel Berbintang Total,54.03,10,2021-10-01,True
+2021,November,1. Hotel Berbintang Total,54.14,11,2021-11-01,True
+2021,Desember,1. Hotel Berbintang Total,56.92,12,2021-12-01,True
+2022,Januari,1. Hotel Berbintang Total,46.99,1,2022-01-01,False
+2022,Februari,1. Hotel Berbintang Total,39.04,2,2022-02-01,False
+2022,Maret,1. Hotel Berbintang Total,50.44,3,2022-03-01,False
+2022,April,1. Hotel Berbintang Total,35.35,4,2022-04-01,False
+2022,Mei,1. Hotel Berbintang Total,54.13,5,2022-05-01,False
+2022,Juni,1. Hotel Berbintang Total,52.82,6,2022-06-01,False
+2022,Juli,1. Hotel Berbintang Total,53.48,7,2022-07-01,False
+2022,Agustus,1. Hotel Berbintang Total,50.73,8,2022-08-01,False
+2022,September,1. Hotel Berbintang Total,53.97,9,2022-09-01,False
+2022,Oktober,1. Hotel Berbintang Total,57.67,10,2022-10-01,False
+2022,November,1. Hotel Berbintang Total,56.64,11,2022-11-01,False
+2022,Desember,1. Hotel Berbintang Total,60.18,12,2022-12-01,False
+2023,Januari,1. Hotel Berbintang Total,46.5,1,2023-01-01,False
+2023,Februari,1. Hotel Berbintang Total,49.39,2,2023-02-01,False
+2023,Maret,1. Hotel Berbintang Total,46.25,3,2023-03-01,False
+2023,April,1. Hotel Berbintang Total,42.81,4,2023-04-01,False
+2023,Mei,1. Hotel Berbintang Total,43.15777777777778,5,2023-05-01,False
+2023,Juni,1. Hotel Berbintang Total,43.50555555555556,6,2023-06-01,False
+2023,Juli,1. Hotel Berbintang Total,43.85333333333333,7,2023-07-01,False
+2023,Agustus,1. Hotel Berbintang Total,44.20111111111111,8,2023-08-01,False
+2023,September,1. Hotel Berbintang Total,44.54888888888889,9,2023-09-01,False
+2023,Oktober,1. Hotel Berbintang Total,44.89666666666667,10,2023-10-01,False
+2023,November,1. Hotel Berbintang Total,45.24444444444444,11,2023-11-01,False
+2023,Desember,1. Hotel Berbintang Total,45.59222222222222,12,2023-12-01,False
+2024,Januari,1. Hotel Berbintang Total,45.94,1,2024-01-01,False
+2024,Februari,1. Hotel Berbintang Total,49.09,2,2024-02-01,False
+2024,Maret,1. Hotel Berbintang Total,40.56,3,2024-03-01,False
+2024,April,1. Hotel Berbintang Total,46.32,4,2024-04-01,False
+2024,Mei,1. Hotel Berbintang Total,52.31,5,2024-05-01,False
+2024,Juni,1. Hotel Berbintang Total,54.42,6,2024-06-01,False
+2024,Juli,1. Hotel Berbintang Total,55.94,7,2024-07-01,False
+2024,Agustus,1. Hotel Berbintang Total,51.09,8,2024-08-01,False
+2024,September,1. Hotel Berbintang Total,51.97,9,2024-09-01,False
+2024,Oktober,1. Hotel Berbintang Total,53.85,10,2024-10-01,False
+2024,November,1. Hotel Berbintang Total,52.99,11,2024-11-01,False
+2024,Desember,1. Hotel Berbintang Total,58.56,12,2024-12-01,False
+2025,Januari,1. Hotel Berbintang Total,47.59,1,2025-01-01,False
+2025,Februari,1. Hotel Berbintang Total,45.51,2,2025-02-01,False
+2025,Maret,1. Hotel Berbintang Total,28.77,3,2025-03-01,False
+2025,April,1. Hotel Berbintang Total,46.37,4,2025-04-01,False
+2025,Mei,1. Hotel Berbintang Total,47.08,5,2025-05-01,False
+2025,Juni,1. Hotel Berbintang Total,47.08,6,2025-06-01,False
+2025,Juli,1. Hotel Berbintang Total,49.52,7,2025-07-01,False
+2025,Agustus,1. Hotel Berbintang Total,45.75,8,2025-08-01,False
+2025,September,1. Hotel Berbintang Total,45.66,9,2025-09-01,False
+2025,Oktober,1. Hotel Berbintang Total,50.24,10,2025-10-01,False
+2025,November,1. Hotel Berbintang Total,53.54,11,2025-11-01,False
+2025,Desember,1. Hotel Berbintang Total,58.13,12,2025-12-01,False
+2019,Januari,2. Hotel NonBintang Total,36.72,1,2019-01-01,False
+2019,Februari,2. Hotel NonBintang Total,32.48,2,2019-02-01,False
+2019,Maret,2. Hotel NonBintang Total,34.6,3,2019-03-01,False
+2019,April,2. Hotel NonBintang Total,35.9,4,2019-04-01,False
+2019,Mei,2. Hotel NonBintang Total,28.26,5,2019-05-01,False
+2019,Juni,2. Hotel NonBintang Total,32.9,6,2019-06-01,False
+2019,Juli,2. Hotel NonBintang Total,34.13,7,2019-07-01,False
+2019,Agustus,2. Hotel NonBintang Total,36.35,8,2019-08-01,False
+2019,September,2. Hotel NonBintang Total,36.51,9,2019-09-01,False
+2019,Oktober,2. Hotel NonBintang Total,34.33,10,2019-10-01,False
+2019,November,2. Hotel NonBintang Total,32.73,11,2019-11-01,False
+2019,Desember,2. Hotel NonBintang Total,34.4,12,2019-12-01,False
+2020,Januari,2. Hotel NonBintang Total,35.35,1,2020-01-01,True
+2020,Februari,2. Hotel NonBintang Total,33.92,2,2020-02-01,True
+2020,Maret,2. Hotel NonBintang Total,17.89,3,2020-03-01,True
+2020,April,2. Hotel NonBintang Total,5.13,4,2020-04-01,True
+2020,Mei,2. Hotel NonBintang Total,13.87,5,2020-05-01,True
+2020,Juni,2. Hotel NonBintang Total,15.57,6,2020-06-01,True
+2020,Juli,2. Hotel NonBintang Total,18.22,7,2020-07-01,True
+2020,Agustus,2. Hotel NonBintang Total,19.34,8,2020-08-01,True
+2020,September,2. Hotel NonBintang Total,19.98,9,2020-09-01,True
+2020,Oktober,2. Hotel NonBintang Total,20.39,10,2020-10-01,True
+2020,November,2. Hotel NonBintang Total,20.95,11,2020-11-01,True
+2020,Desember,2. Hotel NonBintang Total,19.96,12,2020-12-01,True
+2021,Januari,2. Hotel NonBintang Total,18.89,1,2021-01-01,True
+2021,Februari,2. Hotel NonBintang Total,18.17,2,2021-02-01,True
+2021,Maret,2. Hotel NonBintang Total,19.87,3,2021-03-01,True
+2021,April,2. Hotel NonBintang Total,16.49,4,2021-04-01,True
+2021,Mei,2. Hotel NonBintang Total,18.41,5,2021-05-01,True
+2021,Juni,2. Hotel NonBintang Total,19.31,6,2021-06-01,True
+2021,Juli,2. Hotel NonBintang Total,11.11,7,2021-07-01,True
+2021,Agustus,2. Hotel NonBintang Total,18.25,8,2021-08-01,True
+2021,September,2. Hotel NonBintang Total,20.13,9,2021-09-01,True
+2021,Oktober,2. Hotel NonBintang Total,23.61,10,2021-10-01,True
+2021,November,2. Hotel NonBintang Total,24.89,11,2021-11-01,True
+2021,Desember,2. Hotel NonBintang Total,25.58,12,2021-12-01,True
+2022,Januari,2. Hotel NonBintang Total,27.61,1,2022-01-01,False
+2022,Februari,2. Hotel NonBintang Total,22.28,2,2022-02-01,False
+2022,Maret,2. Hotel NonBintang Total,23.55,3,2022-03-01,False
+2022,April,2. Hotel NonBintang Total,16.26,4,2022-04-01,False
+2022,Mei,2. Hotel NonBintang Total,28.31,5,2022-05-01,False
+2022,Juni,2. Hotel NonBintang Total,26.19,6,2022-06-01,False
+2022,Juli,2. Hotel NonBintang Total,25.12,7,2022-07-01,False
+2022,Agustus,2. Hotel NonBintang Total,23.74,8,2022-08-01,False
+2022,September,2. Hotel NonBintang Total,22.54,9,2022-09-01,False
+2022,Oktober,2. Hotel NonBintang Total,23.39,10,2022-10-01,False
+2022,November,2. Hotel NonBintang Total,24.18,11,2022-11-01,False
+2022,Desember,2. Hotel NonBintang Total,25.97,12,2022-12-01,False
+2023,Januari,2. Hotel NonBintang Total,24.7,1,2023-01-01,False
+2023,Februari,2. Hotel NonBintang Total,19.97,2,2023-02-01,False
+2023,Maret,2. Hotel NonBintang Total,19.44,3,2023-03-01,False
+2023,April,2. Hotel NonBintang Total,21.03,4,2023-04-01,False
+2023,Mei,2. Hotel NonBintang Total,21.150000000000002,5,2023-05-01,False
+2023,Juni,2. Hotel NonBintang Total,21.27,6,2023-06-01,False
+2023,Juli,2. Hotel NonBintang Total,21.39,7,2023-07-01,False
+2023,Agustus,2. Hotel NonBintang Total,21.51,8,2023-08-01,False
+2023,September,2. Hotel NonBintang Total,21.63,9,2023-09-01,False
+2023,Oktober,2. Hotel NonBintang Total,21.75,10,2023-10-01,False
+2023,November,2. Hotel NonBintang Total,21.87,11,2023-11-01,False
+2023,Desember,2. Hotel NonBintang Total,21.99,12,2023-12-01,False
+2024,Januari,2. Hotel NonBintang Total,22.11,1,2024-01-01,False
+2024,Februari,2. Hotel NonBintang Total,24.49,2,2024-02-01,False
+2024,Maret,2. Hotel NonBintang Total,16.85,3,2024-03-01,False
+2024,April,2. Hotel NonBintang Total,22.81,4,2024-04-01,False
+2024,Mei,2. Hotel NonBintang Total,23.27,5,2024-05-01,False
+2024,Juni,2. Hotel NonBintang Total,23.57,6,2024-06-01,False
+2024,Juli,2. Hotel NonBintang Total,23.87,7,2024-07-01,False
+2024,Agustus,2. Hotel NonBintang Total,22.69,8,2024-08-01,False
+2024,September,2. Hotel NonBintang Total,23.01,9,2024-09-01,False
+2024,Oktober,2. Hotel NonBintang Total,23.1,10,2024-10-01,False
+2024,November,2. Hotel NonBintang Total,22.71,11,2024-11-01,False
+2024,Desember,2. Hotel NonBintang Total,26.85,12,2024-12-01,False
+2025,Januari,2. Hotel NonBintang Total,23.72,1,2025-01-01,False
+2025,Februari,2. Hotel NonBintang Total,21.33,2,2025-02-01,False
+2025,Maret,2. Hotel NonBintang Total,14.37,3,2025-03-01,False
+2025,April,2. Hotel NonBintang Total,25.76,4,2025-04-01,False
+2025,Mei,2. Hotel NonBintang Total,23.42,5,2025-05-01,False
+2025,Juni,2. Hotel NonBintang Total,23.14,6,2025-06-01,False
+2025,Juli,2. Hotel NonBintang Total,22.68,7,2025-07-01,False
+2025,Agustus,2. Hotel NonBintang Total,21.76,8,2025-08-01,False
+2025,September,2. Hotel NonBintang Total,22.43,9,2025-09-01,False
+2025,Oktober,2. Hotel NonBintang Total,22.26,10,2025-10-01,False
+2025,November,2. Hotel NonBintang Total,23.48,11,2025-11-01,False
+2025,Desember,2. Hotel NonBintang Total,27.51,12,2025-12-01,False
+2019,Januari,3. Hotel Berbintang dan NonBintang Total,51.45,1,2019-01-01,False
+2019,Februari,3. Hotel Berbintang dan NonBintang Total,48.08,2,2019-02-01,False
+2019,Maret,3. Hotel Berbintang dan NonBintang Total,48.81,3,2019-03-01,False
+2019,April,3. Hotel Berbintang dan NonBintang Total,49.19,4,2019-04-01,False
+2019,Mei,3. Hotel Berbintang dan NonBintang Total,36.47,5,2019-05-01,False
+2019,Juni,3. Hotel Berbintang dan NonBintang Total,47.57,6,2019-06-01,False
+2019,Juli,3. Hotel Berbintang dan NonBintang Total,49.03,7,2019-07-01,False
+2019,Agustus,3. Hotel Berbintang dan NonBintang Total,46.26,8,2019-08-01,False
+2019,September,3. Hotel Berbintang dan NonBintang Total,47.57,9,2019-09-01,False
+2019,Oktober,3. Hotel Berbintang dan NonBintang Total,50.36,10,2019-10-01,False
+2019,November,3. Hotel Berbintang dan NonBintang Total,51.59,11,2019-11-01,False
+2019,Desember,3. Hotel Berbintang dan NonBintang Total,54.82,12,2019-12-01,False
+2020,Januari,3. Hotel Berbintang dan NonBintang Total,45.96,1,2020-01-01,True
+2020,Februari,3. Hotel Berbintang dan NonBintang Total,46.47,2,2020-02-01,True
+2020,Maret,3. Hotel Berbintang dan NonBintang Total,28.73,3,2020-03-01,True
+2020,April,3. Hotel Berbintang dan NonBintang Total,8.02,4,2020-04-01,True
+2020,Mei,3. Hotel Berbintang dan NonBintang Total,13.35,5,2020-05-01,True
+2020,Juni,3. Hotel Berbintang dan NonBintang Total,19.13,6,2020-06-01,True
+2020,Juli,3. Hotel Berbintang dan NonBintang Total,27.17,7,2020-07-01,True
+2020,Agustus,3. Hotel Berbintang dan NonBintang Total,34.95,8,2020-08-01,True
+2020,September,3. Hotel Berbintang dan NonBintang Total,32.68,9,2020-09-01,True
+2020,Oktober,3. Hotel Berbintang dan NonBintang Total,37.02,10,2020-10-01,True
+2020,November,3. Hotel Berbintang dan NonBintang Total,41.31,11,2020-11-01,True
+2020,Desember,3. Hotel Berbintang dan NonBintang Total,38.8,12,2020-12-01,True
+2021,Januari,3. Hotel Berbintang dan NonBintang Total,26.68,1,2021-01-01,True
+2021,Februari,3. Hotel Berbintang dan NonBintang Total,33.85,2,2021-02-01,True
+2021,Maret,3. Hotel Berbintang dan NonBintang Total,34.23,3,2021-03-01,True
+2021,April,3. Hotel Berbintang dan NonBintang Total,32.17,4,2021-04-01,True
+2021,Mei,3. Hotel Berbintang dan NonBintang Total,30.58,5,2021-05-01,True
+2021,Juni,3. Hotel Berbintang dan NonBintang Total,32.9,6,2021-06-01,True
+2021,Juli,3. Hotel Berbintang dan NonBintang Total,16.94,7,2021-07-01,True
+2021,Agustus,3. Hotel Berbintang dan NonBintang Total,24.95,8,2021-08-01,True
+2021,September,3. Hotel Berbintang dan NonBintang Total,37.33,9,2021-09-01,True
+2021,Oktober,3. Hotel Berbintang dan NonBintang Total,44.68,10,2021-10-01,True
+2021,November,3. Hotel Berbintang dan NonBintang Total,45.41,11,2021-11-01,True
+2021,Desember,3. Hotel Berbintang dan NonBintang Total,47.53,12,2021-12-01,True
+2022,Januari,3. Hotel Berbintang dan NonBintang Total,46.885384615384616,1,2022-01-01,False
+2022,Februari,3. Hotel Berbintang dan NonBintang Total,46.24076923076923,2,2022-02-01,False
+2022,Maret,3. Hotel Berbintang dan NonBintang Total,45.59615384615385,3,2022-03-01,False
+2022,April,3. Hotel Berbintang dan NonBintang Total,44.95153846153846,4,2022-04-01,False
+2022,Mei,3. Hotel Berbintang dan NonBintang Total,44.30692307692308,5,2022-05-01,False
+2022,Juni,3. Hotel Berbintang dan NonBintang Total,43.66230769230769,6,2022-06-01,False
+2022,Juli,3. Hotel Berbintang dan NonBintang Total,43.01769230769231,7,2022-07-01,False
+2022,Agustus,3. Hotel Berbintang dan NonBintang Total,42.37307692307692,8,2022-08-01,False
+2022,September,3. Hotel Berbintang dan NonBintang Total,41.72846153846154,9,2022-09-01,False
+2022,Oktober,3. Hotel Berbintang dan NonBintang Total,41.08384615384615,10,2022-10-01,False
+2022,November,3. Hotel Berbintang dan NonBintang Total,40.43923076923077,11,2022-11-01,False
+2022,Desember,3. Hotel Berbintang dan NonBintang Total,39.79461538461538,12,2022-12-01,False
+2023,Januari,3. Hotel Berbintang dan NonBintang Total,39.15,1,2023-01-01,False
+2023,Februari,3. Hotel Berbintang dan NonBintang Total,38.93,2,2023-02-01,False
+2023,Maret,3. Hotel Berbintang dan NonBintang Total,36.92,3,2023-03-01,False
+2023,April,3. Hotel Berbintang dan NonBintang Total,35.34,4,2023-04-01,False
+2023,Mei,3. Hotel Berbintang dan NonBintang Total,35.68222222222222,5,2023-05-01,False
+2023,Juni,3. Hotel Berbintang dan NonBintang Total,36.02444444444445,6,2023-06-01,False
+2023,Juli,3. Hotel Berbintang dan NonBintang Total,36.36666666666667,7,2023-07-01,False
+2023,Agustus,3. Hotel Berbintang dan NonBintang Total,36.70888888888889,8,2023-08-01,False
+2023,September,3. Hotel Berbintang dan NonBintang Total,37.05111111111111,9,2023-09-01,False
+2023,Oktober,3. Hotel Berbintang dan NonBintang Total,37.39333333333334,10,2023-10-01,False
+2023,November,3. Hotel Berbintang dan NonBintang Total,37.73555555555556,11,2023-11-01,False
+2023,Desember,3. Hotel Berbintang dan NonBintang Total,38.07777777777778,12,2023-12-01,False
+2024,Januari,3. Hotel Berbintang dan NonBintang Total,38.42,1,2024-01-01,False
+2024,Februari,3. Hotel Berbintang dan NonBintang Total,40.03,2,2024-02-01,False
+2024,Maret,3. Hotel Berbintang dan NonBintang Total,32.39,3,2024-03-01,False
+2024,April,3. Hotel Berbintang dan NonBintang Total,37.99,4,2024-04-01,False
+2024,Mei,3. Hotel Berbintang dan NonBintang Total,42.45,5,2024-05-01,False
+2024,Juni,3. Hotel Berbintang dan NonBintang Total,43.81,6,2024-06-01,False
+2024,Juli,3. Hotel Berbintang dan NonBintang Total,44.96,7,2024-07-01,False
+2024,Agustus,3. Hotel Berbintang dan NonBintang Total,41.44,8,2024-08-01,False
+2024,September,3. Hotel Berbintang dan NonBintang Total,42.09,9,2024-09-01,False
+2024,Oktober,3. Hotel Berbintang dan NonBintang Total,44.82,10,2024-10-01,False
+2024,November,3. Hotel Berbintang dan NonBintang Total,42.72,11,2024-11-01,False
+2024,Desember,3. Hotel Berbintang dan NonBintang Total,47.87,12,2024-12-01,False
+2025,Januari,3. Hotel Berbintang dan NonBintang Total,40.08,1,2025-01-01,False
+2025,Februari,3. Hotel Berbintang dan NonBintang Total,37.88,2,2025-02-01,False
+2025,Maret,3. Hotel Berbintang dan NonBintang Total,24.28,3,2025-03-01,False
+2025,April,3. Hotel Berbintang dan NonBintang Total,38.07,4,2025-04-01,False
+2025,Mei,3. Hotel Berbintang dan NonBintang Total,37.59,5,2025-05-01,False
+2025,Juni,3. Hotel Berbintang dan NonBintang Total,37.5,6,2025-06-01,False
+2025,Juli,3. Hotel Berbintang dan NonBintang Total,38.8,7,2025-07-01,False
+2025,Agustus,3. Hotel Berbintang dan NonBintang Total,36.12,8,2025-08-01,False
+2025,September,3. Hotel Berbintang dan NonBintang Total,36.33,9,2025-09-01,False
+2025,Oktober,3. Hotel Berbintang dan NonBintang Total,38.9,10,2025-10-01,False
+2025,November,3. Hotel Berbintang dan NonBintang Total,41.41,11,2025-11-01,False
+2025,Desember,3. Hotel Berbintang dan NonBintang Total,45.75,12,2025-12-01,False
