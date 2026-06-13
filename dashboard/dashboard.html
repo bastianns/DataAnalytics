@@ -405,22 +405,25 @@
                 <span class="chevron-hotel material-symbols-outlined">expand_more</span>
             </div>
             <div id="hotel-anomali-content" class="anomali-content text-sm space-y-3 text-amber-950">
-                <p>• <strong>TPK adalah persentase:</strong> 
+                <p>• <strong>Definisi TPK:</strong> 
                    TPK = (Kamar terjual / Kamar tersedia) × 100%. 
-                   Nilai 53% berarti lebih dari separuh kamar hotel 
-                   di Jawa Barat terisi rata-rata di 2019.</p>
+                   Nilai sudah dalam bentuk persentase dari sumber data — 
+                   jumlah kamar absolut tidak tersedia.</p>
                 <p>• <strong>Sub-kategori tidak dilaporkan:</strong> 
-                   Data per bintang (1–5) dan per ukuran kamar memang 
+                   Data per bintang (1a–1e) dan per ukuran kamar memang 
                    tidak tersedia di sumber asli. Hanya nilai "Total" 
                    yang dilaporkan. Ini bukan error cleaning.</p>
+                <p>• <strong>Asumsi kalkulasi "Total Gabungan":</strong> 
+                   Kolom "3. Hotel Berbintang dan NonBintang Total" yang kosong 
+                   dihitung sebagai rata-rata sederhana dari kolom 1 dan 2. 
+                   Nilai ini ditandai dengan (*) dan bersifat estimasi, 
+                   bukan data resmi dari sumber.</p>
                 <p>• <strong>2022–2023 tidak lengkap:</strong> 
-                   Data 2022 and 2023 hanya mencakup sebagian bulan 
-                   — bukan 12 bulan penuh. Tren 2022–2023 tidak 
-                   representatif untuk perbandingan tahunan.</p>
+                   Data kedua tahun ini hanya mencakup sebagian bulan. 
+                   Tren 2022–2023 tidak representatif untuk perbandingan tahunan.</p>
                 <p>• <strong>2024–2025 lebih lengkap:</strong> 
                    Mulai 2024 pelaporan jauh lebih konsisten. 
-                   Perbandingan lintas periode harus dilakukan 
-                   dengan hati-hati.</p>
+                   Perbandingan lintas periode harus dilakukan dengan hati-hati.</p>
             </div>
         </div>
 
@@ -835,56 +838,96 @@ const ChartRenderer = (() => {
         const el = document.getElementById('hotel-trend-chart');
         if (!el) return;
         if (!yearlyByType || yearlyByType.length === 0) {
-            el.innerHTML = '<p class="text-center text-slate-400 py-16">Data tidak tersedia</p>';
+            el.innerHTML = '<p style="text-align:center;padding:60px;color:#94a3b8">Data tidak tersedia</p>';
             return;
         }
-        const colors = ['#006591', '#0EA5E9'];
-        const traces = yearlyByType.map((item, i) => ({
+
+        const colorMap = {
+            'Hotel Berbintang Total': '#006591',
+            'Hotel NonBintang Total': '#0EA5E9',
+            'Hotel Berbintang dan NonBintang Total': '#10B981'
+        };
+        const dashMap = {
+            'Hotel Berbintang Total': 'solid',
+            'Hotel NonBintang Total': 'solid',
+            'Hotel Berbintang dan NonBintang Total': 'dot'
+        };
+        const nameMap = {
+            'Hotel Berbintang Total': 'Hotel Berbintang',
+            'Hotel NonBintang Total': 'Hotel Non-Bintang',
+            'Hotel Berbintang dan NonBintang Total': 'Total Gabungan*'
+        };
+
+        const traces = yearlyByType.map(item => ({
             x: item.years,
             y: item.values,
-            name: item.tipe.replace('1. ', '').replace('2. ', ''),
+            name: nameMap[item.tipe] || item.tipe,
             type: 'scatter',
             mode: 'lines+markers',
-            line: { color: colors[i], width: 3 },
-            marker: { size: 8 },
+            line: {
+                color: colorMap[item.tipe] || '#94A3B8',
+                width: item.tipe.includes('NonBintang') ? 2 : 3,
+                dash: dashMap[item.tipe] || 'solid'
+            },
+            marker: { size: 7 },
             connectgaps: true
         }));
 
-        // Tambah trace benchmark: garis putus2 di y=38.5 (rata-rata keseluruhan)
+        // Garis benchmark rata-rata keseluruhan
         traces.push({
-            x: [2019, 2020, 2021, 2022, 2023, 2024, 2025],
-            y: [38.5, 38.5, 38.5, 38.5, 38.5, 38.5, 38.5],
-            name: 'Rata-rata Keseluruhan (38.5%)',
+            x: yearlyByType[0]?.years || [],
+            y: yearlyByType[0]?.years.map(() => 38.5) || [],
+            name: 'Rata-rata (38.5%)',
             type: 'scatter',
             mode: 'lines',
-            line: { color: '#94A3B8', width: 2, dash: 'dot' }
+            line: { color: '#CBD5E1', width: 1.5, dash: 'dot' },
+            hoverinfo: 'skip'
         });
 
         const layout = {
-            ...commonLayout,
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            font: { family: 'Inter', size: 12 },
             showlegend: true,
             legend: { orientation: 'h', y: 1.15 },
-            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 75],
-                     title: 'Tingkat Hunian Kamar (%)' },
-            xaxis: { ...commonLayout.xaxis, type: 'category',
-                     title: 'Tahun' },
+            margin: { t: 50, r: 20, b: 60, l: 70 },
+            yaxis: {
+                gridcolor: '#f0f4f8',
+                zeroline: false,
+                ticksuffix: '%',
+                range: [0, 75],
+                title: { text: 'Tingkat Hunian Kamar (%)', font: { size: 11 } }
+            },
+            xaxis: {
+                gridcolor: '#f0f4f8',
+                zeroline: false,
+                type: 'category',
+                title: { text: 'Tahun', font: { size: 11 } }
+            },
             shapes: [{
-                type: 'rect', xref: 'x', yref: 'paper',
-                x0: '2019.5', y0: 0, x1: '2021.5', y1: 1,
+                type: 'rect', xref: 'paper', yref: 'paper',
+                x0: 0.13, y0: 0, x1: 0.28, y1: 1,
                 fillcolor: 'rgba(239,68,68,0.06)', line: { width: 0 }
             }],
             annotations: [
-                { x: '2020', y: 0.95, xref: 'x', yref: 'paper',
-                  text: '📍 COVID-19 Impact', showarrow: false,
-                  font: { color: '#ba1a1a', size: 10 } },
-                { x: '2022', y: 0.15, xref: 'x', yref: 'paper',
-                  text: '⚠ Data 2022 tidak lengkap', showarrow: false,
-                  font: { color: '#d97706', size: 9 } },
-                { x: '2023', y: 0.08, xref: 'x', yref: 'paper',
-                  text: '⚠ Data 2023 tidak lengkap', showarrow: false,
-                  font: { color: '#d97706', size: 9 } }
+                {
+                    x: '2020', y: 0.95, xref: 'x', yref: 'paper',
+                    text: '📍 COVID-19', showarrow: false,
+                    font: { color: '#ba1a1a', size: 10 }
+                },
+                {
+                    x: '2022', y: 0.15, xref: 'x', yref: 'paper',
+                    text: '⚠ Data 2022 tidak lengkap', showarrow: false,
+                    font: { color: '#d97706', size: 9 }
+                },
+                {
+                    x: '2023', y: 0.08, xref: 'x', yref: 'paper',
+                    text: '⚠ Data 2023 tidak lengkap', showarrow: false,
+                    font: { color: '#d97706', size: 9 }
+                }
             ]
         };
+
         Plotly.newPlot('hotel-trend-chart', traces, layout,
             { responsive: true, displayModeBar: false });
     }
@@ -892,8 +935,7 @@ const ChartRenderer = (() => {
     function renderHotelSeasonal(monthlyData) {
         const el = document.getElementById('hotel-seasonal-chart');
         if (!el) return;
-        
-        // Filter hanya yang ada datanya
+
         const validData = monthlyData.filter(d => d.avg > 0);
         if (validData.length === 0) {
             el.innerHTML = '<p style="text-align:center;padding:60px;color:#94a3b8">Data musiman tidak tersedia</p>';
@@ -902,7 +944,7 @@ const ChartRenderer = (() => {
 
         const maxVal = Math.max(...validData.map(d => d.avg));
         const minVal = Math.min(...validData.map(d => d.avg));
-        
+
         const colors = validData.map(d => {
             if (d.avg === maxVal) return '#0C4A6E';
             if (d.avg >= 45) return '#006591';
@@ -911,7 +953,7 @@ const ChartRenderer = (() => {
         });
 
         const trace = {
-            x: validData.map(d => d.bulan),  // string kategori
+            x: validData.map(d => d.bulan),
             y: validData.map(d => d.avg),
             type: 'bar',
             marker: { color: colors },
@@ -925,19 +967,19 @@ const ChartRenderer = (() => {
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
             font: { family: 'Inter', size: 12 },
-            margin: { t: 40, r: 20, b: 60, l: 70 },
-            xaxis: { 
-                type: 'category',      // PENTING: paksa kategori bukan date
+            margin: { t: 40, r: 20, b: 80, l: 70 },
+            xaxis: {
+                type: 'category',
                 gridcolor: '#f0f4f8',
                 zeroline: false,
                 tickangle: -30,
                 tickfont: { size: 11 }
             },
-            yaxis: { 
+            yaxis: {
                 gridcolor: '#f0f4f8',
                 zeroline: false,
                 ticksuffix: '%',
-                range: [0, maxVal + 10],
+                range: [0, maxVal + 12],
                 title: { text: 'Rata-rata TPK (%)', font: { size: 11 } }
             },
             annotations: [
@@ -947,7 +989,7 @@ const ChartRenderer = (() => {
                     yshift: 28,
                     text: '🏆 Tertinggi',
                     showarrow: false,
-                    font: { color: '#0C4A6E', size: 10, family: 'Inter' }
+                    font: { color: '#0C4A6E', size: 10 }
                 },
                 {
                     x: validData.find(d => d.avg === minVal)?.bulan,
@@ -955,12 +997,12 @@ const ChartRenderer = (() => {
                     yshift: 28,
                     text: '📉 Terendah',
                     showarrow: false,
-                    font: { color: '#94A3B8', size: 10, family: 'Inter' }
+                    font: { color: '#94A3B8', size: 10 }
                 }
             ]
         };
 
-        Plotly.newPlot('hotel-seasonal-chart', [trace], layout, 
+        Plotly.newPlot('hotel-seasonal-chart', [trace], layout,
             { responsive: true, displayModeBar: false });
     }
 
@@ -1005,9 +1047,50 @@ const HotelModule = (() => {
     async function loadHotel() {
         return new Promise((resolve) => {
             Papa.parse('../data/processed/hotel_clean.csv', {
-                download: true, header: true, dynamicTyping: true,
-                complete: (results) => {
-                    hotelData = results.data.filter(d => d.tahun && d.tpk !== null && d.tpk !== '');
+                download: true,
+                header: true,
+                dynamicTyping: true,
+                complete: function(results) {
+                    const raw = results.data.filter(d => d.tahun && d.bulan);
+                    
+                    // Hanya pakai 3 jenis: Total Berbintang, Total NonBintang, Total Gabungan
+                    const validTypes = [
+                        '1. Hotel Berbintang Total',
+                        '2. Hotel NonBintang Total',
+                        '3. Hotel Berbintang dan NonBintang Total'
+                    ];
+                    let filtered = raw.filter(d => validTypes.includes(d.jenis_hotel));
+                    
+                    // Hitung "3. Total Gabungan" dari rata-rata 1+2 jika NaN
+                    const years = [...new Set(filtered.map(d => d.tahun))];
+                    const bulanList = [...new Set(filtered.map(d => d.bulan))];
+                    
+                    years.forEach(y => {
+                        bulanList.forEach(b => {
+                            const row3 = filtered.find(d =>
+                                d.tahun === y && d.bulan === b &&
+                                d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total'
+                            );
+                            if (row3 && (row3.tpk === null || row3.tpk === '' || !row3.tpk)) {
+                                const row1 = filtered.find(d =>
+                                    d.tahun === y && d.bulan === b &&
+                                    d.jenis_hotel === '1. Hotel Berbintang Total'
+                                );
+                                const row2 = filtered.find(d =>
+                                    d.tahun === y && d.bulan === b &&
+                                    d.jenis_hotel === '2. Hotel NonBintang Total'
+                                );
+                                if (row1?.tpk && row2?.tpk) {
+                                    row3.tpk = Math.round(
+                                        ((parseFloat(row1.tpk) + parseFloat(row2.tpk)) / 2) * 10
+                                    ) / 10;
+                                    row3.tpk_calculated = true;
+                                }
+                            }
+                        });
+                    });
+                    
+                    hotelData = filtered.filter(d => d.tpk !== null && d.tpk !== '' && d.tpk);
                     resolve(hotelData);
                 },
                 error: () => resolve([])
@@ -1017,31 +1100,30 @@ const HotelModule = (() => {
 
     function getYearlyByType(data) {
         const targetTypes = [
-            '1. Hotel Berbintang Total', 
-            '2. Hotel NonBintang Total'
+            '1. Hotel Berbintang Total',
+            '2. Hotel NonBintang Total',
+            '3. Hotel Berbintang dan NonBintang Total'
         ];
         const years = [...new Set(
             data.filter(d => d.tpk !== null && d.tpk !== '' && d.tpk)
                 .map(d => d.tahun)
         )].sort();
-        
+
         return targetTypes.map(tipe => {
-            const typeData = data.filter(d => 
-                d.jenis_hotel === tipe && 
-                d.tpk !== null && 
-                d.tpk !== '' && 
-                d.tpk
+            const typeData = data.filter(d =>
+                d.jenis_hotel === tipe &&
+                d.tpk !== null && d.tpk !== '' && d.tpk
             );
             const yearlyAvg = years.map(y => {
                 const yearData = typeData.filter(d => d.tahun === y);
                 if (yearData.length === 0) return null;
-                const sum = yearData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0);
+                const sum = yearData.reduce((s, d) => s + (parseFloat(d.tpk) || 0), 0);
                 return Math.round((sum / yearData.length) * 10) / 10;
             });
-            return { 
-                tipe: tipe.replace('1. ','').replace('2. ',''), 
-                years, 
-                values: yearlyAvg 
+            return {
+                tipe: tipe.replace('1. ', '').replace('2. ', '').replace('3. ', ''),
+                years,
+                values: yearlyAvg
             };
         });
     }
@@ -1051,19 +1133,18 @@ const HotelModule = (() => {
             'Januari','Februari','Maret','April','Mei','Juni',
             'Juli','Agustus','September','Oktober','November','Desember'
         ];
-        // Gunakan Hotel Berbintang Total saja, semua tahun yang valid
-        const totalData = data.filter(d => 
-            d.jenis_hotel === '1. Hotel Berbintang Total' && 
-            d.tpk !== null && d.tpk !== '' && d.tpk &&
-            d.tahun >= 2019
+        // Pakai "3. Total Gabungan" agar representatif
+        const totalData = data.filter(d =>
+            d.jenis_hotel === '3. Hotel Berbintang dan NonBintang Total' &&
+            d.tpk && d.tahun >= 2019
         );
-        
+
         return bulanOrder.map(b => {
             const bulanData = totalData.filter(d => d.bulan === b);
             if (bulanData.length === 0) return { bulan: b, avg: 0 };
-            const avg = bulanData.reduce((s,d) => s + (parseFloat(d.tpk)||0), 0) 
+            const avg = bulanData.reduce((s, d) => s + (parseFloat(d.tpk) || 0), 0)
                         / bulanData.length;
-            return { bulan: b, avg: Math.round(avg*10)/10 };
+            return { bulan: b, avg: Math.round(avg * 10) / 10 };
         });
     }
 
