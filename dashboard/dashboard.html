@@ -405,25 +405,26 @@
                 <span class="chevron-hotel material-symbols-outlined">expand_more</span>
             </div>
             <div id="hotel-anomali-content" class="anomali-content text-sm space-y-3 text-amber-950">
-                <p>• <strong>Definisi TPK:</strong> 
-                   TPK = (Kamar terjual / Kamar tersedia) × 100%. 
-                   Nilai sudah dalam bentuk persentase dari sumber data — 
-                   jumlah kamar absolut tidak tersedia.</p>
-                <p>• <strong>Sub-kategori tidak dilaporkan:</strong> 
-                   Data per bintang (1a–1e) dan per ukuran kamar memang 
-                   tidak tersedia di sumber asli. Hanya nilai "Total" 
+                <p>• <strong>TPK adalah persentase:</strong> 
+                   TPK = (Kamar terjual / Kamar tersedia) × 100%.
+                   Nilai 53% berarti lebih dari separuh kamar hotel 
+                   di Jawa Barat terisi rata-rata di 2019.</p>
+                <p>• <strong>Sub-kategori tidak dilaporkan:</strong>
+                   Data per bintang (1–5) dan per ukuran kamar memang 
+                   tidak tersedia di sumber asli. Hanya nilai "Total"
                    yang dilaporkan. Ini bukan error cleaning.</p>
                 <p>• <strong>Asumsi kalkulasi "Total Gabungan":</strong> 
-                   Kolom "3. Hotel Berbintang dan NonBintang Total" yang kosong 
-                   dihitung sebagai rata-rata sederhana dari kolom 1 dan 2. 
-                   Nilai ini ditandai dengan (*) dan bersifat estimasi, 
-                   bukan data resmi dari sumber.</p>
-                <p>• <strong>2022–2023 tidak lengkap:</strong> 
-                   Data kedua tahun ini hanya mencakup sebagian bulan. 
-                   Tren 2022–2023 tidak representatif untuk perbandingan tahunan.</p>
-                <p>• <strong>2024–2025 lebih lengkap:</strong> 
+                   Kolom "Total Gabungan" yang kosong dihitung sebagai 
+                   rata-rata sederhana dari Berbintang dan Non-Bintang. 
+                   Nilai ini ditandai dengan (*) dan bersifat estimasi.</p>
+                <p>• <strong>2022–2023 tidak lengkap:</strong>
+                   Data 2022 dan 2023 hanya mencakup sebagian bulan 
+                   — bukan 12 bulan penuh. Tren 2022–2023 tidak 
+                   representatif untuk perbandingan tahunan.</p>
+                <p>• <strong>2024–2025 lebih lengkap:</strong>
                    Mulai 2024 pelaporan jauh lebih konsisten. 
-                   Perbandingan lintas periode harus dilakukan dengan hati-hati.</p>
+                   Perbandingan lintas periode harus dilakukan 
+                   dengan hati-hati.</p>
             </div>
         </div>
 
@@ -838,7 +839,7 @@ const ChartRenderer = (() => {
         const el = document.getElementById('hotel-trend-chart');
         if (!el) return;
         if (!yearlyByType || yearlyByType.length === 0) {
-            el.innerHTML = '<p style="text-align:center;padding:60px;color:#94a3b8">Data tidak tersedia</p>';
+            el.innerHTML = '<p class="text-center text-slate-400 py-16">Data tidak tersedia</p>';
             return;
         }
 
@@ -866,65 +867,46 @@ const ChartRenderer = (() => {
             mode: 'lines+markers',
             line: {
                 color: colorMap[item.tipe] || '#94A3B8',
-                width: item.tipe.includes('NonBintang') ? 2 : 3,
+                width: 3,
                 dash: dashMap[item.tipe] || 'solid'
             },
-            marker: { size: 7 },
+            marker: { size: 8 },
             connectgaps: true
         }));
 
-        // Garis benchmark rata-rata keseluruhan
+        // Tambah trace benchmark: garis putus2 di y=38.5 (rata-rata keseluruhan)
         traces.push({
-            x: yearlyByType[0]?.years || [],
-            y: yearlyByType[0]?.years.map(() => 38.5) || [],
-            name: 'Rata-rata (38.5%)',
+            x: [2019, 2020, 2021, 2022, 2023, 2024, 2025],
+            y: [38.5, 38.5, 38.5, 38.5, 38.5, 38.5, 38.5],
+            name: 'Rata-rata Keseluruhan (38.5%)',
             type: 'scatter',
             mode: 'lines',
-            line: { color: '#CBD5E1', width: 1.5, dash: 'dot' },
-            hoverinfo: 'skip'
+            line: { color: '#94A3B8', width: 2, dash: 'dot' }
         });
 
         const layout = {
-            paper_bgcolor: 'rgba(0,0,0,0)',
-            plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { family: 'Inter', size: 12 },
+            ...commonLayout,
             showlegend: true,
             legend: { orientation: 'h', y: 1.15 },
-            margin: { t: 50, r: 20, b: 60, l: 70 },
-            yaxis: {
-                gridcolor: '#f0f4f8',
-                zeroline: false,
-                ticksuffix: '%',
-                range: [0, 75],
-                title: { text: 'Tingkat Hunian Kamar (%)', font: { size: 11 } }
-            },
-            xaxis: {
-                gridcolor: '#f0f4f8',
-                zeroline: false,
-                type: 'category',
-                title: { text: 'Tahun', font: { size: 11 } }
-            },
+            yaxis: { ...commonLayout.yaxis, ticksuffix: '%', range: [0, 75],
+                     title: { text: 'Tingkat Hunian Kamar (%)', font: { size: 11 } } },
+            xaxis: { ...commonLayout.xaxis, type: 'category',
+                     title: { text: 'Tahun', font: { size: 11 } } },
             shapes: [{
-                type: 'rect', xref: 'paper', yref: 'paper',
-                x0: 0.13, y0: 0, x1: 0.28, y1: 1,
+                type: 'rect', xref: 'x', yref: 'paper',
+                x0: '2019.5', y0: 0, x1: '2021.5', y1: 1,
                 fillcolor: 'rgba(239,68,68,0.06)', line: { width: 0 }
             }],
             annotations: [
-                {
-                    x: '2020', y: 0.95, xref: 'x', yref: 'paper',
-                    text: '📍 COVID-19', showarrow: false,
-                    font: { color: '#ba1a1a', size: 10 }
-                },
-                {
-                    x: '2022', y: 0.15, xref: 'x', yref: 'paper',
-                    text: '⚠ Data 2022 tidak lengkap', showarrow: false,
-                    font: { color: '#d97706', size: 9 }
-                },
-                {
-                    x: '2023', y: 0.08, xref: 'x', yref: 'paper',
-                    text: '⚠ Data 2023 tidak lengkap', showarrow: false,
-                    font: { color: '#d97706', size: 9 }
-                }
+                { x: '2020', y: 0.95, xref: 'x', yref: 'paper',
+                  text: '📍 COVID-19 Impact', showarrow: false,
+                  font: { color: '#ba1a1a', size: 10 } },
+                { x: '2022', y: 0.15, xref: 'x', yref: 'paper',
+                  text: '⚠ Data 2022 tidak lengkap', showarrow: false,
+                  font: { color: '#d97706', size: 9 } },
+                { x: '2023', y: 0.08, xref: 'x', yref: 'paper',
+                  text: '⚠ Data 2023 tidak lengkap', showarrow: false,
+                  font: { color: '#d97706', size: 9 } }
             ]
         };
 
